@@ -1,18 +1,17 @@
+import enviosImg from "../assets/images/envios.png"
+
 const serviceData = [
     {
-        icon: "",
+        icon: enviosImg,
         title: "Envíos gratis",
-        bg: "#fdefe6",
     },
     {
         icon: "",
         title: "Pago seguro",
-        bg: "#ceebe9",
     },
     {
         icon: "",
         title: "Respondemos sus consultas",
-        bg: "#e2f2b2",
     },
 ]
 

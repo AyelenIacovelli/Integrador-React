@@ -1,20 +1,18 @@
 .hero__section {
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
     background-color: aquamarine;
-    padding: 40px 0;
 }
 
-.hero__container {
-    display: flex;
-
+.hero__content h2 {
+    color: aqua;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
 }
 
-.hero__content {
-    gap: 60px;
+.hero__content p {
+    color: black;
+    line-height: 28px;
+    font-weight: 500;
 }
 
 .buy__btn {
@@ -28,6 +26,14 @@
     font-size: 18px;
 }
 
+.buy__btn a:hover {
+    color: wheat;
+}
+
+.hero__content {
+    padding-top: 45px;
+}
+
 .trending__container {
     display: flex;
     flex-direction: column;
@@ -37,4 +43,60 @@
 
 .products-list {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.timer__count {
+    background-color: skyblue;
+    padding: 5px 30px;
+}
+
+.timer__count img {
+    width: 70%;    
+    object-fit: contain;
+}
+
+.store__btn {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+}
+
+.store__btn a:hover {
+    color: black;
+
+}
+
+.clock__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock__top-content {
+    margin-top: 25px;
+}
+
+.clock_btn {
+    margin-top: 15px;
+}
+
+.text-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* MEDIAQUERIES */
+@media only screen and (max-width:992px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:576px) {
+
 }
