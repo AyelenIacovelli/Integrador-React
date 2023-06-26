@@ -8,6 +8,7 @@ import Checkout from "../pages/Checkout/Checkout"
 import Login from "../pages/Login/Login"
 import Signup from "../pages/Signup/Signup"
 import Tienda from "../pages/Tienda/Tienda"
+import ProtectedRoute from './ProtectedRoute'
 
 const Routers = () => {
   return (
@@ -17,7 +18,7 @@ const Routers = () => {
       <Route path='tienda' element={<Tienda />} />
       <Route path='tienda/:id' element={<ProductDetails />} />
       <Route path='carrito' element={<Carrito />} />
-      <Route path='checkout' element={<Checkout />} />
+      <Route path='checkout' element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
       <Route path='login' element={<Login />} />
       <Route path='signup' element={<Signup />} />     
     </Routes>
