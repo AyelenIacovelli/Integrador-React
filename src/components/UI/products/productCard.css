@@ -9,7 +9,7 @@
 
 .product__img img {
     width: 200px;
-    
+
 }
 
 .product__info {
@@ -57,13 +57,15 @@
 
 /* MEDIAQUERIES */
 @media only screen and (max-width:992px) {
-
+    .product__info h3 a {
+        font-size: 1.1rem;
+    }
 }
 
 @media only screen and (max-width:768px) {
-
+    .more_icon {
+        font-size: 1rem;
+    }
 }
 
-@media only screen and (max-width:576px) {
-
-}
+@media only screen and (max-width:576px) {}

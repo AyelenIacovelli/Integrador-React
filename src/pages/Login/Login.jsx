@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Helmet from "../../components/Helmet/Helmet"
-import {Container, Row, Col, Form, FormGroup} from "reactstrap"
-import {Link, useNavigate} from "react-router-dom"
+import { Container, Row, Col, Form, FormGroup } from "reactstrap"
+import { Link, useNavigate } from "react-router-dom"
 import "../Login/login.css"
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase.config'
-import {toast} from "react-toastify"
+import { toast } from "react-toastify"
 
 const Login = () => {
 
@@ -20,42 +20,42 @@ const Login = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password)
             const user = userCredential.user
-            // console.log(user)
+            console.log(user)
             setLoading(false)
             toast.success("Sesión iniciada")
             navigate("/checkout")
         } catch (error) {
             setLoading(false)
-            toast.error(error.message)            
+            toast.error(error.message)
         }
     }
 
 
-  return (
-    <Helmet title="Login">
-        <section>
-            <Container>
-                <Row>
-                    {
-                        loading? (<Col lg="12" className='text-center'><h5 className='fw-bold'>Cargando...</h5></Col>) : (<Col lg="6" className='m-auto text-center'>
-                        <h3 className='fw-bold mb-4'>Login</h3>
-                        <Form className='auth__form' onSubmit={signIn}>
-                            <FormGroup className='form__group'>
-                                <input type="email" placeholder='Ingrese su correo' value={email} onChange={e=> setEmail(e.target.value)} />
-                            </FormGroup>
-                            <FormGroup className='form__group'>
-                            <input type="password" placeholder='Ingrese su contraseña' value={password} onChange={e=> setPassword(e.target.value)} />
-                            </FormGroup>
-                            <button type='submit' className='buy__btn auth__btn'>Ingresar</button>
-                            <p>¿Aún no tienes cuenta? <Link to="/signup">Regístrate aquí</Link> </p>
-                        </Form>
-                    </Col>)
-                    }
-                </Row>
-            </Container>
-        </section>
-    </Helmet>
-  )
+    return (
+        <Helmet title="Login">
+            <section>
+                <Container>
+                    <Row>
+                        {
+                            loading ? (<Col lg="12" className='text-center'><h5 className='fw-bold'>Cargando...</h5></Col>) : (<Col lg="6" className='m-auto text-center'>
+                                <h3 className='fw-bold mb-4'>Login</h3>
+                                <Form className='auth__form' onSubmit={signIn}>
+                                    <FormGroup className='form__group'>
+                                        <input type="email" placeholder='Ingrese su correo' value={email} onChange={e => setEmail(e.target.value)} />
+                                    </FormGroup>
+                                    <FormGroup className='form__group'>
+                                        <input type="password" placeholder='Ingrese su contraseña' value={password} onChange={e => setPassword(e.target.value)} />
+                                    </FormGroup>
+                                    <button type='submit' className='buy__btn auth__btn'>Ingresar</button>
+                                    <p>¿Aún no tienes cuenta? <Link to="/signup">Regístrate aquí</Link> </p>
+                                </Form>
+                            </Col>)
+                        }
+                    </Row>
+                </Container>
+            </section>
+        </Helmet>
+    )
 }
 
 export default Login

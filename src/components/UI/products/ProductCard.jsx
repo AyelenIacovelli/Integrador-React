@@ -1,16 +1,16 @@
 import React from 'react'
 import { motion } from "framer-motion"
 import "../products/productCard.css"
-import {FaPlus} from "react-icons/fa"
+import { FaPlus } from "react-icons/fa"
 
 // import "../../../data/Recomended"
 import "../../../data/Products"
 
 import { Link } from 'react-router-dom'
-import {Col} from "reactstrap"
-import {toast} from "react-toastify"
+import { Col } from "reactstrap"
+import { toast } from "react-toastify"
 
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
 import { cartActions } from '../../../redux/slices/cartSlice'
 
 const ProductCard = ({ item }) => {
@@ -22,7 +22,7 @@ const ProductCard = ({ item }) => {
             id: item.id,
             title: item.title,
             price: item.price,
-            img: item.img,            
+            img: item.img,
         }))
 
         toast.success("Producto agregado correctamente al carrito")

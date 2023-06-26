@@ -21,13 +21,33 @@
 
 /* MEDIAQUERIES */
 @media only screen and (max-width:992px) {
+    .service__item span img {
+        width: 50px;
+        padding: 5px;
+    }
 
+    .service__item h3 {
+        font-size: 1rem;
+    }
+
+    .service__item {
+        padding: 10px;
+    }
 }
 
 @media only screen and (max-width:768px) {
+    .service__item {
+        margin-bottom: 1.5rem;
+    }
 
+    .service__item span img {
+        width: 40px;
+        padding: 2px;
+    }
 }
 
 @media only screen and (max-width:576px) {
-
+    .service__item {
+        padding: 20px;
+    }
 }

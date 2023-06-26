@@ -4,7 +4,7 @@ import "./home.css"
 import { Link } from "react-router-dom"
 
 import { motion } from "framer-motion"
-import {Container, Row, Col} from "reactstrap"
+import { Container, Row, Col } from "reactstrap"
 
 import { products } from "../../data/Products"
 import Helmet from '../../components/Helmet/Helmet'
@@ -49,14 +49,14 @@ const Home = () => {
                 <h2>Tienda de regalos</h2>
                 <p className='hero__subtitle'>Lo nuevo del {year}</p>
                 <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Tienda Online</Link></motion.button>
-              </div>              
+              </div>
             </Col>
             <Col lg="6" md="6">
               <div className='hero__img'>
                 <img src='' alt='heroimg' />
               </div>
             </Col>
-          </Row>          
+          </Row>
         </Container>
       </section>
       {/* SERVICIOS */}
@@ -69,33 +69,33 @@ const Home = () => {
               <h2 className='section__title'>Productos en tendencia</h2>
             </Col>
             <ProductsList data={trendingProducts} />
-          </Row>         
+          </Row>
         </Container>
       </section>
       {/* SALE */}
       <section className='best_sales'>
         <Container>
-        <Row>
+          <Row>
             <Col lg="12" className='text-center'>
               <h2 className='section__title'>Ofertas</h2>
             </Col>
             <ProductsList data={bestSalesProducts} />
-          </Row>         
+          </Row>
         </Container>
       </section>
       {/* TIMER */}
       <section className='timer__count'>
         <Row>
-          <Col lg="6" md="6" className='clock__top'>
+          <Col lg="6" md="12" className='clock__down-col'>
             <div className='clock__top-content'>
-              <h4 className='text-white fs-6 mb-2'>Ofertas por tiempo limitado</h4>              
+              <h4 className='text-white fs-6 mb-2'>Ofertas por tiempo limitado</h4>
             </div>
             <Clock />
-            <motion.button whileTap={{scale: 1.2}} className='buy__btn store__btn clock_btn'>
+            <motion.button whileTap={{ scale: 1.2 }} className='buy__btn store__btn clock_btn'>
               <Link to="/tienda">Visita nuestra Tienda</Link>
             </motion.button>
           </Col>
-          <Col lg="5" md="6" className='text-end'>
+          <Col lg="6" md="12" className='text-end counter__img'>
             <img src={oferta} alt="foto sale" />
           </Col>
         </Row>

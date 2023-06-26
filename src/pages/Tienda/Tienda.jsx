@@ -1,38 +1,38 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import CommonSection from '../../components/UI/common/CommonSection'
 import Helmet from "../../components/Helmet/Helmet"
 import { Container, Row, Col } from 'reactstrap'
-import {FaSearch} from "react-icons/fa"
+import { FaSearch } from "react-icons/fa"
 import "../Tienda/tienda.css"
-import {products} from "../../data/Products"
+import { products } from "../../data/Products"
 import ProductsList from "../../components/UI/products/ProductsList"
 
 const Tienda = () => {
 
-  const [productsData, setProductsData] =useState(products)
+  const [productsData, setProductsData] = useState(products)
   // MANEJADOR DE FILTROS
   const handleFilter = (e) => {
     const filterValue = e.target.value
-      if(filterValue === "Tazas") {
-        const filteredProducts = products.filter((item) => item.category === "Tazas")
+    if (filterValue === "Tazas") {
+      const filteredProducts = products.filter((item) => item.category === "Tazas")
 
-        setProductsData(filteredProducts)
-      }
-      if(filterValue === "Pijamas") {
-        const filteredProducts = products.filter((item) => item.category === "Pijamas")
+      setProductsData(filteredProducts)
+    }
+    if (filterValue === "Pijamas") {
+      const filteredProducts = products.filter((item) => item.category === "Pijamas")
 
-        setProductsData(filteredProducts)
-      }
-      if(filterValue === "Remeras") {
-        const filteredProducts = products.filter((item) => item.category === "Remeras")
+      setProductsData(filteredProducts)
+    }
+    if (filterValue === "Remeras") {
+      const filteredProducts = products.filter((item) => item.category === "Remeras")
 
-        setProductsData(filteredProducts)
-      }
-      if(filterValue === "Buzos") {
-        const filteredProducts = products.filter((item) => item.category === "Buzos")
+      setProductsData(filteredProducts)
+    }
+    if (filterValue === "Buzos") {
+      const filteredProducts = products.filter((item) => item.category === "Buzos")
 
-        setProductsData(filteredProducts)
-      }
+      setProductsData(filteredProducts)
+    }
   }
 
   // MANEJADOR DE BUSCADOR
@@ -59,16 +59,16 @@ const Tienda = () => {
                   <option value="Pijamas">Pijamas</option>
                   <option value="Remeras">Remeras</option>
                   <option value="Buzos">Buzos</option>
-                </select>                
+                </select>
               </div>
             </Col>
             <Col lg="3" md="3">
-            <div className='filter__widget'>
+              <div className='filter__widget'>
                 <select>
                   <option>Ordenar por:</option>
                   <option value="ascending">Menor precio</option>
-                  <option value="descending">Mayor precio</option>                  
-                </select>                
+                  <option value="descending">Mayor precio</option>
+                </select>
               </div>
             </Col>
             <Col lg="6" md="6">
@@ -84,7 +84,7 @@ const Tienda = () => {
         <Container>
           <Row>
             {
-              productsData.length === 0? <h1 className='text-center fs-4'>No se encontraron productos</h1> : <ProductsList data={productsData}/>
+              productsData.length === 0 ? <h1 className='text-center fs-4'>No se encontraron productos</h1> : <ProductsList data={productsData} />
             }
           </Row>
         </Container>
