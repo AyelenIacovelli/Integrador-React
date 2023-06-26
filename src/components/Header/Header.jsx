@@ -6,7 +6,7 @@ import {FaHeart, FaBars} from "react-icons/fa"
 
 import {Container, Row} from "reactstrap"
 
-import {NavLink} from "react-router-dom"
+import {NavLink, useNavigate} from "react-router-dom"
 import {motion} from "framer-motion"
 import {useSelector} from "react-redux"
 
@@ -32,6 +32,7 @@ const Header = () => {
   const totalQuantity = useSelector(state=>state.cart.totalQuantity)
 
   const menuRef = useRef(null)
+  const navigate = useNavigate()
 
    const stickyHeaderFunc = () => {
      window.addEventListener("scroll", () => {
@@ -50,6 +51,10 @@ const Header = () => {
    })
 
   const menuToggle = () => menuRef.current.classList.toggle("active__menu")
+
+  const navigateToCart = () => {
+    navigate("/cart")
+  }
 
   return (
     <header className='header' ref={headerRef}>
@@ -75,7 +80,7 @@ const Header = () => {
                 <FaHeart />
                 <span className='badge'>1</span>
               </span>
-              <span className='cart__icon'>
+              <span className='cart__icon' onClick={navigateToCart}>
                 <BsShop />
                 <span className='badge'>{totalQuantity}</span>
               </span>

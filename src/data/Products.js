@@ -27,6 +27,7 @@ export const products = [
         id: 4,
         title: 'Mickey Mouse',
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/mickey_frente_xndxe5.webp',
+        img2: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/konoha_frente_euj7eq.webp',
         desc: 'Buzo Mickey Mouse',
         price: 13000,
         category: 'Buzos',
@@ -456,14 +457,14 @@ export const products = [
     },
 ];
 
-// export const TotalProducts = products.length;
+ export const TotalProducts = products.length;
 
-// export const Products = products.reduce((acc, product) => {
-//     if (!acc[product.category]) {
-//         acc[product.category] = [];
-//     }
+ export const Products = products.reduce((acc, product) => {
+     if (!acc[product.category]) {
+         acc[product.category] = [];
+     }
 
-//     acc[product.category] = [...acc[product.category], product];
+    acc[product.category] = [...acc[product.category], product];
 
-//     return acc;
-// }, {});
+     return acc;
+ }, {});
