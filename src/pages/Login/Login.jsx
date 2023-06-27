@@ -37,8 +37,9 @@ const Login = () => {
                 <Container>
                     <Row>
                         {
-                            loading ? (<Col lg="12" className='text-center'><h5 className='fw-bold'>Cargando...</h5></Col>) : (<Col lg="6" className='m-auto text-center'>
+                            loading ? (<Col lg="12" className='m-auto text-center'><h5 className='fw-bold'>Cargando...</h5></Col>) : (<Col lg="6" className='m-auto text-center'>
                                 <h3 className='fw-bold mb-4'>Login</h3>
+                                
                                 <Form className='auth__form' onSubmit={signIn}>
                                     <FormGroup className='form__group'>
                                         <input type="email" placeholder='Ingrese su correo' value={email} onChange={e => setEmail(e.target.value)} />

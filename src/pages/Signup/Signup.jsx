@@ -34,12 +34,11 @@ const Signup = () => {
 
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-
         const user = userCredential.user
 
         const storageRef = ref(storage, `images/${Date.now()}-${uuidv4()}-${username}`)
-        console.log(Date.now());
-        const uploadTask = uploadBytesResumable(storageRef, file)
+        // console.log(Date.now());
+        const uploadTask = uploadBytesResumable(storageRef, file)        
 
         uploadTask.on((error) => {
           toast.error(error.message)
@@ -64,7 +63,7 @@ const Signup = () => {
         
         setLoading(false)
         toast.success("Cuenta creada")
-        navigate("/login")
+        navigate('/login')
       } catch (error) {
         setLoading(false)
         toast.error("Algo salió mal")
@@ -79,25 +78,26 @@ const Signup = () => {
                     {
                       loading? (<Col lg="12" className='text-center'><h5 className='fw-bold'>Cargando...</h5></Col>) : (<Col lg="6" className='m-auto text-center'>
                       <h3 className='fw-bold mb-4'>Registro</h3>
+
                       <Form className='auth__form' onSubmit={signup}>
-                      <FormGroup className='form__group'>
+                        <FormGroup className='form__group'>
                               <input type="text" placeholder='Usuario' value={username} onChange={e=> setUsername(e.target.value)} />                                
-                          </FormGroup>
-                          <FormGroup className='form__group'>
+                        </FormGroup>
+                        <FormGroup className='form__group'>
                               <input type="email" placeholder='Ingrese su correo' value={email} onChange={e=> setEmail(e.target.value)} />                                
-                          </FormGroup>
-                          <FormGroup className='form__group'>
+                        </FormGroup>
+                        <FormGroup className='form__group'>
                           <input type="password" placeholder='Ingrese su contraseña' value={password} onChange={e=> setPassword(e.target.value)} />
-                          </FormGroup>
-                          <FormGroup className='form__group'>
+                        </FormGroup>
+                        <FormGroup className='form__group'>
                           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-                          </FormGroup>
+                        </FormGroup>
                           <button type='submit' className='buy__btn auth__btn'>Create una cuenta</button>
                           <p>¿Ya tienes cuenta? <Link to="/login">Login</Link> </p>
                       </Form>
                   </Col>) 
-                    }
-                </Row>
+                      }
+                  </Row>
             </Container>
         </section>
     </Helmet>

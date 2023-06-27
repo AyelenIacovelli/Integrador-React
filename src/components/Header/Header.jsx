@@ -36,7 +36,8 @@ const Header = () => {
 
   const headerRef = useRef(null)
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
-  const profileActionRef = useRef(null)
+  const profileActionsRef = useRef(null)
+  const profileImageRef = useRef(null);
 
   const menuRef = useRef(null)
   const navigate = useNavigate()
@@ -73,7 +74,7 @@ const Header = () => {
     navigate("/carrito")
   }
 
-  const toggleProfileActions = () => profileActionRef.current.classList.toggle('show__profileActions')
+  const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
 
   return (
     <header className='header' ref={headerRef}>
@@ -104,14 +105,19 @@ const Header = () => {
                 <BsShop />
                 <span className='badge'>{totalQuantity}</span>
               </span>
+
               <div className='profile'>
-                <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} onClick={toggleProfileActions} alt='user' />
-                <div className='profile__actions' ref={profileActionRef} onClick={toggleProfileActions}>
+                <motion.img whileTap={{ scale: 1.2 }} src={currentUser? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
+                <div className='profile__actions' ref={profileActionsRef} onClick={toggleProfileActions}>
                   {
-                    currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='d-flex align-items-center justify-content-center flex-column'><Link to="/signup">Registrate</Link><Link to="/login">Iniciar sesión</Link></div>)
+                    currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='d-flex align-items-center        justify-content-center flex-column'>
+                        <Link to='/signup'>Registrate</Link>
+                        <Link to='/login'>Iniciar sesión</Link>
+                      </div>)
                   }
                 </div>
               </div>
+
               <div className='mobile__menu'>
                 <span onClick={menuToggle}>
                   <FaBars />

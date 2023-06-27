@@ -25,6 +25,7 @@ header {
     display: flex;
     align-items: center;
     column-gap: 2.7rem;
+    margin-bottom: 0;
 }
 
 .nav__item a {
@@ -73,6 +74,8 @@ header {
     border-radius: 50%;
 }
 
+
+
 .nav__icons .profile {
     position: relative;
     z-index: 9;
@@ -95,8 +98,9 @@ header {
 }
 
 .show__profileActions {
-    display: block;
+    display: block !important;
 }
+
 
 .mobile__menu {
     font-size: 1.3rem;
