@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route, Navigate} from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 
 import Home from "../pages/Home/Home"
 import Carrito from "../pages/Carrito/Carrito"
@@ -10,6 +10,10 @@ import Signup from "../pages/Signup/Signup"
 import Tienda from "../pages/Tienda/Tienda"
 import ProtectedRoute from './ProtectedRoute'
 
+import AddProducts from '../admin/AddProducts'
+import AllProducts from '../admin/AllProducts'
+import Dashboard from '../admin/Dashboard'
+
 const Routers = () => {
   return (
     <Routes>
@@ -18,9 +22,16 @@ const Routers = () => {
       <Route path='tienda' element={<Tienda />} />
       <Route path='tienda/:id' element={<ProductDetails />} />
       <Route path='carrito' element={<Carrito />} />
-      <Route path='checkout' element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+
+      <Route path='/*' element={<ProtectedRoute />}>
+        <Route path='checkout' element={<Checkout />} />
+        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='dashboard/all-products' element={<AllProducts />} />
+        <Route path='dashboard/add-product' element={<AddProducts />} />
+      </Route>
+
       <Route path='login' element={<Login />} />
-      <Route path='signup' element={<Signup />} />     
+      <Route path='signup' element={<Signup />} />
     </Routes>
   )
 }
