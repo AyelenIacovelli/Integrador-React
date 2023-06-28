@@ -14,6 +14,7 @@ import Clock from "../../components/UI/clock/Clock"
 
 import oferta from "../../assets/images/oferta.png"
 
+// ITERAR LUEGO PARA HACER DINAMICAS LAS OFERTAS Y TENDENCIAS
 
 const Home = () => {
 
@@ -34,7 +35,7 @@ const Home = () => {
 
     setTrendingProducts(filteredTrendingProducts)
     setBestSalesProducts(filteredBestSalesProducts)
-  }, [])
+  }, [products])
 
   return (
     // HELMET

@@ -38,7 +38,7 @@ const AddProducts = () => {
                         description: enterDescription,
                         category: enterCategory,
                         price: enterPrice,
-                        imgUrl: downloadURL,
+                        img: downloadURL,
                     })
                 })
             })
@@ -76,6 +76,7 @@ const AddProducts = () => {
                                         <FormGroup className='form__group w-50'>
                                             <span>Categoría</span>
                                             <select className='w-100 p-2' value={enterCategory} onChange={e => setEnterCategory(e.target.value)} >
+                                                <option>Seleccioná la categoría</option>
                                                 <option value="Tazas">Tazas</option>
                                                 <option value="Pijamas">Pijamas</option>
                                                 <option value="Remeras">Remeras</option>

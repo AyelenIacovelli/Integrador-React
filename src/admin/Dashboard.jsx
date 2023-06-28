@@ -1,8 +1,46 @@
 import React from 'react'
+import { Container, Row, Col } from 'reactstrap'
+import "./styles/dashboard.css"
+import useGetData from '../custom-hooks/useGetData'
 
 const Dashboard = () => {
+
+    const {data: products} = useGetData('products')
+    const {data: users} = useGetData('users')
+
     return (
-        <div>Dashboard</div>
+        <>
+            <section>
+                <Container>
+                    <Row>
+                        <Col lg="3">
+                            <div className="revenue__box">
+                                <h5>Total Sales</h5>
+                                <span>$7890</span>
+                            </div>
+                            <div className="order__box">
+                                <h5>Ordenes</h5>
+                                <span>789</span>
+                            </div>
+                            <div className="products__box">
+                                <h5>Total de productos</h5>
+                                <span>{products.length}</span>
+                            </div>
+                        </Col>
+                        <Col lg="3">
+                        <div className="users__box">
+                                <h5>Total de usuarios</h5>
+                                <span>{users.length}</span>
+                            </div>
+                        </Col>
+                        <Col lg="3">
+                        </Col>
+                        <Col lg="3">
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+        </>
     )
 }
 

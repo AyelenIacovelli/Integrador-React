@@ -46,7 +46,7 @@ const AdminNav = () => {
                             <div className='admin__nav-top-right'>
                                 <span><IoIosNotifications /></span>
                                 <span><FcSettings /></span>
-                                <img src={currentUser.photoURL} alt="user" />
+                                <img src={ currentUser && currentUser.photoURL} alt="user" />
                             </div>
                         </div>
                     </Container>
