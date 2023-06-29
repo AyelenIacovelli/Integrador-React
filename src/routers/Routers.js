@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login"
 import Signup from "../pages/Signup/Signup"
 import Tienda from "../pages/Tienda/Tienda"
 import ProtectedRoute from './ProtectedRoute'
+import Felicitaciones from "../pages/Felicitaciones/Felicitaciones"
 
 import AddProducts from '../admin/AddProducts'
 import AllProducts from '../admin/AllProducts'
@@ -34,6 +35,8 @@ const Routers = () => {
 
       <Route path='login' element={<Login />} />
       <Route path='signup' element={<Signup />} />
+
+      <Route path='felicitaciones' element={<Felicitaciones />} />
     </Routes>
   )
 }
