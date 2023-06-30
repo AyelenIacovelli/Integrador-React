@@ -8,7 +8,7 @@ import "../../data/Products";
 import "../ProductDetails/productDetails.css"
 import { motion } from 'framer-motion'
 import { useDispatch } from 'react-redux'
-import { cartActions } from '../../redux/slices/cartSlice'
+import { addItem } from "../../redux/slices/cartSlice"
 import { toast } from 'react-toastify'
 
 const ProductDetails = () => {
@@ -26,7 +26,7 @@ const ProductDetails = () => {
   const { title, img, desc, price, img2 } = product;
 
   const addToCart = () => {
-    dispatch(cartActions.addItem({
+    dispatch(addItem({
       id,
       img: img,
       title,

@@ -11,14 +11,14 @@ import { Col } from "reactstrap"
 import { toast } from "react-toastify"
 
 import { useDispatch } from "react-redux"
-import { cartActions } from '../../../redux/slices/cartSlice'
+import { addItem } from '../../../redux/slices/cartSlice'
 
 const ProductCard = ({ item }) => {
 
     const dispatch = useDispatch()
 
     const addToCart = () => {
-        dispatch(cartActions.addItem({
+        dispatch(addItem({
             id: item.id,
             title: item.title,
             price: item.price,
