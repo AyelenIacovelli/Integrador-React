@@ -17,6 +17,8 @@ import { auth } from "../../firebase.config"
 
 import useAuth from "../../custom-hooks/useAuth"
 
+import { selectFavoriteProductsCount } from './selectors';
+
 const nav__links = [
   {
     path: "home",
@@ -33,6 +35,9 @@ const nav__links = [
 ]
 
 const Header = () => {
+
+  // const favorites = useSelector((state) => state.favs.favorites);
+  const favorites = useSelector((state) => state.favs.favorites);
 
   const headerRef = useRef(null)
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
@@ -74,7 +79,17 @@ const Header = () => {
     navigate("/carrito")
   }
 
+
+
+  const navigateToFavs = () => {
+    navigate("/favoritos")
+  }
+
+
+
   const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
+
+  const favoriteProductsCount = favorites ? favorites.length : 0;
 
   return (
     <header className='header' ref={headerRef}>
@@ -97,9 +112,9 @@ const Header = () => {
               </motion.ul>
             </div>
             <div className='nav__icons'>
-              <span className='fav__icon'>
+              <span className='fav__icon' onClick={navigateToFavs}>
                 <FaHeart />
-                <span className='badge'>2</span>
+                <span className='badge'>{favoriteProductsCount}</span>
               </span>
               <span className='cart__icon' onClick={navigateToCart}>
                 <BsShop />

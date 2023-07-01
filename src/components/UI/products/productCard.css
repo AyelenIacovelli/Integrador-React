@@ -55,6 +55,23 @@
     font-size: 1.2rem;
 }
 
+
+
+.favs .favs__icon {
+    color: rgb(197, 176, 176);
+}
+
+.favs .favs__icon:hover {
+    color: red;
+}
+
+.product__item .favs__icon.clicked {
+    color: red;
+  }
+
+
+
+
 /* MEDIAQUERIES */
 @media only screen and (max-width:992px) {
     .product__info h3 a {

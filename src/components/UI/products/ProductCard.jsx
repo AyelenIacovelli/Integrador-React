@@ -10,12 +10,24 @@ import { Link } from 'react-router-dom'
 import { Col } from "reactstrap"
 import { toast } from "react-toastify"
 
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { addItem } from '../../../redux/slices/cartSlice'
+
+
+
+import { toggleFavorite } from '../../../redux/slices/favsSlice'
+import { FaHeart } from "react-icons/fa"
 
 const ProductCard = ({ item }) => {
 
+    // const [isClicked, setIsClicked] = useState(false);
+
     const dispatch = useDispatch()
+
+    // const cart = useSelector((state) => state.cart);
+  const favorites = useSelector((state) => state.favs.favorites);
+
+  const isFavorite = favorites.includes(item.id);
 
     const addToCart = () => {
         dispatch(addItem({
@@ -28,14 +40,23 @@ const ProductCard = ({ item }) => {
         toast.success("Producto agregado correctamente al carrito")
     }
 
+    const handleIconClick = () => {
+        dispatch(toggleFavorite(item.id)); // Invierte el estado individual al hacer clic
+    }
+
+    
+
     return (
         <Col lg="2" md="4" className='mb-2'>
-            <div className='product__item'>
+            <div className={`product__item ${isFavorite ? 'favorite' : ''}`}>
                 <div className='product__img'>
                     <motion.img whileHover={{ scale: 0.9 }} src={item.img} alt="producto" />
                 </div>
                 <div className='p-2 product__info'>
                     <h3 className='product__name'><Link to={`/tienda/${item.id}`}>{item.title}</Link></h3>
+                    <span className={`favs ${isFavorite ? 'clicked' : ''}`}>
+            <FaHeart className={`favs__icon ${isFavorite ? 'clicked' : ''}`} onClick={handleIconClick} />
+          </span>
                     <span className='text-center d-block'>{item.category}</span>
                 </div>
                 <div className='product__card-bottom p-2'>
