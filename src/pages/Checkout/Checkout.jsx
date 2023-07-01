@@ -23,6 +23,7 @@ const Checkout = () => {
     envio: 0,
     totalPagar: totalAmount,
   });
+  console.log(checkoutCartData)
 
 
   const resetCheckoutCart = () => {

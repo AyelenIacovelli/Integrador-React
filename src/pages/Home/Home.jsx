@@ -35,7 +35,7 @@ const Home = () => {
 
     setTrendingProducts(filteredTrendingProducts)
     setBestSalesProducts(filteredBestSalesProducts)
-  }, [products])
+  }, [])
 
   return (
     // HELMET

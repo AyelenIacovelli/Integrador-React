@@ -35,6 +35,20 @@ const Tienda = () => {
     }
   }
 
+  // MANEJADOR DE ORDEN
+  const handleOrder = (e) => {
+    const orderValue = e.target.value;
+
+    if (orderValue === "ascending") {
+      const sortedProducts = [...productsData].sort((a, b) => a.price - b.price);
+      setProductsData(sortedProducts);
+    }
+    if (orderValue === "descending") {
+      const sortedProducts = [...productsData].sort((a, b) => b.price - a.price);
+      setProductsData(sortedProducts);
+    }
+  }
+
   // MANEJADOR DE BUSCADOR
   const handleSearch = e => {
     const searchTerm = e.target.value
@@ -64,7 +78,7 @@ const Tienda = () => {
             </Col>
             <Col lg="3" md="3">
               <div className='filter__widget'>
-                <select>
+                <select onChange={handleOrder}>
                   <option>Ordenar por:</option>
                   <option value="ascending">Menor precio</option>
                   <option value="descending">Mayor precio</option>
