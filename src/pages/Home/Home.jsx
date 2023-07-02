@@ -3,7 +3,7 @@ import "./home.css"
 
 import { Link } from "react-router-dom"
 
-import { motion } from "framer-motion"
+
 import { Container, Row, Col } from "reactstrap"
 
 import { products } from "../../data/Products"
@@ -13,6 +13,10 @@ import ProductsList from '../../components/UI/products/ProductsList'
 import Clock from "../../components/UI/clock/Clock"
 
 import oferta from "../../assets/images/oferta.png"
+
+import hero from "../../assets/images/hero.jpg"
+
+import { motion, useAnimation } from 'framer-motion';
 
 // ITERAR LUEGO PARA HACER DINAMICAS LAS OFERTAS Y TENDENCIAS
 
@@ -37,26 +41,40 @@ const Home = () => {
     setBestSalesProducts(filteredBestSalesProducts)
   }, [])
 
+  const controlsX = useAnimation();
+  const controlsY = useAnimation();
+
+  useEffect(() => {
+    controlsX.start({ x: 0 }); // Iniciar la animación moviendo el elemento a la posición final (x: 0)
+  }, []); // Se ejecuta solo una vez al cargar la página
+
+  useEffect(() => {
+    controlsY.start({ y: 0 }); // Iniciar la animación moviendo el elemento a la posición final (x: 0)
+  }, []); // Se ejecuta solo una vez al cargar la página
+
   return (
     // HELMET
     <Helmet title={"Home"}>
       {/* HERO */}
-      <section className='hero__section'>
+      <section className='hero__section' style={{ backgroundImage: `url(${hero})`, backgroundSize: 'cover' }}>
         <Container>
           <Row>
             <Col lg="6" md="6">
-              <div className='hero__content'>
-                <h1>GREVERY STORE</h1>
-                <h2>Tienda de regalos</h2>
-                <p className='hero__subtitle'>Lo nuevo del {year}</p>
-                <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Tienda Online</Link></motion.button>
-              </div>
+            <motion.h1
+              initial={{ x: -500 }} // Posición inicial fuera de la pantalla (izquierda)
+              animate={controlsX} // Controla la animación
+              transition={{ duration: 2 }} // Duración de la animación
+            >GREVERY STORE
+            </motion.h1>
             </Col>
-            <Col lg="6" md="6">
-              <div className='hero__img'>
-                <img src='' alt='heroimg' />
-              </div>
+            <Col>
+              <motion.div initial={{ y: 500 }} animate={controlsY} transition={{ duration: 2.5 }} className='hero__content'>
+                  <h2>Tienda de regalos</h2>
+                  <p className='hero__subtitle'>Conoce lo nuevo del {year}</p>
+                  <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Tienda Online</Link></motion.button>
+              </motion.div>              
             </Col>
+            
           </Row>
         </Container>
       </section>

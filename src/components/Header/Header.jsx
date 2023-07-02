@@ -50,7 +50,7 @@ const Header = () => {
 
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 115 || document.documentElement.scrollTop > 115) {
+      if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
         headerRef.current.classList.add('sticky__header')
       } else {
         headerRef.current.classList.remove('sticky__header')

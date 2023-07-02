@@ -1,10 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 // import {toggleFavorite} from '../../redux/slices/favsSlice';
-// import ProductCard from '../../components/UI/products/ProductCard';
+import ProductCard from "../../components/UI/products/ProductCard"
 // import ProductsList from '../../components/UI/products/ProductsList';
 import { products } from '../../data/Products';
 import { createSelector } from 'reselect';
+import Helmet from "../../components/Helmet/Helmet"
+import CommonSection from "../../components/UI/common/CommonSection"
+
+import "../Favoritos/favoritos.css"
+import { Col, Container, Row } from 'reactstrap';
 
 const getFavorites = (state) => state.favs.favorites ?? [];
 
@@ -20,14 +25,29 @@ const Favoritos = () => {
     const favoriteProducts = useSelector(getFavoriteProducts);
   
     return (
-      <div>
+      <Helmet title={Favoritos}>
+        <CommonSection title={Favoritos} />
+        <Container>
+          <Row>
+            <Col>
+            <section className='favoritos__section'>
+        <div className='favoritos__container'>
         {favoriteProducts.map((product) => (
-          <div key={product.id}>
-            {product.title}
-            {/* Resto de la estructura del producto */}
-          </div>
+          <ProductCard key={product.id} item={product} />
         ))}
       </div>
+      </section>
+            </Col>
+          </Row>
+        </Container>
+        
+            
+            
+            
+         
+        
+      </Helmet>
+      
     );
   }
 

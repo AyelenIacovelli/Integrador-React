@@ -1,0 +1,18 @@
+.favoritos__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    max-width: 1200px;
+    width: 100%;
+    padding: 50px 20px;
+}
+
+
+.favoritos__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
