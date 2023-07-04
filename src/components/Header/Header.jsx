@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import "../Header/header.css"
 import userIcon from "../../assets/images/user-icon.png"
 import logo from "../../assets/images/logo.png"
@@ -17,7 +17,17 @@ import { auth } from "../../firebase.config"
 
 import useAuth from "../../custom-hooks/useAuth"
 
-import { selectFavoriteProductsCount } from './selectors';
+// import { selectFavoriteProductsCount } from './selectors';
+
+
+
+
+import Modal from "react-modal"
+// import Carrito from '../../pages/Carrito/Carrito';
+import ModalCart from '../../pages/Carrito/ModalCart';
+
+
+
 
 const nav__links = [
   {
@@ -35,6 +45,17 @@ const nav__links = [
 ]
 
 const Header = () => {
+
+  const [isCartModalOpen, setCartModalOpen] = useState(false);
+
+  const toggleCartModal = () => {
+    setCartModalOpen(!isCartModalOpen);
+  };
+
+  // const cartItems = useSelector((state) => state.cart.cartItems);
+
+
+
 
   // const favorites = useSelector((state) => state.favs.favorites);
   const favorites = useSelector((state) => state.favs.favorites);
@@ -75,9 +96,9 @@ const Header = () => {
 
   const menuToggle = () => menuRef.current.classList.toggle('active__menu')
 
-  const navigateToCart = () => {
-    navigate("/carrito")
-  }
+  // const navigateToCart = () => {
+  //   navigate("/carrito")
+  // }
 
 
 
@@ -116,7 +137,7 @@ const Header = () => {
                 <FaHeart />
                 <span className='badge'>{favoriteProductsCount}</span>
               </span>
-              <span className='cart__icon' onClick={navigateToCart}>
+              <span className='cart__icon' onClick={toggleCartModal}>
                 <BsShop />
                 <span className='badge'>{totalQuantity}</span>
               </span>
@@ -145,6 +166,20 @@ const Header = () => {
         </Row>
 
       </Container>
+
+
+
+      <Modal
+        isOpen={isCartModalOpen}
+        onRequestClose={toggleCartModal}
+        contentLabel='Carrito de compras'
+        className="modal-cart-content"
+      >
+        <ModalCart />
+      </Modal>
+
+
+
     </header>
 
   )

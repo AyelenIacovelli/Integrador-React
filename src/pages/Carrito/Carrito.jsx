@@ -3,15 +3,28 @@ import "../Carrito/carrito.css"
 import Helmet from "../../components/Helmet/Helmet"
 import CommonSection from "../../components/UI/common/CommonSection"
 import { Container, Row, Col } from 'reactstrap'
-import { FaTrashAlt } from "react-icons/fa"
-import { deleteItem } from "../../redux/slices/cartSlice"
+import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa"
+import { deleteItem, incrementQuantity, decrementQuantity, clearCart } from "../../redux/slices/cartSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
+
+
 
 const Carrito = () => {
 
   const cartItems = useSelector(state => state.cart.cartItems)
   const totalAmount = useSelector(state => state.cart.totalAmount)
+
+  const dispatch = useDispatch()
+
+  const handleClearCart = () => {
+    const confirmed = window.confirm('¿Estás seguro que deseas eliminar todo el carrito?');
+    if (confirmed) {
+      dispatch(clearCart());
+    }
+  };
+
+  const isCartEmpty = cartItems.length === 0;
 
   return (
     <Helmet title="Carrito de compras">
@@ -54,6 +67,9 @@ const Carrito = () => {
               <div>
                 <button className='buy__btn w-100'><Link to="/checkout">Verificar compra</Link></button>
                 <button className='buy__btn w-100 mt-3'><Link to="/tienda">Continuar comprando</Link></button>
+                <button className="buy__btn w-100 mt-3" onClick={handleClearCart} disabled={isCartEmpty}>
+                  Borrar carrito
+                </button>
               </div>
             </Col>
           </Row>
@@ -64,22 +80,39 @@ const Carrito = () => {
   )
 }
 
-const Tr = ({ item }) => {
+export const Tr = ({ item }) => {
 
   const dispatch = useDispatch()
 
   const deleteProduct = () => {
-    dispatch(deleteItem(item.id))
+    const confirmed = window.confirm('¿Estás seguro que deseas eliminar el producto del carrito?');
+    if (confirmed) {
+      dispatch(deleteItem(item.id))
+    }
+    
   }
+
+  const incrementProductQuantity = () => {
+    dispatch(incrementQuantity(item.id));
+  };
+
+  const decrementProductQuantity = () => {
+    dispatch(decrementQuantity(item.id));
+  };
 
   return (
     <tr>
       <td><img src={item.img} alt="img" /></td>
       <td>{item.title}</td>
       <td>{item.price}</td>
-      <td>{item.quantity}</td>
+      <td>
+        <button onClick={decrementProductQuantity} disabled={item.quantity === 1}><FaMinus /></button>
+        <span>{item.quantity}</span>
+        <button onClick={incrementProductQuantity}><FaPlus /></button>
+      </td>
       <td><FaTrashAlt onClick={deleteProduct} /></td>
     </tr>
+    
   )
 }
 
