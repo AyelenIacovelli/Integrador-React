@@ -32,7 +32,7 @@ import ModalCart from '../../pages/Carrito/ModalCart';
 const nav__links = [
   {
     path: "home",
-    display: "Home"
+    display: "Inicio"
   },
   {
     path: "tienda",
@@ -45,6 +45,10 @@ const nav__links = [
 ]
 
 const Header = () => {
+
+  const navigateToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const [isCartModalOpen, setCartModalOpen] = useState(false);
 
@@ -155,7 +159,9 @@ const Header = () => {
         <Row>
           <div className='nav__wrapper'>
             <div className='logo'>
-              <img src={logo} alt='logo' />
+              <Link to="/home" onClick={navigateToTop}>
+                <img src={logo} alt='logo' />
+              </Link>
               {/* <h1>Grevery Store</h1> */}
             </div>
             <div className='navigation' ref={menuRef} onClick={menuToggle}>
@@ -163,7 +169,7 @@ const Header = () => {
                 {
                   nav__links.map((item, index) => (
                     <li className='nav__item' key={index}>
-                      <NavLink to={item.path} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>{item.display}</NavLink>
+                      <NavLink to={item.path} onClick={navigateToTop} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>{item.display}</NavLink>
                     </li>
                   ))
                 }
