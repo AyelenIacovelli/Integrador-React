@@ -48,12 +48,28 @@ const Header = () => {
 
   const [isCartModalOpen, setCartModalOpen] = useState(false);
 
+  const [isProfileActionsOpen, setProfileActionsOpen] = useState(false);
+
   const toggleCartModal = () => {
     setCartModalOpen(!isCartModalOpen);
   };
 
-  // const cartItems = useSelector((state) => state.cart.cartItems);
 
+
+  const toggleProfileActions = () => {
+    // Cerrar el modal del carrito antes de cambiar el estado del perfil
+    closeCartModal();
+    setProfileActionsOpen(!isProfileActionsOpen);
+  };
+
+  const closeProfileActions = () => {
+    setProfileActionsOpen(false);
+  };
+
+  // const cartItems = useSelector((state) => state.cart.cartItems);
+  const closeCartModal = () => {
+    setCartModalOpen(false);
+  };
 
 
 
@@ -94,6 +110,27 @@ const Header = () => {
     return () => window.removeEventListener('scroll', stickyHeaderFunc)
   })
 
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        profileActionsRef.current &&
+        !profileActionsRef.current.contains(event.target) &&
+        !profileImageRef.current.contains(event.target)
+      ) {
+        closeProfileActions();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+
   const menuToggle = () => menuRef.current.classList.toggle('active__menu')
 
   // const navigateToCart = () => {
@@ -108,7 +145,7 @@ const Header = () => {
 
 
 
-  const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
+  // const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
 
   const favoriteProductsCount = favorites ? favorites.length : 0;
 
@@ -144,7 +181,11 @@ const Header = () => {
 
               <div className='profile'>
                 <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
-                <div className='profile__actions' ref={profileActionsRef} onClick={toggleProfileActions}>
+                <div
+                  className={`profile__actions${isProfileActionsOpen ? ' show__profileActions' : ''
+                    }`}
+                  ref={profileActionsRef}
+                >
                   {
                     currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='d-flex align-items-center        justify-content-center flex-column'>
                       <Link to='/signup'>Registrate</Link>

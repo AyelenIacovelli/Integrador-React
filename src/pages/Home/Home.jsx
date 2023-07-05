@@ -45,36 +45,36 @@ const Home = () => {
   const controlsY = useAnimation();
 
   useEffect(() => {
-    controlsX.start({ x: 0 }); // Iniciar la animación moviendo el elemento a la posición final (x: 0)
-  }, []); // Se ejecuta solo una vez al cargar la página
+    controlsX.start({ x: 0 });
+  }, [controlsX]);
 
   useEffect(() => {
-    controlsY.start({ y: 0 }); // Iniciar la animación moviendo el elemento a la posición final (x: 0)
-  }, []); // Se ejecuta solo una vez al cargar la página
+    controlsY.start({ y: 0 });
+  }, [controlsY]);
 
   return (
     // HELMET
-    <Helmet title={"Home"}>
+    <Helmet title="Home">
       {/* HERO */}
       <section className='hero__section' style={{ backgroundImage: `url(${hero})`, backgroundSize: 'cover' }}>
         <Container>
           <Row>
             <Col lg="6" md="6">
-            <motion.h1
-              initial={{ x: -500 }} // Posición inicial fuera de la pantalla (izquierda)
-              animate={controlsX} // Controla la animación
-              transition={{ duration: 2 }} // Duración de la animación
-            >GREVERY STORE
-            </motion.h1>
+              <motion.h1
+                initial={{ x: -500 }} // Posición inicial fuera de la pantalla (izquierda)
+                animate={controlsX} // Controla la animación
+                transition={{ duration: 2 }} // Duración de la animación
+              >GREVERY STORE
+              </motion.h1>
             </Col>
             <Col>
               <motion.div initial={{ y: 500 }} animate={controlsY} transition={{ duration: 2.5 }} className='hero__content'>
-                  <h2>Tienda de regalos</h2>
-                  <p className='hero__subtitle'>Conoce lo nuevo del {year}</p>
-                  <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Tienda Online</Link></motion.button>
-              </motion.div>              
+                <h2>Tienda de regalos</h2>
+                <p className='hero__subtitle'>Conoce lo nuevo del {year}</p>
+                <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Tienda Online</Link></motion.button>
+              </motion.div>
             </Col>
-            
+
           </Row>
         </Container>
       </section>

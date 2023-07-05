@@ -22,33 +22,37 @@ const getFavoriteProducts = createSelector(
 );
 
 const Favoritos = () => {
-    const favoriteProducts = useSelector(getFavoriteProducts);
-  
-    return (
-      <Helmet title={Favoritos}>
-        <CommonSection title={Favoritos} />
-        <Container>
-          <Row>
-            <Col>
+  const favoriteProducts = useSelector(getFavoriteProducts);
+
+  return (
+    <Helmet title="Favoritos">
+      <CommonSection title="Favoritos" />
+      <Container>
+        <Row>
+          <Col>
             <section className='favoritos__section'>
-        <div className='favoritos__container'>
-        {favoriteProducts.map((product) => (
-          <ProductCard key={product.id} item={product} />
-        ))}
-      </div>
-      </section>
-            </Col>
-          </Row>
-        </Container>
-        
-            
-            
-            
-         
-        
-      </Helmet>
-      
-    );
-  }
+              <div className='favoritos__container'>
+                {favoriteProducts.length === 0 ? (
+                  <p>Aún no hay productos agregados a favoritos</p>
+                ) : (
+                  favoriteProducts.map((product) => (
+                    <ProductCard key={product.id} item={product} />
+                  ))
+                )}
+              </div>
+            </section>
+          </Col>
+        </Row>
+      </Container>
+
+
+
+
+
+
+    </Helmet>
+
+  );
+}
 
 export default Favoritos;
