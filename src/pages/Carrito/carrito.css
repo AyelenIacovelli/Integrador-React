@@ -1,3 +1,16 @@
+.buy__btn[disabled] {
+    cursor: not-allowed;
+}
+
+.buy__btn a {
+    text-decoration: none;
+}
+
+.buy__btn[disabled] a {
+    pointer-events: none;
+    color: inherit;
+}
+
 .table tr td img {
     width: 80px !important;
     height: 80px !important;
@@ -9,6 +22,6 @@ td i {
 }
 
 td,
-th{
+th {
     color: black;
 }

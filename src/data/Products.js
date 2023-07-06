@@ -5,6 +5,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/roshi_frente_j9tkk6.webp',
         desc: 'Buzo Maestro Roshi',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -13,6 +14,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/mortal_kombat_frente_vctczd.webp',
         desc: 'Buzo Mortal Kombat',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -21,6 +23,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/punisher_frente_nwnvqg.webp',
         desc: 'Buzo de Punisher',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -30,6 +33,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/konoha_frente_euj7eq.webp',
         desc: 'Buzo Mickey Mouse',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -38,6 +42,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/konoha_frente_euj7eq.webp',
         desc: 'Buzo de Konoha',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -46,6 +51,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/dr_strange_frente_moeyqc.webp',
         desc: 'Buzo Doctor Strange',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -54,6 +60,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755218/Buzos/venom_frente_zkygwg.webp',
         desc: 'Buzo Venom',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -62,6 +69,7 @@ export const products = [
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755218/Buzos/soldado_del_invierno_frente_qucvl0.webp',
         desc: 'Buzo Soldado del invierno',
         price: 13000,
+        pricesale: 10500,
         category: 'Buzos',
     },
     {
@@ -457,14 +465,14 @@ export const products = [
     },
 ];
 
- export const TotalProducts = products.length;
+export const TotalProducts = products.length;
 
- export const Products = products.reduce((acc, product) => {
-     if (!acc[product.category]) {
-         acc[product.category] = [];
-     }
+export const Products = products.reduce((acc, product) => {
+    if (!acc[product.category]) {
+        acc[product.category] = [];
+    }
 
     acc[product.category] = [...acc[product.category], product];
 
-     return acc;
- }, {});
+    return acc;
+}, {});

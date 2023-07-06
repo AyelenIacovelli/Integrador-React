@@ -67,7 +67,21 @@
 
 .product__item .favs__icon.clicked {
     color: red;
-  }
+}
+
+
+.price-original {
+    /* text-decoration: line-through; */
+    color: brown;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.price-sale {
+    color: green;
+}
 
 
 

@@ -65,7 +65,7 @@ const Carrito = () => {
               </div>
               <p className='fs-6 mt-2'>El envío se calculará al finalizar la compra</p>
               <div>
-                <button className='buy__btn w-100'><Link to="/checkout">Verificar compra</Link></button>
+                <button className='buy__btn w-100' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Verificar compra</Link></button>
                 <button className='buy__btn w-100 mt-3'><Link to="/tienda">Continuar comprando</Link></button>
                 <button className="buy__btn w-100 mt-3" onClick={handleClearCart} disabled={isCartEmpty}>
                   Borrar carrito
@@ -89,7 +89,7 @@ export const Tr = ({ item }) => {
     if (confirmed) {
       dispatch(deleteItem(item.id))
     }
-    
+
   }
 
   const incrementProductQuantity = () => {
@@ -112,7 +112,7 @@ export const Tr = ({ item }) => {
       </td>
       <td><FaTrashAlt onClick={deleteProduct} /></td>
     </tr>
-    
+
   )
 }
 
