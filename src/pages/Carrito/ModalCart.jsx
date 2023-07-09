@@ -4,7 +4,7 @@ import { Tr } from '../Carrito/Carrito';
 import { clearCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
 
-const ModalCart = () => {
+const ModalCart = ({ onCloseModal }) => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
@@ -16,6 +16,10 @@ const ModalCart = () => {
   };
 
   const isCartEmpty = cartItems.length === 0;
+
+  const handleCloseModal = () => {
+    onCloseModal(); // Cerrar el modal llamando a la función prop
+  };
 
   return (
     <>
@@ -42,7 +46,7 @@ const ModalCart = () => {
           <button className='clear-cart-button' onClick={handleClearCart} disabled={isCartEmpty}>
             Borrar todos los elementos
           </button>
-          <button className="checkout-button">
+          <button className="checkout-button" onClick={handleCloseModal}>
             <Link to="/checkout" className="checkout-link">
               Ir al Checkout
             </Link>

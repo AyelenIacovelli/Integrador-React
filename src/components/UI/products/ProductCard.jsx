@@ -34,7 +34,7 @@ const ProductCard = ({ item }) => {
         dispatch(addItem({
             id: item.id,
             title: item.title,
-            price: item.price,
+            price: item.hasOwnProperty("pricesale") ? item.pricesale : item.price,
             img: item.img,
         }))
 

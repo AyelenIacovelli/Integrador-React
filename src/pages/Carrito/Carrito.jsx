@@ -100,11 +100,15 @@ export const Tr = ({ item }) => {
     dispatch(decrementQuantity(item.id));
   };
 
+  const totalPrice = item.price * item.quantity;
+
   return (
     <tr>
       <td><img src={item.img} alt="img" /></td>
       <td>{item.title}</td>
-      <td>{item.price}</td>
+      <td>
+      <span>${totalPrice}</span>
+      </td>
       <td>
         <button onClick={decrementProductQuantity} disabled={item.quantity === 1}><FaMinus /></button>
         <span>{item.quantity}</span>

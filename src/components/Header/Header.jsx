@@ -77,6 +77,7 @@ const Header = () => {
 
 
 
+
   // const favorites = useSelector((state) => state.favs.favorites);
   const favorites = useSelector((state) => state.favs.favorites);
 
@@ -222,7 +223,7 @@ const Header = () => {
         contentLabel='Carrito de compras'
         className="modal-cart-content"
       >
-        <ModalCart />
+        <ModalCart onCloseModal={closeCartModal} />
       </Modal>
 
 

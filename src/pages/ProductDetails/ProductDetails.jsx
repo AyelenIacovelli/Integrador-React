@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from "reactstrap"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { products } from "../../data/Products"
 import Helmet from "../../components/Helmet/Helmet"
 import CommonSection from "../../components/UI/common/CommonSection"
@@ -23,14 +23,15 @@ const ProductDetails = () => {
     return <div>El producto no fue encontrado.</div>;
   }
 
-  const { title, img, desc, price, img2 } = product;
+  const { title, img, desc, desc2, price, pricesale, img2, img3, img4, img5 } = product;
 
   const addToCart = () => {
+    const selectedPrice = pricesale || price;
     dispatch(addItem({
       id,
       img: img,
       title,
-      price,
+      price: selectedPrice,
     }))
     toast.success("Producto agregado correctamente al carrito")
   }
@@ -43,14 +44,19 @@ const ProductDetails = () => {
           <Row>
             <Col lg="6">
               <img src={img} alt="foto producto" />
-              <img src={img2} alt="foto secundaria" />
+              {img2 && <img src={img2} alt="foto secundaria" />}
+              {img3 && <img src={img3} alt="foto secundaria" />}
+              {img4 && <img src={img4} alt="foto secundaria" />}
+              {img5 && <img src={img5} alt="foto secundaria" />}
             </Col>
             <Col lg="6">
               <div className='product__details'>
                 <h2>{title}</h2>
-                <span>{price}</span>
+                {pricesale ? <span>${pricesale}</span> : <span>${price}</span>}
                 <p>{desc}</p>
+                <p>{desc2}</p>
                 <motion.button whileTap={{ scale: 1.2 }} className='buy__btn' onClick={addToCart}>Agregar al carrito</motion.button>
+                <motion.button whileTap={{ scale: 1.2 }}><Link to="/tienda">Volver a la tienda</Link></motion.button>
               </div>
             </Col>
           </Row>
