@@ -22,6 +22,9 @@ import { motion, useAnimation } from 'framer-motion';
 
 const Home = () => {
 
+  const navigateToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   // TRENDING PRODUCTS
   const [trendingProducts, setTrendingProducts] = useState([])
 
@@ -111,7 +114,7 @@ const Home = () => {
             </div>
             <Clock />
             <motion.button whileTap={{ scale: 1.2 }} className='buy__btn store__btn clock_btn'>
-              <Link to="/tienda">Visita nuestra Tienda</Link>
+              <Link to="/tienda" onClick={navigateToTop}>Visita nuestra Tienda</Link>
             </motion.button>
           </Col>
           <Col lg="6" md="12" className='text-end counter__img'>
