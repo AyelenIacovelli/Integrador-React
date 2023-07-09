@@ -82,9 +82,13 @@ const Header = () => {
   const favorites = useSelector((state) => state.favs.favorites);
 
   const headerRef = useRef(null)
-  const totalQuantity = useSelector(state => state.cart.totalQuantity)
+  // const totalQuantity = useSelector(state => state.cart.totalQuantity)
   const profileActionsRef = useRef(null)
   const profileImageRef = useRef(null);
+
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const menuRef = useRef(null)
   const navigate = useNavigate()
