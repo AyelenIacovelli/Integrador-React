@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import {toggleFavorite} from '../../redux/slices/favsSlice';
 import ProductCard from "../../components/UI/products/ProductCard"
 // import ProductsList from '../../components/UI/products/ProductsList';
@@ -7,6 +7,7 @@ import { products } from '../../data/Products';
 import { createSelector } from 'reselect';
 import Helmet from "../../components/Helmet/Helmet"
 import CommonSection from "../../components/UI/common/CommonSection"
+import { clearFavorites } from '../../redux/slices/favsSlice';
 
 import "../Favoritos/favoritos.css"
 import { Col, Container, Row } from 'reactstrap';
@@ -22,6 +23,16 @@ const getFavoriteProducts = createSelector(
 );
 
 const Favoritos = () => {
+
+  const dispatch = useDispatch();
+
+  const handleClearFavorites = () => {
+    const confirmed = window.confirm('¿Seguro deseas eliminar todos los Favoritos?');
+    if (confirmed) {
+      dispatch(clearFavorites());
+    }    
+  };
+
   const favoriteProducts = useSelector(getFavoriteProducts);
 
   return (
@@ -40,6 +51,7 @@ const Favoritos = () => {
                   ))
                 )}
               </div>
+              <button onClick={handleClearFavorites}>Borrar todos los Favoritos</button>
             </section>
           </Col>
         </Row>

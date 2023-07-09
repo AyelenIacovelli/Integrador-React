@@ -15,9 +15,12 @@ const favsSlice = createSlice({
         state.favorites.splice(index, 1);
       }
     },
+    clearFavorites: (state) => {
+      state.favorites = [];
+    },
   },
 });
 
-export const { toggleFavorite } = favsSlice.actions;
+export const { toggleFavorite, clearFavorites } = favsSlice.actions;
 
 export default favsSlice.reducer;
