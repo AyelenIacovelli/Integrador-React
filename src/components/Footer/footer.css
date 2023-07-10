@@ -1,3 +1,19 @@
+.footer__section {
+    padding: 40px 10px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 200px;
+}
+
 .contacto,
 .redes {
     display: flex;
@@ -6,6 +22,46 @@
     justify-content: center;
 }
 
+.redes {
+    gap: 5px;
+}
+
 p {
     text-align: center;
+}
+
+.nombre p {
+    border-top: 1px solid black;
+    padding-top: 3px;
+}
+
+.contacto h4,
+.redes h4 {
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.contacto h6 {
+    font-size: 14px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .info {
+        gap: 80px;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    .info {
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
 }

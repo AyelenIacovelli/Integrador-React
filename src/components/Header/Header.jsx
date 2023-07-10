@@ -6,7 +6,6 @@ import logo from "../../assets/images/logo.png"
 import { BsShop } from "react-icons/bs";
 import { FaHeart, FaBars } from "react-icons/fa"
 
-import { Container, Row } from "reactstrap"
 import { toast } from "react-toastify"
 
 import { Link, NavLink, useNavigate } from "react-router-dom"
@@ -160,64 +159,64 @@ const Header = () => {
 
   return (
     <header className='header' ref={headerRef}>
-      <Container>
-        <Row>
-          <div className='nav__wrapper'>
-            <div className='logo'>
-              <Link to="/home" onClick={navigateToTop}>
-                <img src={logo} alt='logo' />
-              </Link>
-              {/* <h1>Grevery Store</h1> */}
-            </div>
-            <div className='navigation' ref={menuRef} onClick={menuToggle}>
-              <motion.ul className='menu'>
-                {
-                  nav__links.map((item, index) => (
-                    <li className='nav__item' key={index}>
-                      <NavLink to={item.path} onClick={navigateToTop} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>{item.display}</NavLink>
-                    </li>
-                  ))
-                }
-              </motion.ul>
-            </div>
-            <div className='nav__icons'>
-              <span className='fav__icon' onClick={navigateToFavs}>
-                <FaHeart />
-                <span className='badge'>{favoriteProductsCount}</span>
-              </span>
-              <span className='cart__icon' onClick={toggleCartModal}>
-                <BsShop />
-                <span className='badge'>{totalQuantity}</span>
-              </span>
 
-              <div className='profile'>
-                <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
-                <div
-                  className={`profile__actions${isProfileActionsOpen ? ' show__profileActions' : ''
-                    }`}
-                  ref={profileActionsRef}
-                >
-                  {
-                    currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='d-flex align-items-center        justify-content-center flex-column'>
-                      <Link to='/signup'>Registrate</Link>
-                      <Link to='/login'>Iniciar sesión</Link>
-                      <Link to='/dashboard'>Dashboard</Link>
-                    </div>)
-                  }
-                </div>
-              </div>
 
-              <div className='mobile__menu'>
-                <span onClick={menuToggle}>
-                  <FaBars />
-                </span>
-              </div>
+      <div className='nav__wrapper'>
+        <div className='logo'>
+          <Link to="/home" onClick={navigateToTop}>
+            <img src={logo} alt='logo' />
+          </Link>
+          {/* <h1>Grevery Store</h1> */}
+        </div>
+        <div className='navigation' ref={menuRef} onClick={menuToggle}>
+          <motion.ul className='menu'>
+            {
+              nav__links.map((item, index) => (
+                <li className='nav__item' key={index}>
+                  <NavLink to={item.path} onClick={navigateToTop} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>{item.display}</NavLink>
+                </li>
+              ))
+            }
+          </motion.ul>
+        </div>
+        <div className='nav__icons'>
+          <span className='fav__icon' onClick={navigateToFavs}>
+            <FaHeart />
+            <span className='badge'>{favoriteProductsCount}</span>
+          </span>
+          <span className='cart__icon' onClick={toggleCartModal}>
+            <BsShop />
+            <span className='badge'>{totalQuantity}</span>
+          </span>
+
+          <div className='profile'>
+            <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
+            <div
+              className={`profile__actions${isProfileActionsOpen ? ' show__profileActions' : ''
+                }`}
+              ref={profileActionsRef}
+            >
+              {
+                currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='d-flex align-items-center        justify-content-center flex-column'>
+                  <Link to='/signup'>Registrate</Link>
+                  <Link to='/login'>Iniciar sesión</Link>
+                  <Link to='/dashboard'>Dashboard</Link>
+                </div>)
+              }
             </div>
-
           </div>
-        </Row>
 
-      </Container>
+          <div className='mobile__menu'>
+            <span onClick={menuToggle}>
+              <FaBars />
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+
+
 
 
 

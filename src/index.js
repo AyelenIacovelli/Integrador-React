@@ -9,7 +9,6 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import "remixicon/fonts/remixicon.css"
-import "bootstrap/dist/css/bootstrap.css"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

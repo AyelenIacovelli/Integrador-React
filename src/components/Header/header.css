@@ -1,24 +1,28 @@
 header {
     width: 100%;
-    height: 80px;
-    line-height: 100px;
+    height: 70px;
 }
 
 .nav__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    column-gap: 8px;
+    height: 100%;
+}
+
+.logo a {
+    height: 100%;
 }
 
 .logo img {
-    width: 35px;
-    height: 35px;
+    height: 100%;
+    /* height: 35px; */
 }
 
 .menu {
@@ -26,6 +30,7 @@ header {
     align-items: center;
     column-gap: 2.7rem;
     margin-bottom: 0;
+    height: 100%;
 }
 
 .nav__item a {
@@ -47,19 +52,24 @@ header {
 .cart__icon,
 .fav__icon {
     position: relative;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .badge {
     position: absolute;
-    top: 26%;
+    top: -18px;
+    width: 18px;
     right: -14px;
     height: 18px;
     content: "";
     z-index: 10;
     background-color: rebeccapurple;
     color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
+
 .nav__icons .profile img {
     width: 30px;
     height: 30px;
@@ -124,11 +134,11 @@ header {
     right: 0;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
-  }
+}
 
-  .modal-content {
+.modal-content {
     border: none;
-  }
+}
 
 /* MEDIAQUERIES */
 
