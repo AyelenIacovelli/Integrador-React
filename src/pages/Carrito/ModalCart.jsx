@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Tr } from '../Carrito/Carrito';
 import { clearCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
+// import "./modalCart.css";
 
 const ModalCart = ({ onCloseModal }) => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -27,19 +28,11 @@ const ModalCart = ({ onCloseModal }) => {
         <p>Aún no hay productos agregados al carrito</p>
       ) : (
         <>
+          <h4 className='misproductos'>Mis productos</h4>
           <table className='table'>
-            <thead>
-              <tr>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Borrar</th>
-              </tr>
-            </thead>
             <tbody>
               {cartItems.map((item, index) => (
-                <Tr item={item} key={index} />
+                <Tr item={item} key={index} className='table__body' />
               ))}
             </tbody>
           </table>

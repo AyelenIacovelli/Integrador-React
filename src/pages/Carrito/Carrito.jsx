@@ -107,14 +107,14 @@ export const Tr = ({ item }) => {
       <td><img src={item.img} alt="img" /></td>
       <td>{item.title}</td>
       <td>
-      <span>${totalPrice}</span>
+        <span>${totalPrice}</span>
       </td>
-      <td>
-        <button onClick={decrementProductQuantity} disabled={item.quantity === 1}><FaMinus /></button>
+      <td className='btns__quantity'>
+        <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'><FaMinus /></button>
         <span>{item.quantity}</span>
-        <button onClick={incrementProductQuantity}><FaPlus /></button>
+        <button onClick={incrementProductQuantity} className='btn__quantity increment'><FaPlus /></button>
       </td>
-      <td><FaTrashAlt onClick={deleteProduct} /></td>
+      <td className='trash'><FaTrashAlt onClick={deleteProduct} /></td>
     </tr>
 
   )

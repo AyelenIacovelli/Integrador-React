@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Helmet from "../../components/Helmet/Helmet"
-import { Container, Row, Col, Form, FormGroup } from "reactstrap"
+import { Form, FormGroup } from "reactstrap"
 import { Link, useNavigate } from "react-router-dom"
 import "../Login/login.css"
 import { signInWithEmailAndPassword } from 'firebase/auth'
@@ -34,26 +34,26 @@ const Login = () => {
     return (
         <Helmet title="Login">
             <section>
-                <Container>
-                    <Row>
-                        {
-                            loading ? (<Col lg="12" className='m-auto text-center'><h5 className='fw-bold'>Cargando...</h5></Col>) : (<Col lg="6" className='m-auto text-center'>
-                                <h3 className='fw-bold mb-4'>Login</h3>
-                                
-                                <Form className='auth__form' onSubmit={signIn}>
-                                    <FormGroup className='form__group'>
-                                        <input type="email" placeholder='Ingrese su correo' value={email} onChange={e => setEmail(e.target.value)} />
-                                    </FormGroup>
-                                    <FormGroup className='form__group'>
-                                        <input type="password" placeholder='Ingrese su contraseña' value={password} onChange={e => setPassword(e.target.value)} />
-                                    </FormGroup>
-                                    <button type='submit' className='buy__btn auth__btn'>Ingresar</button>
-                                    <p>¿Aún no tienes cuenta? <Link to="/signup">Regístrate aquí</Link> </p>
-                                </Form>
-                            </Col>)
-                        }
-                    </Row>
-                </Container>
+
+
+                {
+                    loading ? (<div className='loading'><h5>Cargando...</h5></div>) : (<div className='login__container'>
+                        <h3>Login</h3>
+
+                        <Form className='auth__form' onSubmit={signIn}>
+                            <FormGroup className='form__group'>
+                                <input type="email" placeholder='Ingrese su correo' value={email} onChange={e => setEmail(e.target.value)} />
+                            </FormGroup>
+                            <FormGroup className='form__group'>
+                                <input type="password" placeholder='Ingrese su contraseña' value={password} onChange={e => setPassword(e.target.value)} />
+                            </FormGroup>
+                            <button type='submit' className='buy__btn auth__btn'>Ingresar</button>
+                            <p>¿Aún no tienes cuenta? <Link to="/signup">Regístrate aquí</Link> </p>
+                        </Form>
+                    </div>)
+                }
+
+
             </section>
         </Helmet>
     )

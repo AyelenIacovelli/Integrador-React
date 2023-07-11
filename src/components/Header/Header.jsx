@@ -197,10 +197,10 @@ const Header = () => {
               ref={profileActionsRef}
             >
               {
-                currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='d-flex align-items-center        justify-content-center flex-column'>
+                currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='user__action'>
                   <Link to='/signup'>Registrate</Link>
                   <Link to='/login'>Iniciar sesión</Link>
-                  <Link to='/dashboard'>Dashboard</Link>
+                  {/* <Link to='/dashboard'>Dashboard</Link> */}
                 </div>)
               }
             </div>

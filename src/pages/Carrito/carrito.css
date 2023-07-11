@@ -11,9 +11,37 @@
     color: inherit;
 }
 
+.modal-cart-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.misproductos {
+    text-align: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.table__body {
+    display: flex;
+}
+
+.table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 5px;
+}
+
 .table tr td img {
-    width: 80px !important;
-    height: 80px !important;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
 }
 
@@ -24,4 +52,28 @@ td i {
 td,
 th {
     color: black;
+}
+
+.btns__quantity {
+    display: flex;
+    gap: 5px;
+}
+
+.btns__quantity .btn__quantity {
+    border-radius: 5px;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.trash {
+    cursor: pointer;
+}
+
+.increment {
+    background-color: rgb(38, 58, 8);
+}
+
+.decrement {
+    background-color: rgb(95, 80, 80);
 }
