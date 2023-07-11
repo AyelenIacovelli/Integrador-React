@@ -11,10 +11,10 @@
 .hero__section h1 {
     color: thistle;
     text-align: center;
-    
+
     font-size: 50px;
     font-weight: 700;
-    
+
 }
 
 .hero__content {
@@ -70,7 +70,7 @@
     padding: 20px 16px;
     width: 100%;
     gap: 40px;
-    
+
 }
 
 .trending__content,
@@ -92,44 +92,54 @@
 
 .timer__count {
     background-color: skyblue;
-    padding: 5px 30px;
-}
-
-.timer__count img {
-    width: 70%;
-    object-fit: contain;
-}
-
-.store__btn {
-    background-color: white;
-    color: black;
-    font-weight: 600;
-}
-
-.store__btn a:hover {
-    color: black;
+    padding: 20px 16px;
+    width: 100%;
+    display: flex;
 
 }
 
-.clock__top {
+.timer__content {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+    width: 100%;
+}
+
+.clock__down {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    row-gap: 40px;
+    width: 50%;
 }
 
-.clock__top-content {
-    margin-top: 25px;
+.clock__down h4 {
+    font-size: 20px;
 }
 
-.clock_btn {
-    margin-top: 15px;
+.clock__btn {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background-color: thistle;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.clock__btn a:hover {
+    color: wheat;
 }
 
 .counter__img {
+    width: 50%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+}
+
+.counter__img img {
+    width: 400px;
 }
 
 /* MEDIAQUERIES */
@@ -159,8 +169,24 @@
     }
 
 
+    /* TIMER */
 
- 
+    .clock__down h4 {
+        font-size: 18px;
+    }
+
+    .clock__btn {
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
+    .counter__img img {
+        width: 300px;
+    }
+
+
+
+
 }
 
 @media only screen and (max-width:768px) {
@@ -169,7 +195,24 @@
         height: 50vh;
     }
 
- 
+    /* TIMER */
+
+    .clock__down h4 {
+        font-size: 15px;
+    }
+
+    .clock__btn {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .counter__img img {
+        width: 250px;
+    }
+
+
+
+
 }
 
 @media only screen and (max-width:576px) {
@@ -205,5 +248,30 @@
         height: 290px;
         gap: unset;
         row-gap: 28px;
+    }
+
+    /* TIMER */
+
+    .timer__content {
+        flex-direction: column;
+        row-gap: 11px;
+    }
+
+    .clock__down {
+        row-gap: 20px;
+    }
+
+    .clock__down h4 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .clock__btn {
+        padding: 7px 10px;
+        font-size: 15px;
+    }
+
+    .counter__img {
+        justify-content: center;
     }
 }

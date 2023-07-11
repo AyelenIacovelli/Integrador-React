@@ -1,13 +1,86 @@
+.clock__wrapper {
+    display: flex;
+    gap: 18px;
+}
+
+.clock__wrapper h2 {
+    font-size: 25px;
+}
+
+.clock__wrapper h5 {
+    font-size: 14px;
+}
+
+.clock__data {
+    display: flex;
+    flex-direction: column;
+}
+
+.clock__data-days,
+.clock__data-hours,
+.clock__data-minutes,
+.clock__data-seconds {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.clock__wrapper span {
+    margin-top: 3px;
+}
+
+
 @media only screen and (max-width: 992px) {
+
     .clock__wrapper {
-        justify-content: center;
+        gap: 16px;
     }
 
-    .clock__data h1 {
-        font-size: 1.1rem !important;
+    .clock__wrapper h2 {
+        font-size: 23px;
     }
 
-    .clock__data h5 {
-        font-size: 0.9rem !important;
+    .clock__wrapper h5 {
+        font-size: 12px;
     }
+
+    .clock__data-days,
+    .clock__data-hours,
+    .clock__data-minutes,
+    .clock__data-seconds {
+        gap: 8px;
+    }
+
+    .clock__wrapper span {
+        margin-top: 2px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .clock__wrapper {
+        gap: 12px;
+    }
+
+    .clock__wrapper h2 {
+        font-size: 20px;
+    }
+
+    .clock__wrapper h5 {
+        font-size: 11px;
+    }
+
+    .clock__data-days,
+    .clock__data-hours,
+    .clock__data-minutes,
+    .clock__data-seconds {
+        gap: 5px;
+    }
+
+    .clock__wrapper span {
+        margin-top: 1px;
+    }
+
 }

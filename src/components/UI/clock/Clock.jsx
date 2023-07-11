@@ -38,36 +38,36 @@ const Clock = () => {
     })
 
     return (
-        <div className='clock__wrapper d-flex align-items-center gap-3'>
-            <div className='clock__data d-flex align-items-center gap-3'>
-                <div className='text-center'>
-                    <h1 className='text-white fs-3 mb-2'>{days}</h1>
-                    <h5 className='text-white fs-6'>Días</h5>
-                </div>
-                <span className='text-white fs-3'>:</span>
-            </div>
+        <div className='clock__wrapper'>
+            <div className='clock__data'>
+                <div className='clock__data-days'>
+                    <h2>{days}</h2>
 
-            <div className='clock__data d-flex align-items-center gap-3'>
-                <div className='text-center'>
-                    <h1 className='text-white fs-3 mb-2'>{hours}</h1>
-                    <h5 className='text-white fs-6'>Horas</h5>
                 </div>
-                <span className='text-white fs-3'>:</span>
+                <h5>Días</h5>
             </div>
+            <span>:</span>
+            <div className='clock__data'>
+                <div className='clock__data-hours'>
+                    <h2>{hours}</h2>
 
-            <div className='clock__data d-flex align-items-center gap-3'>
-                <div className='text-center'>
-                    <h1 className='text-white fs-3 mb-2'>{minutes}</h1>
-                    <h5 className='text-white fs-6'>Minutos</h5>
                 </div>
-                <span className='text-white fs-3'>:</span>
+                <h5>Horas</h5>
             </div>
+            <span>:</span>
+            <div className='clock__data'>
+                <div className='clock__data-minutes'>
+                    <h2>{minutes}</h2>
 
-            <div className='clock__data d-flex align-items-center gap-3'>
-                <div className='text-center'>
-                    <h1 className='text-white fs-3 mb-2'>{seconds}</h1>
-                    <h5 className='text-white fs-6'>Segundos</h5>
                 </div>
+                <h5>Minutos</h5>
+            </div>
+            <span>:</span>
+            <div className='clock__data'>
+                <div className='clock__data-seconds'>
+                    <h2>{seconds}</h2>
+                </div>
+                <h5>Segundos</h5>
             </div>
         </div>
 
