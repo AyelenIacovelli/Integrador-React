@@ -1,14 +1,20 @@
+/* HERO */
+
 .hero__section {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .hero__section h1 {
     color: thistle;
     text-align: center;
-    margin-top: 52%;
+    
     font-size: 50px;
     font-weight: 700;
-    margin-right: 65px;
+    
 }
 
 .hero__content {
@@ -17,9 +23,9 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-    margin-top: 39%;
+    /* margin-top: 39%; */
     gap: 10px;
-    margin-left: 65px;
+    /* margin-left: 65px; */
 }
 
 .hero__content h2 {
@@ -53,21 +59,36 @@
     color: wheat;
 }
 
-.hero__content {
-    padding-top: 45px;
-}
+/* TENDENCIA */
 
-.trending__container {
+.trending__products,
+.best_sales {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px 16px;
+    width: 100%;
+    gap: 40px;
+    
 }
 
-.products-list {
+.trending__content,
+.sales__content {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 25px;
 }
+
+.trending__products h2,
+.best_sales h2 {
+    text-align: center;
+}
+
+/* TIMER */
 
 .timer__count {
     background-color: skyblue;
@@ -113,56 +134,76 @@
 
 /* MEDIAQUERIES */
 @media only screen and (max-width:992px) {
-    .hero__content h2 {
-        font-size: 2rem;
+
+
+    .hero__section {
+        /* background-size: contain; */
+        height: 70vh;
     }
 
-    .section__title {
-        font-size: 1.7rem;
+    .hero__section h1 {
+        font-size: 40px;
     }
 
-    .counter__img {
-        display: none;
-    }
-
-    .clock__top-content {
-        text-align: center;
-    }
-
-    .clock__top-content h4 {
-        font-size: 0.9rem;
-    }
-
-    .clock__top-content h3 {
-        font-size: 1rem;
-    }
-
-    .count__down-col {
-        text-align: center;
-    }
-}
-
-@media only screen and (max-width:768px) {
-    .hero__content h2 {
-        font-size: 1.6rem;
+    .hero__section h2 {
+        font-size: 28px;
     }
 
     .hero__content p {
-        font-size: 0.9rem;
+        font-size: 16px;
     }
 
-    .buy__btn a {
-        font-size: 0.9rem;
+    .hero__content .buy__btn {
+        padding: 7px 10px;
+        font-size: 16px;
     }
 
-    .section__title {
-        font-size: 1.4rem;
+
+
+ 
+}
+
+@media only screen and (max-width:768px) {
+
+    .hero__section {
+        height: 50vh;
     }
+
+ 
 }
 
 @media only screen and (max-width:576px) {
-    .hero__content {
-        padding-top: 0;
-        margin-bottom: 40px;
+
+    /* HERO */
+
+    .hero__section {
+        height: 40vh;
+    }
+
+    .hero__section h1 {
+        font-size: 25px;
+    }
+
+    .hero__section h2 {
+        display: none;
+    }
+
+    .hero__content p {
+        font-size: 14px;
+    }
+
+    .hero__content .buy__btn {
+        padding: 4px 7px;
+        font-size: 12px;
+    }
+
+    /* TENDENCIA */
+
+    .trending__content,
+    .sales__content {
+        overflow-y: scroll;
+        height: 290px;
+        gap: unset;
+        row-gap: 28px;
     }
 }
