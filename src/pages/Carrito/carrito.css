@@ -1,3 +1,27 @@
+.cart__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.cart__container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.cart__container-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .buy__btn[disabled] {
     cursor: not-allowed;
 }
@@ -26,6 +50,12 @@
     flex-direction: column;
     gap: 10px;
     width: 100%;
+}
+
+.bordered {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
 }
 
 .table__body {
@@ -64,10 +94,14 @@ th {
     border: none;
     padding: 3px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .trash {
     cursor: pointer;
+    display: flex;
 }
 
 .increment {
@@ -76,4 +110,64 @@ th {
 
 .decrement {
     background-color: rgb(95, 80, 80);
+}
+
+.decrement[disabled] {
+    cursor: not-allowed;
+}
+
+h6 {
+    text-align: end;
+}
+
+h6 span {
+    margin-left: 2px;
+    padding-right: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .cart__container {
+        padding: 4px;
+    }
+
+    .bordered {
+        /* display: flex; */
+        align-items: stretch;
+        /* padding: 10px; */
+    }
+
+    .table td,
+    span,
+    .btn__quantity-icon {
+        font-size: 12px;
+    }
+
+    /* .bordered-title {
+        display: flex;
+    } */
+
+    .table tr td img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btns__quantity .btn__quantity {
+        padding: 2px;
+
+    }
+
+    .cart__container-bottom-buttons {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        gap: 5px;
+        padding-top: 8px;
+    }
+
+
 }
