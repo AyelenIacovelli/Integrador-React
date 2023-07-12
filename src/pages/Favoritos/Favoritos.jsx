@@ -8,9 +8,9 @@ import { createSelector } from 'reselect';
 import Helmet from "../../components/Helmet/Helmet"
 import CommonSection from "../../components/UI/common/CommonSection"
 import { clearFavorites } from '../../redux/slices/favsSlice';
-
+import { FaHeart } from "react-icons/fa"
 import "../Favoritos/favoritos.css"
-import { Col, Container, Row } from 'reactstrap';
+
 
 const getFavorites = (state) => state.favs.favorites ?? [];
 
@@ -30,7 +30,7 @@ const Favoritos = () => {
     const confirmed = window.confirm('¿Seguro deseas eliminar todos los Favoritos?');
     if (confirmed) {
       dispatch(clearFavorites());
-    }    
+    }
   };
 
   const favoriteProducts = useSelector(getFavoriteProducts);
@@ -38,24 +38,23 @@ const Favoritos = () => {
   return (
     <Helmet title="Favoritos">
       <CommonSection title="Favoritos" />
-      <Container>
-        <Row>
-          <Col>
-            <section className='favoritos__section'>
-              <div className='favoritos__container'>
-                {favoriteProducts.length === 0 ? (
-                  <p>Aún no hay productos agregados a favoritos</p>
-                ) : (
-                  favoriteProducts.map((product) => (
-                    <ProductCard key={product.id} item={product} />
-                  ))
-                )}
-              </div>
-              <button onClick={handleClearFavorites}>Borrar todos los Favoritos</button>
-            </section>
-          </Col>
-        </Row>
-      </Container>
+
+
+
+      <section className='favoritos__section'>
+        <div className='favoritos__container'>
+          {favoriteProducts.length === 0 ? (
+            <p>Aún no hay productos agregados a favoritos</p>
+          ) : (
+            favoriteProducts.map((product) => (
+              <ProductCard key={product.id} item={product} />
+            ))
+          )}
+        </div>
+        <button onClick={handleClearFavorites} className='fav__btn'>Borrar todos los Favoritos <FaHeart /></button>
+      </section>
+
+
 
 
 

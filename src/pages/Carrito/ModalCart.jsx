@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Tr } from '../Carrito/Carrito';
 import { clearCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
+
+import { FaTrashAlt } from "react-icons/fa"
 // import "./modalCart.css";
 
 const ModalCart = ({ onCloseModal }) => {
@@ -36,14 +38,19 @@ const ModalCart = ({ onCloseModal }) => {
               ))}
             </tbody>
           </table>
-          <button className='clear-cart-button' onClick={handleClearCart} disabled={isCartEmpty}>
-            Borrar todos los elementos
-          </button>
-          <button className="checkout-button" onClick={handleCloseModal}>
-            <Link to="/checkout" className="checkout-link">
-              Ir al Checkout
-            </Link>
-          </button>
+          <div className='cart__buttons'>
+            <button className='clear-cart-button' onClick={handleClearCart} disabled={isCartEmpty}>
+              Borrar todos los productos <FaTrashAlt />
+            </button>
+            <div className='checkout'>
+              <button className="checkout-button" onClick={handleCloseModal}>
+                <Link to="/checkout" className="checkout-link">
+                  Completar compra
+                </Link>
+              </button>
+            </div>
+
+          </div>
         </>
       )}
     </>

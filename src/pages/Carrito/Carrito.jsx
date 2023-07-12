@@ -68,11 +68,14 @@ const Carrito = () => {
 
 
             <div className='cart__container-bottom-buttons'>
-              <button className='buy__btn' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Verificar compra</Link></button>
-              <button className='buy__btn'><Link to="/tienda">Continuar comprando</Link></button>
-              <button className="buy__btn" onClick={handleClearCart} disabled={isCartEmpty}>
-                Borrar carrito
+              <button className="clear-cart-button" onClick={handleClearCart} disabled={isCartEmpty}>
+                Borrar carrito <FaTrashAlt />
               </button>
+              <button className='buy__btn'><Link to="/tienda">Continuar eligiendo productos</Link></button>
+              <div className='checkout-btn'>
+                <button className='checkout-button' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Completar compra</Link></button>
+              </div>
+
             </div>
           </div>
         </div>
