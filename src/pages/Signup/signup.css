@@ -1,0 +1,106 @@
+.signup__section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: black;
+    padding: 15px 10px;
+    border-radius: 1rem;
+}
+
+h3 {
+    font-size: 25px;
+    color: wheat;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    gap: 10px;
+}
+
+.form__group input {
+    padding: 2px 5px;
+    width: 400px;
+    font-size: 16px;
+}
+
+.auth__form input[type='file'] {
+    padding: unset;
+}
+
+.auth__btn {
+    margin-top: 10px;
+    padding: 5px 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+p a {
+    text-decoration: underline;
+}
+
+/* MEDIAQUERIES */
+
+
+@media only screen and (max-width:768px) {
+
+    .auth__form {
+        width: 90%;
+    }
+
+    .form__group input {
+        width: 310px;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width:576px) {
+
+    .signup__section {
+        padding: 5px;
+    }
+
+    .auth__form {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+
+    .form__group input {
+        width: 240px;
+        font-size: 11px;
+    }
+
+    .form__container {
+        padding: 10px 5px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .auth__btn {
+        font-size: 15px;
+    }
+}

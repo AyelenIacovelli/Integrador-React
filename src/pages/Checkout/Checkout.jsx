@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, FormGroup } from 'reactstrap';
+import { Form, FormGroup } from 'reactstrap';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { doc, setDoc } from 'firebase/firestore';
@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '../../redux/slices/cartSlice';
 import Helmet from '../../components/Helmet/Helmet';
 import CommonSection from '../../components/UI/common/CommonSection';
+import "./checkout.css";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -95,51 +96,51 @@ const Checkout = () => {
   return (
     <Helmet title="Checkout">
       <CommonSection title="Verificación" />
-      <section>
-        <Container>
-          <Row>
-            <Col lg="8">
-              <h6 className="mb-4 fw-bold">Facturación</h6>
-              <Form className="billingform" onSubmit={handleSubmit}>
-                <FormGroup className="formgroup">
-                  <input
-                    type="text"
-                    placeholder="Escribe tu nombre"
-                    name="name"
-                    value={values.name}
-                    onChange={handleChange}
-                    className={errors.name && touched.name ? 'is-invalid' : ''}
-                  />
-                  {errors.name && touched.name && <div className="invalid-feedback">{errors.name}</div>}
-                </FormGroup>
-                <FormGroup className="form__group">
-                  <input
-                    type="email"
-                    placeholder="Escribe tu email"
-                    name="email"
-                    value={values.email}
-                    onChange={handleChange}
-                    className={errors.email && touched.email ? 'is-invalid' : ''}
-                  />
-                  {errors.email && touched.email && <div className="invalid-feedback">{errors.email}</div>}
-                </FormGroup>
-                {/* Resto de los campos del formulario */}
-                <button type="submit" disabled={!isValid || isSubmitting}>
-                  {isSubmitting ? 'Enviando...' : 'Enviar'}
-                </button>
-              </Form>
-            </Col>
-            <Col lg="4">
-              {isSubmitting ? (
-                <div className="loading">Cargando...</div>
-              ) : (
-                <div className="checkoutcart">
-                  <h6>Cantidad: <span>{totalQty} productos</span></h6>
-                  <h6>Subtotal: <span>${totalAmount}</span></h6>
-                  <h6>Envío: <span>$0</span></h6>
-                  <p>Envío gratis</p>
-                  <h4>Total a pagar: <span>${totalAmount}</span></h4>
-                  {/* <button
+      <section className='checkout__section'>
+
+        <div className='billing__container'>
+          <h3>Completa el Formulario</h3>
+          <Form className="billing__container-form" onSubmit={handleSubmit}>
+            <FormGroup className="form__group">
+              <input
+                type="text"
+                placeholder="Escribe tu nombre"
+                name="name"
+                value={values.name}
+                onChange={handleChange}
+                className={errors.name && touched.name ? 'is-invalid' : ''}
+              />
+              {errors.name && touched.name && <div className="invalid-feedback">{errors.name}</div>}
+            </FormGroup>
+            <FormGroup className="form__group">
+              <input
+                type="email"
+                placeholder="Escribe tu email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                className={errors.email && touched.email ? 'is-invalid' : ''}
+              />
+              {errors.email && touched.email && <div className="invalid-feedback">{errors.email}</div>}
+            </FormGroup>
+            {/* Resto de los campos del formulario */}
+            <button className='check__btn' type="submit" disabled={!isValid || isSubmitting}>
+              {isSubmitting ? 'Enviando...' : 'Comprar'}
+            </button>
+          </Form>
+        </div>
+        <div className='buys__container'>
+          {isSubmitting ? (
+            <div className="loading">Cargando...</div>
+          ) : (
+            <div className="buys__container-cart">
+              <h3>Datos de la compra</h3>
+              <h6>Cantidad: <span>{totalQty} productos</span></h6>
+              <h6>Subtotal: <span>${totalAmount}</span></h6>
+              <h6>Envío: <span>$0</span></h6>
+              <p>¡Envío gratis!</p>
+              <h4>Total a pagar: <span>${totalAmount}</span></h4>
+              {/* <button
                     type="submit"
                     className="buybtn auth__btn w-100"
                     onClick={handleSubmit}
@@ -147,11 +148,10 @@ const Checkout = () => {
                   >
                     {isSubmitting ? 'Procesando...' : 'Realizar compra'}
                   </button> */}
-                </div>
-              )}
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          )}
+        </div>
+
       </section>
     </Helmet>
   );

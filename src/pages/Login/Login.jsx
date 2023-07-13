@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Helmet from "../../components/Helmet/Helmet"
 import { Form, FormGroup } from "reactstrap"
 import { Link, useNavigate } from "react-router-dom"
-import "../Login/login.css"
+// import "../Login/login.css"
+import "../Signup/signup.css"
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import { toast } from "react-toastify"
@@ -33,11 +34,11 @@ const Login = () => {
 
     return (
         <Helmet title="Login">
-            <section>
+            <section className='signup__section'>
 
 
                 {
-                    loading ? (<div className='loading'><h5>Cargando...</h5></div>) : (<div className='login__container'>
+                    loading ? (<div className='loading'><h5>Cargando...</h5></div>) : (<div className='form__container'>
                         <h3>Login</h3>
 
                         <Form className='auth__form' onSubmit={signIn}>
@@ -47,7 +48,7 @@ const Login = () => {
                             <FormGroup className='form__group'>
                                 <input type="password" placeholder='Ingrese su contraseña' value={password} onChange={e => setPassword(e.target.value)} />
                             </FormGroup>
-                            <button type='submit' className='buy__btn auth__btn'>Ingresar</button>
+                            <button type='submit' className='auth__btn'>Ingresar</button>
                             <p>¿Aún no tienes cuenta? <Link to="/signup">Regístrate aquí</Link> </p>
                         </Form>
                     </div>)
