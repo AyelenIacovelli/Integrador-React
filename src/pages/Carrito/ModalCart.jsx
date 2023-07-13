@@ -11,6 +11,8 @@ const ModalCart = ({ onCloseModal }) => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
+  const totalAmount = useSelector(state => state.cart.totalAmount)
+
   const handleClearCart = () => {
     const confirmed = window.confirm('¿Estás seguro que deseas eliminar todo el carrito?');
     if (confirmed) {
@@ -42,6 +44,7 @@ const ModalCart = ({ onCloseModal }) => {
             <button className='clear-cart-button' onClick={handleClearCart} disabled={isCartEmpty}>
               Borrar todos los productos <FaTrashAlt />
             </button>
+            <span className='subtotal'>Subtotal: ${totalAmount}</span>
             <div className='checkout'>
               <button className="checkout-button" onClick={handleCloseModal}>
                 <Link to="/checkout" className="checkout-link">

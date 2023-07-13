@@ -9,6 +9,7 @@
 
 .product__img img {
     width: 200px;
+    height: 200PX;
 
 }
 
@@ -53,8 +54,13 @@
     border-radius: 50px;
     padding: 5px;
     font-size: 1.2rem;
+    display: flex;
 }
 
+.offer-fire {
+    display: flex;
+    color: red;
+}
 
 
 .favs .favs__icon {

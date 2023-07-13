@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import CommonSection from '../../components/UI/common/CommonSection'
 import Helmet from "../../components/Helmet/Helmet"
-import { Container, Row, Col } from 'reactstrap'
+
 import { FaSearch } from "react-icons/fa"
 import "../Tienda/tienda.css"
 import { products } from "../../data/Products"
@@ -62,10 +62,10 @@ const Tienda = () => {
     <Helmet title="Tienda">
       <CommonSection title="Productos" />
 
-      <section>
-        <Container>
-          <Row>
-            <Col lg="3" md="3">
+      <section className='shop__section'>
+        <div className='shop__container'>
+          
+            
               <div className='filter__widget'>
                 <select onChange={handleFilter}>
                   <option>Filtrar por categoría</option>
@@ -75,8 +75,8 @@ const Tienda = () => {
                   <option value="Buzos">Buzos</option>
                 </select>
               </div>
-            </Col>
-            <Col lg="3" md="3">
+            
+            
               <div className='filter__widget'>
                 <select onChange={handleOrder}>
                   <option>Ordenar por:</option>
@@ -84,24 +84,26 @@ const Tienda = () => {
                   <option value="descending">Mayor precio</option>
                 </select>
               </div>
-            </Col>
-            <Col lg="6" md="6">
+            
+            
               <div className='search__box'>
                 <input type="text" placeholder='Buscar por título o personaje...' onChange={handleSearch} />
                 <span><FaSearch /></span>
               </div>
-            </Col>
-          </Row>
-        </Container>
+            
+          
+        </div>
       </section>
-      <section className='pt-0'>
-        <Container>
-          <Row>
+
+
+      <section className='products__section'>
+        
+          <div className='products__container'>
             {
               productsData.length === 0 ? <h1 className='text-center fs-4'>No se encontraron productos</h1> : <ProductsList data={productsData} />
             }
-          </Row>
-        </Container>
+          </div>
+        
       </section>
     </Helmet>
   )

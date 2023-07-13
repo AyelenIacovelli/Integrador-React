@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from "reactstrap"
+
 import { Link, useParams } from "react-router-dom"
 import { products } from "../../data/Products"
 import Helmet from "../../components/Helmet/Helmet"
@@ -13,6 +13,11 @@ import { toast } from 'react-toastify'
 
 const ProductDetails = () => {
 
+  const navigateToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+ 
   const dispatch = useDispatch()
 
   const { id } = useParams()
@@ -38,29 +43,33 @@ const ProductDetails = () => {
 
   return (
     <Helmet title={title}>
-      <CommonSection title={title} />
-      <section className='pt-0'>
-        <Container>
-          <Row>
-            <Col lg="6">
+      <CommonSection title="Detalles" />
+      <section className='details__section'>
+        <div className='details__contain'>
+        <h2>{title}</h2>
+          <div className='details__contain-imgs'>
               <img src={img} alt="foto producto" />
               {img2 && <img src={img2} alt="foto secundaria" />}
               {img3 && <img src={img3} alt="foto secundaria" />}
               {img4 && <img src={img4} alt="foto secundaria" />}
               {img5 && <img src={img5} alt="foto secundaria" />}
-            </Col>
-            <Col lg="6">
+            </div>
+            <div>
               <div className='product__details'>
-                <h2>{title}</h2>
+                
                 {pricesale ? <span>${pricesale}</span> : <span>${price}</span>}
                 <p>{desc}</p>
                 <p>{desc2}</p>
                 <motion.button whileTap={{ scale: 1.2 }} className='buy__btn' onClick={addToCart}>Agregar al carrito</motion.button>
-                <motion.button whileTap={{ scale: 1.2 }}><Link to="/tienda">Volver a la tienda</Link></motion.button>
+                <motion.button whileTap={{ scale: 1.2 }} className='shop__btn' onClick={navigateToTop}><Link to="/tienda">Volver a la tienda</Link></motion.button>
               </div>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+        </div>
+        
+          
+            
+          
+        
       </section>
     </Helmet>
   )

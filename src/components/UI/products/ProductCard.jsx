@@ -8,7 +8,7 @@ import { AiTwotoneFire } from "react-icons/ai"
 import "../../../data/Products"
 
 import { Link } from 'react-router-dom'
-import { Col } from "reactstrap"
+
 import { toast } from "react-toastify"
 
 import { useDispatch, useSelector } from "react-redux"
@@ -20,6 +20,11 @@ import { toggleFavorite } from '../../../redux/slices/favsSlice'
 import { FaHeart } from "react-icons/fa"
 
 const ProductCard = ({ item }) => {
+
+    const navigateToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+    
 
     // const [isClicked, setIsClicked] = useState(false);
 
@@ -50,21 +55,21 @@ const ProductCard = ({ item }) => {
     const showOfferFire = isPriceSale ? 'show' : '';
 
     return (
-        <Col lg="2" md="4" className='mb-2'>
+        
             <div className={`product__item ${isFavorite ? 'favorite' : ''}`}>
-                <div className='product__img'>
+                <div className='product__img' onClick={navigateToTop}>
                     {isPriceSale && <span className={`offer-fire ${showOfferFire}`}><AiTwotoneFire /></span>}
                     <Link to={`/tienda/${item.id}`}><motion.img whileHover={{ scale: 0.9 }} src={item.img} alt="producto" /></Link>
                 </div>
 
-                <div className='p-2 product__info'>
+                <div className='product__info'>
                     <h3 className='product__name'><Link to={`/tienda/${item.id}`}>{item.title}</Link></h3>
                     <span className={`favs ${isFavorite ? 'clicked' : ''}`}>
                         <FaHeart className={`favs__icon ${isFavorite ? 'clicked' : ''}`} onClick={handleIconClick} />
                     </span>
-                    <span className='text-center d-block'>{item.category}</span>
+                    <span>{item.category}</span>
                 </div>
-                <div className='product__card-bottom p-2'>
+                <div className='product__card-bottom'>
                     <span className="price">
                         <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${item.price}</span>
                         {isPriceSale && <span className="price-sale">${item.pricesale}</span>}
@@ -72,7 +77,7 @@ const ProductCard = ({ item }) => {
                     <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}><FaPlus className='more_icon' /></motion.span>
                 </div>
             </div>
-        </Col>
+        
     )
 }
 

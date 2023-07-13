@@ -58,9 +58,9 @@ const Carrito = () => {
             }
 
           </div>
-          <h6>
+          <h6 className='subtotal'>
             Subtotal:
-            <span>${totalAmount}</span>
+            <span> ${totalAmount}</span>
           </h6>
           <div className='cart__container-bottom'>
 
@@ -108,20 +108,32 @@ export const Tr = ({ item }) => {
   const totalPrice = item.price * item.quantity;
 
   return (
-    <tr>
-      <td><img src={item.img} alt="img" /></td>
-      <td>{item.title}</td>
-      <td>
+    <tr className=''>
+    <td className='td-container'>
+      
+<div className='td-top'>
+        <Link to={`/tienda/${item.id}`}>
+          <img src={item.img} alt="img" />
+        </Link>
+        <span>{item.title}</span>
+      </div>
+      <div className='td-bottom'>
         <span>${totalPrice}</span>
-      </td>
-      <td className='btns__quantity'>
-        <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'><FaMinus className='btn__quantity-icon' /></button>
-        <span>{item.quantity}</span>
-        <button onClick={incrementProductQuantity} className='btn__quantity increment'><FaPlus className='btn__quantity-icon' /></button>
-      </td>
-      <td className='trash'><FaTrashAlt onClick={deleteProduct} /></td>
-    </tr>
-
+        <div className='btns__quantity'>
+          <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'>
+            <FaMinus className='btn__quantity-icon' />
+          </button>
+          <span>{item.quantity}</span>
+          <button onClick={incrementProductQuantity} className='btn__quantity increment'>
+            <FaPlus className='btn__quantity-icon' />
+          </button>
+          <FaTrashAlt className='btn__trash' onClick={deleteProduct} />
+        </div>
+      </div>
+      
+      
+    </td>
+  </tr>
   )
 }
 

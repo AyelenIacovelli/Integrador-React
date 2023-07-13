@@ -1,3 +1,6 @@
+
+
+
 .cart__section {
     display: flex;
     flex-direction: column;
@@ -66,6 +69,31 @@ h2 {
     padding: 10px 5px;
 } */
 
+.td-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+
+
+
+.td-container .td-top,
+.td-container .td-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.td-container.td-top {
+    gap: 6px;
+}
+
+.td-container .td-bottom {
+    gap: 8px;
+}
+
 .table__body {
     display: flex;
 }
@@ -90,11 +118,13 @@ td i {
 td,
 th {
     color: black;
+    display: flex;
 }
 
 .btns__quantity {
     display: flex;
     gap: 5px;
+    align-items: center;
 }
 
 .btns__quantity .btn__quantity {
@@ -125,13 +155,13 @@ th {
 }
 
 h6 {
-    text-align: end;
+    font-size: 15px;
 }
 
-h6 span {
+/* h6 span {
     margin-left: 2px;
     padding-right: 10px;
-}
+} */
 
 .cart__container-bottom-buttons {
     display: flex;
@@ -190,6 +220,11 @@ h6 span {
     width: 90%;
     border-top: 1px solid black;
     margin-top: 10px;
+}
+
+.subtotal {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 /* MEDIAQUERIES */
@@ -271,6 +306,17 @@ h6 span {
         font-size: 10px;
     }
 
+    .td-bottom {
+        gap: 3px;
+    }
 
+    .btns__quantity {
+        gap: 2px;
+    }
+
+    .subtotal {
+        font-size: 12px;
+        
+    }
 
 }
