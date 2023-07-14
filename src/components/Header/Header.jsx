@@ -158,6 +158,11 @@ const Header = () => {
     setProfileActionsOpen(false);
   };
 
+  const handleSesion = () => {
+    logout();
+    handleLinkClick();
+  }
+
 
   // const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
 
@@ -213,7 +218,7 @@ const Header = () => {
               ref={profileActionsRef}
             >
               {
-                currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='user__action'>
+                currentUser ? (<span onClick={handleSesion}>Cerrar sesión</span>) : (<div className='user__action'>
                   <Link to='/signup' onClick={handleLinkClick}>Registrate</Link>
                   <Link to='/login' onClick={handleLinkClick}>Iniciar sesión</Link>
                   {/* <Link to='/dashboard'>Dashboard</Link> */}

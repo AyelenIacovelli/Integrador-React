@@ -104,3 +104,8 @@ p a {
         font-size: 15px;
     }
 }
+
+.custom-toast {
+    top: 70px;
+    right: 0;
+}

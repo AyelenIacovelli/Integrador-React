@@ -7,6 +7,7 @@ import "../Signup/signup.css"
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
@@ -24,7 +25,7 @@ const Login = () => {
             console.log(user)
             setLoading(false)
             toast.success("Sesión iniciada")
-            navigate("/checkout")
+            navigate("/home")
         } catch (error) {
             setLoading(false)
             toast.error(error.message)
