@@ -184,6 +184,7 @@ header {
 
     .mobile__menu {
         display: block;
+        cursor: pointer;
     }
 
     .mobile__menu span i {

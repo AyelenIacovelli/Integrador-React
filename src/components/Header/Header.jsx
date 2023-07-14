@@ -59,6 +59,8 @@ const Header = () => {
 
 
 
+
+
   const toggleProfileActions = () => {
     // Cerrar el modal del carrito antes de cambiar el estado del perfil
     closeCartModal();
@@ -140,6 +142,7 @@ const Header = () => {
 
 
   const menuToggle = () => menuRef.current.classList.toggle('active__menu')
+  const menuClose = () => menuRef.current.classList.remove('active__menu')
 
   // const navigateToCart = () => {
   //   navigate("/carrito")
@@ -151,18 +154,31 @@ const Header = () => {
     navigate("/favoritos")
   }
 
+  const handleLinkClick = () => {
+    setProfileActionsOpen(false);
+  };
 
 
   // const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
 
   const favoriteProductsCount = favorites ? favorites.length : 0;
 
+  const menuCloseFavLink = () => {
+    menuClose();
+    navigateToFavs();
+  }
+
+  const menuCloseCartLink = () => {
+    menuClose();
+    toggleCartModal();
+  }
+
   return (
     <header className='header' ref={headerRef}>
 
 
       <div className='nav__wrapper'>
-        <div className='logo'>
+        <div className='logo' onClick={menuClose}>
           <Link to="/home" onClick={navigateToTop}>
             <img src={logo} alt='logo' />
           </Link>
@@ -180,16 +196,16 @@ const Header = () => {
           </motion.ul>
         </div>
         <div className='nav__icons'>
-          <span className='fav__icon' onClick={navigateToFavs}>
+          <span className='fav__icon' onClick={menuCloseFavLink}>
             <FaHeart />
             <span className='badge'>{favoriteProductsCount}</span>
           </span>
-          <span className='cart__icon' onClick={toggleCartModal}>
+          <span className='cart__icon' onClick={menuCloseCartLink}>
             <BsShop />
             <span className='badge'>{totalQuantity}</span>
           </span>
 
-          <div className='profile'>
+          <div className='profile' onClick={menuClose}>
             <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
             <div
               className={`profile__actions${isProfileActionsOpen ? ' show__profileActions' : ''
@@ -198,8 +214,8 @@ const Header = () => {
             >
               {
                 currentUser ? (<span onClick={logout}>Cerrar sesión</span>) : (<div className='user__action'>
-                  <Link to='/signup'>Registrate</Link>
-                  <Link to='/login'>Iniciar sesión</Link>
+                  <Link to='/signup' onClick={handleLinkClick}>Registrate</Link>
+                  <Link to='/login' onClick={handleLinkClick}>Iniciar sesión</Link>
                   {/* <Link to='/dashboard'>Dashboard</Link> */}
                 </div>)
               }
