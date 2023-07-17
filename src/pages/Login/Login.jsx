@@ -25,7 +25,7 @@ const Login = () => {
             console.log(user)
             setLoading(false)
             toast.success("Sesión iniciada")
-            navigate("/home")
+            navigate(-1)
         } catch (error) {
             setLoading(false)
             toast.error(error.message)

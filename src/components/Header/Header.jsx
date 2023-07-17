@@ -169,6 +169,7 @@ const Header = () => {
   const favoriteProductsCount = favorites ? favorites.length : 0;
 
   const menuCloseFavLink = () => {
+    navigateToTop();
     menuClose();
     navigateToFavs();
   }

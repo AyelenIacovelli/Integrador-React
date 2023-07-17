@@ -39,11 +39,11 @@ const Checkout = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('Campo requerido'),
     email: Yup.string().email('Correo electrónico inválido').required('Campo requerido'),
-    // phoneNumber: Yup.number().required('Campo requerido'),
-    // address: Yup.string().required('Campo requerido'),
-    // province: Yup.string().required('Campo requerido'),
-    // postalCode: Yup.number().required('Campo requerido'),
-    // locality: Yup.string().required('Campo requerido'),
+    phoneNumber: Yup.number().required('Campo requerido'),
+    address: Yup.string().required('Campo requerido'),
+    province: Yup.string().required('Campo requerido'),
+    postalCode: Yup.number().required('Campo requerido'),
+    locality: Yup.string().required('Campo requerido'),
   });
 
   const formik = useFormik({
@@ -124,6 +124,61 @@ const Checkout = () => {
               {errors.email && touched.email && <div className="invalid-feedback">{errors.email}</div>}
             </FormGroup>
             {/* Resto de los campos del formulario */}
+            <FormGroup className="form__group">
+              <input
+                type="number"
+                placeholder="Escribe tu número de celular"
+                name="phoneNumber"
+                value={values.phoneNumber}
+                onChange={handleChange}
+                className={errors.phoneNumber && touched.phoneNumber ? 'is-invalid' : ''}
+              />
+              {errors.phoneNumber && touched.phoneNumber && <div className="invalid-feedback">{errors.phoneNumber}</div>}
+            </FormGroup>
+            <FormGroup className="form__group">
+              <input
+                type="text"
+                placeholder="Escribe tu dirección"
+                name="address"
+                value={values.address}
+                onChange={handleChange}
+                className={errors.address && touched.address ? 'is-invalid' : ''}
+              />
+              {errors.address && touched.address && <div className="invalid-feedback">{errors.address}</div>}
+            </FormGroup>
+            <FormGroup className="form__group">
+              <input
+                type="text"
+                placeholder="Escribe tu Provincia"
+                name="province"
+                value={values.province}
+                onChange={handleChange}
+                className={errors.province && touched.province ? 'is-invalid' : ''}
+              />
+              {errors.province && touched.province && <div className="invalid-feedback">{errors.province}</div>}
+              </FormGroup>
+              <FormGroup className="form__group">
+              <input
+                type="number"
+                placeholder="Escribe tu Código Postal"
+                name="postalCode"
+                value={values.postalCode}
+                onChange={handleChange}
+                className={errors.postalCode && touched.postalCode ? 'is-invalid' : ''}
+              />
+              {errors.postalCode && touched.postalCode && <div className="invalid-feedback">{errors.postalCode}</div>}
+            </FormGroup>
+            <FormGroup className="form__group">
+              <input
+                type="text"
+                placeholder="Escribe tu Localidad"
+                name="locality"
+                value={values.locality}
+                onChange={handleChange}
+                className={errors.locality && touched.locality ? 'is-invalid' : ''}
+              />
+              {errors.locality && touched.locality && <div className="invalid-feedback">{errors.locality}</div>}
+            </FormGroup>
             <button className='check__btn' type="submit" disabled={!isValid || isSubmitting}>
               {isSubmitting ? 'Enviando...' : 'Comprar'}
             </button>
@@ -140,14 +195,6 @@ const Checkout = () => {
               <h6>Envío: <span>$0</span></h6>
               <p>¡Envío gratis!</p>
               <h4>Total a pagar: <span>${totalAmount}</span></h4>
-              {/* <button
-                    type="submit"
-                    className="buybtn auth__btn w-100"
-                    onClick={handleSubmit}
-                    disabled={!isValid || isSubmitting}
-                  >
-                    {isSubmitting ? 'Procesando...' : 'Realizar compra'}
-                  </button> */}
             </div>
           )}
         </div>
