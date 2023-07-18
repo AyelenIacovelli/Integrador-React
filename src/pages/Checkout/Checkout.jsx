@@ -22,7 +22,9 @@ const Checkout = () => {
     envio: 0,
     totalPagar: totalAmount,
   });
-  console.log(checkoutCartData)
+  console.log(checkoutCartData);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const resetCheckoutCart = () => {
     setCheckoutCartData({
@@ -43,9 +45,9 @@ const Checkout = () => {
     locality: Yup.string().required('Campo requerido'),
   });
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values/*, { setSubmitting }*/) => {
     try {
-      setSubmitting(true);
+      setIsSubmitting(true);
       // Guardar los datos del formulario en Firestore
       await setDoc(doc(db, 'checkout', 'data'), values);
       console.log('Datos del formulario guardados en Firestore');
@@ -72,7 +74,7 @@ const Checkout = () => {
     } catch (error) {
       console.error('Error al guardar la compra en Firestore:', error);
     } finally {
-      setSubmitting(false);
+      setIsSubmitting(false);
     }
   };
 
@@ -175,8 +177,8 @@ const Checkout = () => {
                   />
                   {errors.locality && touched.locality && <div className="invalid-feedback">{errors.locality}</div>}
                 </div>
-                <button className='check__btn' type="submit" disabled={!isValid}>
-                  Comprar
+                <button className='check__btn' type="submit" disabled={!isValid || isSubmitting}>
+                  {isSubmitting ? 'Comprando...' : 'Completar compra'}
                 </button>
               </Form>
             )}
