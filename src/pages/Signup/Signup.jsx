@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormGroup } from 'reactstrap';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
@@ -7,25 +7,34 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { setDoc, doc } from 'firebase/firestore';
 import { auth, db, storage } from '../../firebase.config';
 import { v4 as uuidv4 } from 'uuid';
+import * as Yup from 'yup';
 
 const Signup = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const signup = async (e) => {
-    e.preventDefault();
+  const validationSchema = Yup.object().shape({
+    username: Yup.string().required('El nombre de usuario es requerido'),
+    email: Yup.string().email('Ingrese un correo válido').required('El correo es requerido'),
+    password: Yup.string().min(6, 'La contraseña debe tener al menos 6 caracteres').required('La contraseña es requerida'),
+  });
+
+  const signup = async (values) => {
     setLoading(true);
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const isValid = await validationSchema.isValid(values);
+      if (!isValid) {
+        setLoading(false);
+        return;
+      }
+
+      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
       const user = userCredential.user;
 
       if (file) {
-        const storageRef = ref(storage, `images/${Date.now()}-${uuidv4()}-${username}`);
+        const storageRef = ref(storage, `images/${Date.now()}-${uuidv4()}-${values.username}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
 
         uploadTask.on(
@@ -40,36 +49,36 @@ const Signup = () => {
           async () => {
             const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
             await updateProfile(user, {
-              displayName: username,
+              displayName: values.username,
               photoURL: downloadURL,
             });
 
             await setDoc(doc(db, 'users', user.uid), {
               uid: user.uid,
-              displayName: username,
-              email,
+              displayName: values.username,
+              email: values.email,
               photoURL: downloadURL,
             });
 
             setLoading(false);
             toast.success('Cuenta creada');
-            navigate('/login');
+            navigate(-1);
           }
         );
       } else {
         await updateProfile(user, {
-          displayName: username,
+          displayName: values.username,
         });
 
         await setDoc(doc(db, 'users', user.uid), {
           uid: user.uid,
-          displayName: username,
-          email,
+          displayName: values.username,
+          email: values.email,
         });
 
         setLoading(false);
         toast.success('Cuenta creada');
-        navigate('/login');
+        navigate(-1);
       }
     } catch (error) {
       setLoading(false);
@@ -91,26 +100,40 @@ const Signup = () => {
       ) : (
         <div className="form__container">
           <h3>Registro</h3>
-          <Form className="auth__form" onSubmit={signup}>
-            <FormGroup className="form__group">
-              <input type="text" placeholder="Usuario" value={username} onChange={(e) => setUsername(e.target.value)} />
-            </FormGroup>
-            <FormGroup className="form__group">
-              <input type="email" placeholder="Ingrese su correo" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </FormGroup>
-            <FormGroup className="form__group">
-              <input type="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
-            </FormGroup>
-            <FormGroup className="form__group">
-              <input type="file" onChange={handleFileChange} />
-            </FormGroup>
-            <button type="submit" className="auth__btn">
-              Crear una cuenta
-            </button>
-            <p>
-              ¿Ya tienes cuenta? <Link to="/login">Login</Link>{' '}
-            </p>
-          </Form>
+          <Formik
+            initialValues={{
+              username: '',
+              email: '',
+              password: '',
+              file: null
+            }}
+            onSubmit={signup}
+            validationSchema={validationSchema}
+          >
+            <Form className="auth__form">
+              <div className="form__group">
+                <Field type="text" name="username" placeholder="Usuario" />
+                <ErrorMessage name="username" component="div" className="error-message" />
+              </div>
+              <div className="form__group">
+                <Field type="email" name="email" placeholder="Ingrese su correo" />
+                <ErrorMessage name="email" component="div" className="error-message" />
+              </div>
+              <div className="form__group">
+                <Field type="password" name="password" placeholder="Ingrese su contraseña" />
+                <ErrorMessage name="password" component="div" className="error-message" />
+              </div>
+              <div className="form__group">
+                <input type="file" onChange={handleFileChange} />
+              </div>
+              <button type="submit" className="auth__btn">
+                Crear una cuenta
+              </button>
+              <p>
+                ¿Ya tienes cuenta? <Link to="/login">Login</Link>
+              </p>
+            </Form>
+          </Formik>
         </div>
       )}
     </section>
