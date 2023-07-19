@@ -18,6 +18,8 @@ import hero from "../../assets/images/hero.jpg"
 
 import { motion, useAnimation } from 'framer-motion';
 
+import { BsArrowUpRight } from "react-icons/bs"
+
 // ITERAR LUEGO PARA HACER DINAMICAS LAS OFERTAS Y TENDENCIAS
 
 const Home = () => {
@@ -59,22 +61,13 @@ const Home = () => {
     // HELMET
     <Helmet title="Home">
       {/* HERO */}
-      <section className='hero__section' style={{ backgroundImage: `url(${hero})` }}>
-
-        <motion.h1
-          initial={{ x: -500 }} // Posición inicial fuera de la pantalla (izquierda)
-          animate={controlsX} // Controla la animación
-          transition={{ duration: 2 }} // Duración de la animación
-        >GREVERY STORE
-        </motion.h1>
-
-
-
-        <motion.div initial={{ y: 500 }} animate={controlsY} transition={{ duration: 2.5 }} className='hero__content'>
+      <section className='hero__section'>
+        <h1>GREVERY STORE</h1>
+        <div className='hero__content'>
           <h2>Tienda de regalos</h2>
-          <p>Conoce lo nuevo del {year}</p>
-          <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Tienda Online</Link></motion.button>
-        </motion.div>
+          <p className='hero__content-p'>Conoce lo nuevo del {year}</p>
+          <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda">Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
+        </div>
 
       </section>
       {/* SERVICIOS */}

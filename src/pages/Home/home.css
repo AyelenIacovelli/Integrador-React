@@ -5,15 +5,19 @@
     width: 100%;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('../../assets/images/hero.jpg');
 
 }
 
 .hero__section h1 {
     color: thistle;
     text-align: center;
-
     font-size: 50px;
     font-weight: 700;
+    margin-top: -35px;
 
 }
 
@@ -30,32 +34,33 @@
 
 .hero__content h2 {
     color: thistle;
-    font-size: 35px;
+    font-size: 18px;
     font-weight: 600;
-    /* margin: 20px 0; */
+    margin-top: -10px;
     text-align: center;
 }
 
-.hero__content p {
+.hero__content-p {
     color: tan;
     line-height: 28px;
-    font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
 }
 
-.hero__content .buy__btn {
+.hero__content-btn {
     border: none;
     outline: none;
-    padding: 8px 20px;
+    padding: 8px 12px;
     border-radius: 5px;
     background-color: thistle;
     color: black;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
+    display: flex;
+    gap: 5px;
 }
 
-.buy__btn a:hover {
+.hero__content-btn a:hover {
     color: wheat;
 }
 
@@ -154,20 +159,23 @@
     }
 
     .hero__section h1 {
-        font-size: 40px;
-    }
-
-    .hero__section h2 {
         font-size: 28px;
     }
 
-    .hero__content p {
-        font-size: 16px;
+    .hero__section h2 {
+        font-size: 17px;
+        margin-top: -5px;
     }
 
-    .hero__content .buy__btn {
-        padding: 7px 10px;
-        font-size: 16px;
+    .hero__content-p {
+        font-size: 14px;
+        margin-top: unset;
+    }
+
+    .hero__content-btn {
+        margin-top: -10px;
+        font-size: 14px;
+        padding: 4px 8px;
     }
 
 
@@ -196,6 +204,18 @@
     .hero__section {
         height: 50vh;
     }
+
+    .hero__content-p {
+        font-size: 12px;
+    }
+
+    .hero__content-btn {
+        margin-top: -10px;
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+
+
 
     /* TIMER */
 
@@ -226,7 +246,7 @@
     }
 
     .hero__section h1 {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .hero__section h2 {
@@ -234,12 +254,11 @@
     }
 
     .hero__content p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
-    .hero__content .buy__btn {
-        padding: 4px 7px;
-        font-size: 12px;
+    .hero__content-btn {
+        margin-top: -13px;
     }
 
     /* TENDENCIA */

@@ -97,7 +97,7 @@ const Header = () => {
 
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 450 || document.documentElement.scrollTop > 450) {
+      if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
         headerRef.current.classList.add('sticky__header')
       } else {
         headerRef.current.classList.remove('sticky__header')
@@ -219,7 +219,7 @@ const Header = () => {
               ref={profileActionsRef}
             >
               {
-                currentUser ? (<span onClick={handleSesion}>Cerrar sesión</span>) : (<div className='user__action'>
+                currentUser ? (<Link onClick={handleSesion}>Cerrar sesión</Link>) : (<div className='user__action'>
                   <Link to='/signup' onClick={handleLinkClick}>Registrate</Link>
                   <Link to='/login' onClick={handleLinkClick}>Iniciar sesión</Link>
                   {/* <Link to='/dashboard'>Dashboard</Link> */}

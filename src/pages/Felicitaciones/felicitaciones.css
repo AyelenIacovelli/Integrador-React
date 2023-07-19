@@ -1,0 +1,103 @@
+.congratulations__section {
+    display: flex;
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.congratulations__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 10px;
+}
+
+.congratulations__container ul li {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.congratulations__container-msg {
+    font-size: 20px;
+}
+
+.congratulations__container-p {
+    /* font-size: 18px; */
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.shop__btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* MEDIAQUERIES */
+
+@media only screen and (max-width:768px) {
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .congratulations__container-msg {
+        font-size: 16px;
+    }
+
+    .congratulations__container-p {
+        font-size: 16px;
+
+        margin-top: 15px;
+    }
+
+    .shop__btn {
+        padding: 5px 8px;
+
+        font-size: 14px;
+
+        margin-top: 15px;
+    }
+
+
+}
+
+@media only screen and (max-width:576px) {
+
+    .congratulations__section {
+        padding: 30px 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .congratulations__container-msg {
+        font-size: 14px;
+    }
+
+    .congratulations__container-p {
+        font-size: 14px;
+
+        margin-top: 11px;
+    }
+
+    .shop__btn {
+        padding: 4px 6px;
+
+        font-size: 12px;
+
+        margin-top: 11px;
+    }
+
+}

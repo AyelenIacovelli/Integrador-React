@@ -82,8 +82,18 @@ const Checkout = () => {
     <Helmet title="Checkout">
       <CommonSection title="Verificación" />
       <section className='checkout__section'>
+        <div className='buys__container'>
+          <div className="buys__container-cart">
+            <h3 className='billing__container-title'>Datos de la compra</h3>
+            <h6>Cantidad: <span>{totalQty} productos</span></h6>
+            <h6>Subtotal: <span>${totalAmount}</span></h6>
+            <h6>Envío: <span>$0</span></h6>
+            <p>¡Envío gratis!</p>
+            <h4>Total a pagar: <span>${totalAmount}</span></h4>
+          </div>
+        </div>
         <div className='billing__container'>
-          <h3>Completa el Formulario</h3>
+          <h3 className='billing__container-title'>Completa el Formulario</h3>
           <Formik
             initialValues={{
               name: '',
@@ -99,7 +109,7 @@ const Checkout = () => {
           >
             {({ values, touched, errors, handleChange, isValid }) => (
               <Form className="billing__container-form">
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="text"
                     placeholder="Escribe tu nombre"
@@ -110,7 +120,7 @@ const Checkout = () => {
                   />
                   {errors.name && touched.name && <div className="invalid-feedback">{errors.name}</div>}
                 </div>
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="email"
                     placeholder="Escribe tu email"
@@ -122,7 +132,7 @@ const Checkout = () => {
                   {errors.email && touched.email && <div className="invalid-feedback">{errors.email}</div>}
                 </div>
                 {/* Resto de los campos del formulario */}
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="number"
                     placeholder="Escribe tu número de celular"
@@ -133,7 +143,7 @@ const Checkout = () => {
                   />
                   {errors.phoneNumber && touched.phoneNumber && <div className="invalid-feedback">{errors.phoneNumber}</div>}
                 </div>
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="text"
                     placeholder="Escribe tu dirección"
@@ -144,7 +154,7 @@ const Checkout = () => {
                   />
                   {errors.address && touched.address && <div className="invalid-feedback">{errors.address}</div>}
                 </div>
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="text"
                     placeholder="Escribe tu Provincia"
@@ -155,7 +165,7 @@ const Checkout = () => {
                   />
                   {errors.province && touched.province && <div className="invalid-feedback">{errors.province}</div>}
                 </div>
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="number"
                     placeholder="Escribe tu Código Postal"
@@ -166,7 +176,7 @@ const Checkout = () => {
                   />
                   {errors.postalCode && touched.postalCode && <div className="invalid-feedback">{errors.postalCode}</div>}
                 </div>
-                <div className="form__group">
+                <div className="form__group-check">
                   <Field
                     type="text"
                     placeholder="Escribe tu Localidad"
@@ -183,16 +193,6 @@ const Checkout = () => {
               </Form>
             )}
           </Formik>
-        </div>
-        <div className='buys__container'>
-          <div className="buys__container-cart">
-            <h3>Datos de la compra</h3>
-            <h6>Cantidad: <span>{totalQty} productos</span></h6>
-            <h6>Subtotal: <span>${totalAmount}</span></h6>
-            <h6>Envío: <span>$0</span></h6>
-            <p>¡Envío gratis!</p>
-            <h4>Total a pagar: <span>${totalAmount}</span></h4>
-          </div>
         </div>
       </section>
     </Helmet>

@@ -5,6 +5,7 @@ import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs"
 const Footer = () => {
   return (
     <section className='footer__section'>
+      <h3>GREVERY STORE</h3>
       <div className='info'>
         <div className='contacto' >
           <h4>Contacto</h4>

@@ -4,6 +4,7 @@ header {
     padding: 0 8px;
     display: flex;
     justify-content: center;
+    background-color: bisque;
 }
 
 .nav__wrapper {
@@ -40,7 +41,6 @@ header {
 }
 
 .nav__item a {
-    font-weight: 500;
     cursor: pointer;
 }
 
@@ -98,18 +98,27 @@ header {
     right: -8px;
     width: 150px;
     z-index: 10;
-    padding: 15px;
+    padding: 12px 8px;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: lightskyblue;
     line-height: 30px;
     display: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .show__profileActions {
     display: block !important;
+}
+
+.show__profileActions a {
+    display: flex;
+    justify-content: center;
+}
+
+.show__profileActions a:hover {
+    color: brown;
 }
 
 .user__action {
@@ -117,6 +126,16 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
+}
+
+.user__action a {
+    color: black;
+    font-size: 16px;
+}
+
+.user__action a:hover {
+    color: tomato;
 }
 
 
@@ -126,7 +145,8 @@ header {
 }
 
 .nav__active {
-    font-weight: 600 !important;
+    color: brown;
+    font-weight: 600;
 }
 
 .sticky__header {
@@ -137,7 +157,7 @@ header {
     left: 0;
     z-index: 999;
     box-shadow: 3px 3px 8px -3px grey;
-    background-color: bisque;
+    background-color: burlywood;
 }
 
 

@@ -23,8 +23,8 @@ const ProductCard = ({ item }) => {
 
     const navigateToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      };
-    
+    };
+
 
     // const [isClicked, setIsClicked] = useState(false);
 
@@ -55,29 +55,29 @@ const ProductCard = ({ item }) => {
     const showOfferFire = isPriceSale ? 'show' : '';
 
     return (
-        
-            <div className={`product__item ${isFavorite ? 'favorite' : ''}`}>
-                <div className='product__img' onClick={navigateToTop}>
-                    {isPriceSale && <span className={`offer-fire ${showOfferFire}`}><AiTwotoneFire /></span>}
-                    <Link to={`/tienda/${item.id}`}><motion.img whileHover={{ scale: 0.9 }} src={item.img} alt="producto" /></Link>
-                </div>
 
-                <div className='product__info'>
-                    <h3 className='product__name'><Link to={`/tienda/${item.id}`}>{item.title}</Link></h3>
-                    <span className={`favs ${isFavorite ? 'clicked' : ''}`}>
-                        <FaHeart className={`favs__icon ${isFavorite ? 'clicked' : ''}`} onClick={handleIconClick} />
-                    </span>
-                    <span>{item.category}</span>
-                </div>
-                <div className='product__card-bottom'>
-                    <span className="price">
-                        <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${item.price}</span>
-                        {isPriceSale && <span className="price-sale">${item.pricesale}</span>}
-                    </span>
-                    <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}><FaPlus className='more_icon' /></motion.span>
-                </div>
+        <div className={`product__item ${isFavorite ? 'favorite' : ''}`}>
+            <div className='product__img' onClick={navigateToTop}>
+                {isPriceSale && <span className={`offer-fire ${showOfferFire}`}><AiTwotoneFire /></span>}
+                <Link to={`/tienda/${item.id}`}><motion.img whileHover={{ scale: 0.9 }} src={item.img} alt="producto" /></Link>
             </div>
-        
+
+            <div className='product__info'>
+                <h3 className='product__name'><Link to={`/tienda/${item.id}`}>{item.title}</Link></h3>
+                <motion.span whileTap={{ scale: 1.2 }} className={`favs ${isFavorite ? 'clicked' : ''}`}>
+                    <FaHeart className={`favs__icon ${isFavorite ? 'clicked' : ''}`} onClick={handleIconClick} />
+                </motion.span>
+                <span>{item.category}</span>
+            </div>
+            <div className='product__card-bottom'>
+                <span className="price">
+                    <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${item.price}</span>
+                    {isPriceSale && <span className="price-sale">${item.pricesale}</span>}
+                </span>
+                <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}><FaPlus className='more_icon' /></motion.span>
+            </div>
+        </div>
+
     )
 }
 
