@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Tr } from '../Carrito/Carrito';
 import { clearCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
+import {motion} from "framer-motion";
 
 import { FaTrashAlt } from "react-icons/fa"
 // import "./modalCart.css";
@@ -46,11 +47,11 @@ const ModalCart = ({ onCloseModal }) => {
             </button>
             <span className='subtotal'>Subtotal: ${totalAmount}</span>
             <div className='checkout'>
-              <button className="checkout-button" onClick={handleCloseModal}>
+            <motion.button whileTap={{ scale: 1.2 }} className="checkout-button" onClick={handleCloseModal}>
                 <Link to="/checkout" className="checkout-link">
                   Completar compra
                 </Link>
-              </button>
+              </motion.button>
             </div>
 
           </div>

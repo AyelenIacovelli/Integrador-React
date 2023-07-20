@@ -12,9 +12,7 @@ import Services from '../../services/Services'
 import ProductsList from '../../components/UI/products/ProductsList'
 import Clock from "../../components/UI/clock/Clock"
 
-import oferta from "../../assets/images/oferta.png"
-
-import hero from "../../assets/images/hero.jpg"
+import ofertaok from "../../assets/images/ofertaok.png"
 
 import { motion, useAnimation } from 'framer-motion';
 
@@ -94,12 +92,11 @@ const Home = () => {
             <h4>Ofertas por tiempo limitado</h4>
 
             <Clock />
-            <motion.button whileTap={{ scale: 1.2 }} className='buy__btn clock__btn'>
-              <Link to="/tienda" onClick={navigateToTop}>Visita nuestra Tienda</Link>
-            </motion.button>
+            <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda" onClick={navigateToTop}>Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
+            
           </div>
           <div className='counter__img'>
-            <img src={oferta} alt="foto sale" />
+            <img src={ofertaok} alt="foto sale" />
           </div>
         </div>
 

@@ -3,8 +3,9 @@ import "../Header/header.css"
 import userIcon from "../../assets/images/user-icon.png"
 import logo from "../../assets/images/logo.png"
 
-import { BsShop } from "react-icons/bs";
-import { FaHeart, FaBars } from "react-icons/fa"
+// import { BsShop } from "react-icons/bs";
+import { FaHeart, FaBars, FaShoppingCart } from "react-icons/fa"
+// import {BsCartFill} from "react-icons/bs"
 
 import { toast } from "react-toastify"
 
@@ -207,9 +208,25 @@ const Header = () => {
             <span className='badge'>{favoriteProductsCount}</span>
           </span>
           <span className='cart__icon' onClick={menuCloseCartLink}>
-            <BsShop />
+            <FaShoppingCart />
             <span className='badge'>{totalQuantity}</span>
+
+
+            <Modal
+        isOpen={isCartModalOpen}
+        onRequestClose={toggleCartModal}
+        contentLabel='Carrito de compras'
+        className="modal-cart-content"
+      >
+        <ModalCart onCloseModal={closeCartModal} />
+      </Modal>
+
+      
           </span>
+
+
+
+          
 
           <div className='profile' onClick={menuClose}>
             <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
@@ -226,6 +243,8 @@ const Header = () => {
                 </div>)
               }
             </div>
+
+            
           </div>
 
           <div className='mobile__menu'>
@@ -242,14 +261,7 @@ const Header = () => {
 
 
 
-      <Modal
-        isOpen={isCartModalOpen}
-        onRequestClose={toggleCartModal}
-        contentLabel='Carrito de compras'
-        className="modal-cart-content"
-      >
-        <ModalCart onCloseModal={closeCartModal} />
-      </Modal>
+      
 
 
 

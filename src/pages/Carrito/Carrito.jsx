@@ -6,6 +6,7 @@ import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa"
 import { deleteItem, incrementQuantity, decrementQuantity, clearCart } from "../../redux/slices/cartSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
+import {motion} from "framer-motion";
 
 
 
@@ -71,9 +72,9 @@ const Carrito = () => {
               <button className="clear-cart-button" onClick={handleClearCart} disabled={isCartEmpty}>
                 Borrar carrito <FaTrashAlt />
               </button>
-              <button className='buy__btn'><Link to="/tienda">Continuar eligiendo productos</Link></button>
+              <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Continuar eligiendo productos</Link></motion.button>
               <div className='checkout-btn'>
-                <button className='checkout-button' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Completar compra</Link></button>
+              <motion.button whileTap={{ scale: 1.2 }} className='checkout-button' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Completar compra</Link></motion.button>
               </div>
 
             </div>
@@ -118,7 +119,7 @@ export const Tr = ({ item }) => {
         <span>{item.title}</span>
       </div>
       <div className='td-bottom'>
-        <span>${totalPrice}</span>
+        <span className='td-bottom-span'>${totalPrice}</span>
         <div className='btns__quantity'>
           <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'>
             <FaMinus className='btn__quantity-icon' />
