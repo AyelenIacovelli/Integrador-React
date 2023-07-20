@@ -60,10 +60,13 @@ const Home = () => {
     <Helmet title="Home">
       {/* HERO */}
       <section className='hero__section'>
+        <div className='hero__section-titles'>
         <h1>GREVERY STORE</h1>
+        <h2>Tienda de regalos</h2>
+        </div>
         <div className='hero__content'>
-          <h2>Tienda de regalos</h2>
-          <p className='hero__content-p'>Conoce lo nuevo del {year}</p>
+          {/* <h2>Tienda de regalos</h2> */}
+          <p className='hero__content-p'>¡Conoce lo nuevo del {year}!</p>
           <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda">Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
         </div>
 
