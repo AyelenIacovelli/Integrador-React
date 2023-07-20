@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('../../assets/images/hero.jpg');
+    background-image: url('../../assets/images/guardianes.jpg');
 
 }
 
@@ -97,11 +97,14 @@
 /* TIMER */
 
 .timer__count {
-    background-color: skyblue;
     padding: 20px 16px;
     width: 100%;
     display: flex;
     justify-content: center;
+    background-image: url('../../assets/images/bg1.jpg');
+    background-size: contain;
+    background-position: center;
+    position: relative;
 
 }
 
@@ -110,6 +113,20 @@
     max-width: 1200px;
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 2;
+
+}
+
+.timer__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.500);
+    background-blend-mode: multiply;
+    z-index: 1;
 }
 
 .clock__down {
@@ -122,6 +139,7 @@
 
 .clock__down h4 {
     font-size: 20px;
+    color: white;
 }
 
 .clock__btn {
@@ -277,24 +295,32 @@
 
     .timer__content {
         flex-direction: column;
-        row-gap: 11px;
+        row-gap: 26px;
+    }
+
+    .timer__count {
+        padding: 37px 16px;
     }
 
     .clock__down {
         row-gap: 20px;
+        align-items: center;
+        width: 100%;
     }
 
     .clock__down h4 {
         text-align: center;
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .clock__btn {
         padding: 7px 10px;
         font-size: 15px;
+        margin-top: unset;
     }
 
     .counter__img {
         justify-content: center;
+        width: 100%;
     }
 }

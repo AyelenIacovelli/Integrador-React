@@ -1,53 +1,81 @@
-.services {
+.services__section {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    gap: 25px;
-    padding: 30px 10px;
-    background-color: black;
+    align-items: center;
 
+    padding: 80px 0;
+    background-image: url('../assets/images/bg1.jpg');
+    background-position: center;
+    background-size: contain;
+    position: relative;
+}
+
+.services__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+.services__container {
+    width: 100%;
+    max-width: 1200px;
+    gap: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .service__item {
 
     display: flex;
-    align-items: center;
+    padding-top: 5px;
     justify-content: center;
     column-gap: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
-    background-color: brown;
-    width: 294px;
-    height: 80px;
-}
+    width: 318px;
+    height: 177px;
+    background-size: cover;
+    background-position: center;
 
-.service__item-img {
-    width: 70px;
 }
 
 .service__item-title {
-    color: black;
-    font-size: 1.1rem;
-    font-weight: 600;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 1);
 }
 
 /* MEDIAQUERIES */
 @media only screen and (max-width:992px) {
 
-    .services {
-        padding: 20px 7px;
+    .services__section {
+        padding: 68px 0;
+
+    }
+
+    .services__container {
+        gap: unset;
     }
 
     .service__item {
-        width: 210px;
-        height: 62px;
+        width: 239px;
+        height: 135px;
     }
 
 
-    .service__item-img {
-        width: 55px;
-    }
+
 
     .service__item-title {
         font-size: 14px;
@@ -57,42 +85,42 @@
 
 @media only screen and (max-width:768px) {
 
-    .services {
-        padding: 17px 2px;
-        gap: 15px;
+    .services__section {
+        padding: 45px 0;
     }
 
     .service__item {
-        width: 170px;
-        height: 53px;
+        width: 181px;
+        height: 103px;
     }
 
-    .service__item-img {
-        width: 48px;
-    }
+
 
     .service__item-title {
-        font-size: 12px;
+        font-size: 11px;
+        font-weight: 700;
     }
 
 }
 
 @media only screen and (max-width:576px) {
 
-    .services {
+    .services__section {
+        padding: 30px 0;
+    }
+
+    .services__container {
         flex-direction: column;
+        gap: 10px;
     }
 
     .service__item {
-        width: 220px
-    }
-
-    .service__item-img {
-        width: 55px;
+        width: 265px;
+        height: 135px;
     }
 
     .service__item-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
 }

@@ -5,10 +5,12 @@
 
 .clock__wrapper h2 {
     font-size: 25px;
+    color: white;
 }
 
 .clock__wrapper h5 {
     font-size: 14px;
+    color: white;
 }
 
 .clock__data {
@@ -28,6 +30,7 @@
 
 .clock__wrapper span {
     margin-top: 3px;
+    color: white;
 }
 
 

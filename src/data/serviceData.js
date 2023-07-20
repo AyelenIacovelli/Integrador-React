@@ -1,16 +1,19 @@
-import enviosImg from "../assets/images/envios.png"
+
+import envios2Img from "../assets/images/mario4.jpg"
+import consultas from "../assets/images/mario3.jpg"
+import pago from "../assets/images/mario2.jpg"
 
 const serviceData = [
     {
-        icon: enviosImg,
+        backgroundImage: `url(${envios2Img})`,
         title: "Envíos gratis",
     },
     {
-        icon: "",
+        backgroundImage: `url(${pago})`,
         title: "Pago seguro",
     },
     {
-        icon: "",
+        backgroundImage: `url(${consultas})`,
         title: "Respondemos sus consultas",
     },
 ]

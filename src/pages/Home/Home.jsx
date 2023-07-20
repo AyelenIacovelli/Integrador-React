@@ -86,14 +86,15 @@ const Home = () => {
       </section>
       {/* TIMER */}
       <section className='timer__count'>
+        <div className="timer__overlay"></div>
         <div className='timer__content'>
           <div className='clock__down'>
 
             <h4>Ofertas por tiempo limitado</h4>
 
             <Clock />
-            <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda" onClick={navigateToTop}>Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
-            
+            <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn clock__btn'><Link to="/tienda" onClick={navigateToTop}>Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
+
           </div>
           <div className='counter__img'>
             <img src={ofertaok} alt="foto sale" />
