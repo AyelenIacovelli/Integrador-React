@@ -1,12 +1,26 @@
 .checkout__section {
     display: flex;
     width: 100%;
-    gap: 20px;
+
     padding: 20px 50px;
     justify-content: center;
-    max-width: 1200px;
-    background-color: burlywood;
     align-items: center;
+    background-image: url(../../assets/images/bg1.jpg);
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+.checkout__container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.checkout-title {
+    padding: 50px 0;
 }
 
 .billing__container,
@@ -82,13 +96,17 @@ h6 span {
     margin-top: 8px;
 }
 
+.form__group-check {
+    display: flex;
+    flex-direction: column;
+}
+
 .form__group-check .is-invalid {
     border-color: red;
 }
 
 .form__group-check .invalid-feedback {
     color: red;
-    margin-top: 0.5rem;
 }
 
 /* MEDIAQUERIES */
@@ -97,6 +115,10 @@ h6 span {
 
     .checkout__section {
         padding: 18px 30px;
+    }
+
+    .checkout__container {
+        gap: 10px;
     }
 
     .form__group-check input {
@@ -132,12 +154,22 @@ h6 span {
 @media only screen and (max-width:576px) {
 
     .checkout__section {
+        height: unset;
+        padding: 70px 0;
+    }
+
+    .checkout__container {
         flex-direction: column;
         align-items: center;
     }
 
+    .checkout-title {
+        padding: 30px 0;
+    }
+
     .billing__container-title {
         font-size: 20px;
+
     }
 
     .billing__container,

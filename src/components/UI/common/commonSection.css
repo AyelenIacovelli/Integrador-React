@@ -1,16 +1,47 @@
 .common__section {
     background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562)),
-        url("../../../assets/images/hero.jpg") no-repeat center center;
+        url("../../../assets/images/bar.jpg") no-repeat center center;
     background-size: cover;
     padding: 100px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -70px;
-    height: 50vh;
+    height: 70vh;
 }
 
 .common__section h1 {
     color: white;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* MEDIAQUERIES */
+
+@media only screen and (max-width:992px) {
+
+    .common__section {
+        height: 60vh;
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+
+    .common__section {
+        height: 50vh;
+    }
+
+    .common__section h1 {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width:576px) {
+
+    .common__section {
+        height: 40vh;
+    }
+
 }

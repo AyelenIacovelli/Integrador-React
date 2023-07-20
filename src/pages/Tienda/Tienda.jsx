@@ -7,6 +7,8 @@ import "../Tienda/tienda.css"
 import { products } from "../../data/Products"
 import ProductsList from "../../components/UI/products/ProductsList"
 
+
+
 const Tienda = () => {
 
   const [productsData, setProductsData] = useState(products)
