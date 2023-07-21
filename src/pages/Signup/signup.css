@@ -117,6 +117,10 @@ p a {
     .auth__btn {
         font-size: 15px;
     }
+
+    .error-message {
+        font-size: 12px;
+    }
 }
 
 .custom-toast {
