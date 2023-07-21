@@ -89,11 +89,20 @@ const Header = () => {
     })
   }
 
-  useEffect(() => {
-    stickyHeaderFunc()
+  const menuCloseOnScroll = () => {
+    menuClose();
+  };
 
-    return () => window.removeEventListener('scroll', stickyHeaderFunc)
-  })
+  useEffect(() => {
+    stickyHeaderFunc();
+
+    window.addEventListener('scroll', menuCloseOnScroll);
+
+    return () => {
+      window.removeEventListener('scroll', menuCloseOnScroll);
+      window.removeEventListener('scroll', stickyHeaderFunc);
+    };
+  });
 
   useEffect(() => {
     const handleClickOutside = (event) => {
