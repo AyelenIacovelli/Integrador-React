@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import "./home.css"
-
 import { Link } from "react-router-dom"
-
-
-
-
 import { products } from "../../data/Products"
 import Helmet from '../../components/Helmet/Helmet'
 import Services from '../../services/Services'
 import ProductsList from '../../components/UI/products/ProductsList'
 import Clock from "../../components/UI/clock/Clock"
-
 import ofertaok from "../../assets/images/ofertaok.png"
-
 import { motion, useAnimation } from 'framer-motion';
-
 import { BsArrowUpRight } from "react-icons/bs"
-
-// ITERAR LUEGO PARA HACER DINAMICAS LAS OFERTAS Y TENDENCIAS
 
 const Home = () => {
 
@@ -65,11 +55,8 @@ const Home = () => {
           <h2>Tienda de regalos</h2>
         </div>
         <div className='hero__content'>
-          {/* <h2>Tienda de regalos</h2> */}
           <p className='hero__content-p'>¡Conoce lo nuevo del {year}!</p>
-          {/* <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda">Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button> */}
         </div>
-
       </section>
       {/* SERVICIOS */}
       <Services />
@@ -92,18 +79,14 @@ const Home = () => {
         <div className="timer__overlay"></div>
         <div className='timer__content'>
           <div className='clock__down'>
-
             <h4 className='clock__down-title'>Ofertas por tiempo limitado</h4>
-
             <Clock />
             <motion.button whileTap={{ scale: 1.2 }} className='clock__btn'><Link to="/tienda" onClick={navigateToTop}>Tienda Online<BsArrowUpRight className='clock__btn-icon' /></Link></motion.button>
-
           </div>
           <div className='counter__img'>
             <img src={ofertaok} alt="foto sale" />
           </div>
         </div>
-
       </section>
     </Helmet>
   )

@@ -3,19 +3,11 @@ import { motion } from "framer-motion"
 import "../products/productCard.css"
 import { FaPlus } from "react-icons/fa"
 import { AiTwotoneFire } from "react-icons/ai"
-
-// import "../../../data/Recomended"
 import "../../../data/Products"
-
 import { Link } from 'react-router-dom'
-
 import { toast } from "react-toastify"
-
 import { useDispatch, useSelector } from "react-redux"
 import { addItem } from '../../../redux/slices/cartSlice'
-
-
-
 import { toggleFavorite } from '../../../redux/slices/favsSlice'
 import { FaHeart } from "react-icons/fa"
 
@@ -25,14 +17,9 @@ const ProductCard = ({ item }) => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-
-    // const [isClicked, setIsClicked] = useState(false);
-
     const dispatch = useDispatch()
 
-    // const cart = useSelector((state) => state.cart);
     const favorites = useSelector((state) => state.favs.favorites);
-
     const isFavorite = favorites.includes(item.id);
 
     const addToCart = () => {
@@ -55,7 +42,6 @@ const ProductCard = ({ item }) => {
     const showOfferFire = isPriceSale ? 'show' : '';
 
     return (
-
         <div className={`product__item ${isFavorite ? 'favorite' : ''}`}>
             <div className='product__img' onClick={navigateToTop}>
                 {isPriceSale && <span className={`offer-fire ${showOfferFire}`}><AiTwotoneFire /></span>}
@@ -69,6 +55,7 @@ const ProductCard = ({ item }) => {
                 </motion.span>
                 <span>{item.category}</span>
             </div>
+
             <div className='product__card-bottom'>
                 <span className="price">
                     <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${item.price}</span>
@@ -77,7 +64,6 @@ const ProductCard = ({ item }) => {
                 <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}><FaPlus className='more_icon' /></motion.span>
             </div>
         </div>
-
     )
 }
 

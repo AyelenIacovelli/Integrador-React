@@ -2,32 +2,16 @@ import React, { useRef, useEffect, useState } from 'react'
 import "../Header/header.css"
 import userIcon from "../../assets/images/user-icon.png"
 import logo2 from "../../assets/images/logo2.png"
-
-// import { BsShop } from "react-icons/bs";
 import { FaHeart, FaBars, FaShoppingCart } from "react-icons/fa"
-// import {BsCartFill} from "react-icons/bs"
-
 import { toast } from "react-toastify"
-
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import { useSelector } from "react-redux"
 import { signOut } from 'firebase/auth';
 import { auth } from "../../firebase.config"
-
 import useAuth from "../../custom-hooks/useAuth"
-
-// import { selectFavoriteProductsCount } from './selectors';
-
-
-
-
 import Modal from "react-modal"
-// import Carrito from '../../pages/Carrito/Carrito';
 import ModalCart from '../../pages/Carrito/ModalCart';
-
-
-
 
 const nav__links = [
   {
@@ -58,10 +42,6 @@ const Header = () => {
     setCartModalOpen(!isCartModalOpen);
   };
 
-
-
-
-
   const toggleProfileActions = () => {
     // Cerrar el modal del carrito antes de cambiar el estado del perfil
     closeCartModal();
@@ -72,19 +52,13 @@ const Header = () => {
     setProfileActionsOpen(false);
   };
 
-  // const cartItems = useSelector((state) => state.cart.cartItems);
   const closeCartModal = () => {
     setCartModalOpen(false);
   };
 
-
-
-
-  // const favorites = useSelector((state) => state.favs.favorites);
   const favorites = useSelector((state) => state.favs.favorites);
 
   const headerRef = useRef(null)
-  // const totalQuantity = useSelector(state => state.cart.totalQuantity)
   const profileActionsRef = useRef(null)
   const profileImageRef = useRef(null);
 
@@ -121,8 +95,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', stickyHeaderFunc)
   })
 
-
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -145,12 +117,6 @@ const Header = () => {
   const menuToggle = () => menuRef.current.classList.toggle('active__menu')
   const menuClose = () => menuRef.current.classList.remove('active__menu')
 
-  // const navigateToCart = () => {
-  //   navigate("/carrito")
-  // }
-
-
-
   const navigateToFavs = () => {
     navigate("/favoritos")
   }
@@ -163,9 +129,6 @@ const Header = () => {
     logout();
     handleLinkClick();
   }
-
-
-  // const toggleProfileActions = () => profileActionsRef.current.classList.toggle('show__profileActions')
 
   const favoriteProductsCount = favorites ? favorites.length : 0;
 
@@ -182,14 +145,11 @@ const Header = () => {
 
   return (
     <header className='header' ref={headerRef}>
-
-
       <div className='nav__wrapper'>
         <div className='logo' onClick={menuClose}>
           <Link to="/home" onClick={navigateToTop}>
             <img src={logo2} alt='logo' />
           </Link>
-          {/* <h1>Grevery Store</h1> */}
         </div>
         <div className='navigation' ref={menuRef} onClick={menuToggle}>
           <motion.ul className='menu'>
@@ -211,7 +171,6 @@ const Header = () => {
             <FaShoppingCart />
             <span className='badge'>{totalQuantity}</span>
 
-
             <Modal
               isOpen={isCartModalOpen}
               onRequestClose={toggleCartModal}
@@ -221,12 +180,7 @@ const Header = () => {
               <ModalCart onCloseModal={closeCartModal} />
             </Modal>
 
-
           </span>
-
-
-
-
 
           <div className='profile' onClick={menuClose}>
             <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
@@ -243,30 +197,15 @@ const Header = () => {
                 </div>)
               }
             </div>
-
-
           </div>
-
           <div className='mobile__menu'>
             <span onClick={menuToggle}>
               <FaBars />
             </span>
           </div>
         </div>
-
       </div>
-
-
-
-
-
-
-
-
-
-
     </header>
-
   )
 }
 

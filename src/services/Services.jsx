@@ -1,9 +1,6 @@
 import React from 'react'
-
 import "./services.css"
 import { motion } from "framer-motion"
-
-
 import serviceData from '../data/serviceData'
 
 const Services = () => {
@@ -23,8 +20,6 @@ const Services = () => {
                         </div>
                     ))
                 }
-
-
 
             </div>
         </section>

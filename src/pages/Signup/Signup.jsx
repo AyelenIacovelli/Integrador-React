@@ -95,53 +95,53 @@ const Signup = () => {
 
   return (
     <Helmet title="Registrarse">
-            <CommonSection title="Registrarse" />
-    <section className="signup__section">
-      
-      {loading ? (
-        <div>
-          <h5>Cargando...</h5>
-        </div>
-      ) : (
-        <div className="form__container">
-          <h3 className='login-title'>Create una cuenta</h3>
-          <Formik
-            initialValues={{
-              username: '',
-              email: '',
-              password: '',
-              file: null
-            }}
-            onSubmit={signup}
-            validationSchema={validationSchema}
-          >
-            <Form className="auth__form">
-              <div className="form__group">
-                <Field type="text" name="username" placeholder="Usuario" />
-                <ErrorMessage name="username" component="div" className="error-message" />
-              </div>
-              <div className="form__group">
-                <Field type="email" name="email" placeholder="Ingrese su correo" />
-                <ErrorMessage name="email" component="div" className="error-message" />
-              </div>
-              <div className="form__group">
-                <Field type="password" name="password" placeholder="Ingrese su contraseña" />
-                <ErrorMessage name="password" component="div" className="error-message" />
-              </div>
-              <div className="form__group">
-                <input type="file" onChange={handleFileChange} />
-              </div>
-              <button type="submit" className="auth__btn">
-                Crear una cuenta
-              </button>
-              <p>
-                ¿Ya tienes cuenta? <Link to="/login">Login</Link>
-              </p>
-            </Form>
-          </Formik>
-        </div>
-      )}
-    </section>
+      <CommonSection title="Registrarse" />
+      <section className="signup__section">
+
+        {loading ? (
+          <div>
+            <h5>Cargando...</h5>
+          </div>
+        ) : (
+          <div className="form__container">
+            <h3 className='login-title'>Create una cuenta</h3>
+            <Formik
+              initialValues={{
+                username: '',
+                email: '',
+                password: '',
+                file: null
+              }}
+              onSubmit={signup}
+              validationSchema={validationSchema}
+            >
+              <Form className="auth__form">
+                <div className="form__group">
+                  <Field type="text" name="username" placeholder="Usuario" />
+                  <ErrorMessage name="username" component="div" className="error-message" />
+                </div>
+                <div className="form__group">
+                  <Field type="email" name="email" placeholder="Ingrese su correo" />
+                  <ErrorMessage name="email" component="div" className="error-message" />
+                </div>
+                <div className="form__group">
+                  <Field type="password" name="password" placeholder="Ingrese su contraseña" />
+                  <ErrorMessage name="password" component="div" className="error-message" />
+                </div>
+                <div className="form__group">
+                  <input type="file" onChange={handleFileChange} />
+                </div>
+                <button type="submit" className="auth__btn">
+                  Crear una cuenta
+                </button>
+                <p>
+                  ¿Ya tienes cuenta? <Link to="/login">Login</Link>
+                </p>
+              </Form>
+            </Formik>
+          </div>
+        )}
+      </section>
     </Helmet>
   );
 };

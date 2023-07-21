@@ -11,8 +11,6 @@
     justify-content: center;
     background-image: url('../../assets/images/guardianes.jpg');
     align-items: center;
-    /* padding: 70px 0; */
-
 }
 
 .hero__section-titles {
@@ -30,10 +28,8 @@
     text-align: center;
     font-size: 60px;
     font-weight: 900;
-    /* margin-top: -35px; */
     letter-spacing: 3px;
     text-shadow: 4px -3px 4px rgba(0, 0, 0, 0.67);
-
 }
 
 .hero__section-titles h2 {
@@ -58,20 +54,9 @@
     justify-content: flex-end;
     align-content: center;
     padding-bottom: 30px;
-    /* margin-top: 39%; */
     gap: 10px;
     height: 50%;
-    /* margin-left: 65px; */
-    /* padding-top: 40px; */
 }
-
-/* .hero__content h1 {
-    color: thistle;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: -10px;
-    text-align: center;
-} */
 
 .hero__content-p {
     color: tan;
@@ -79,23 +64,6 @@
     font-weight: 700;
     text-shadow: -4px -3px 2px rgba(0, 0, 0, 0.67);
 }
-
-/* .hero__content-btn {
-    border: none;
-    outline: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    background-color: thistle;
-    color: black;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    gap: 5px;
-}
-
-.hero__content-btn a:hover {
-    color: wheat;
-} */
 
 /* TENDENCIA */
 
@@ -137,7 +105,6 @@
     background-size: contain;
     background-position: center;
     position: relative;
-
 }
 
 .timer__content {
@@ -147,7 +114,6 @@
     width: 100%;
     position: relative;
     z-index: 2;
-
 }
 
 .timer__overlay {
@@ -186,10 +152,6 @@
     font-weight: 700;
 }
 
-/* .clock__btn:hover {
-    background-color: thistle;
-} */
-
 .clock__btn a:hover {
     color: grey;
 }
@@ -209,13 +171,11 @@
 }
 
 
-
 /* MEDIAQUERIES */
+
 @media only screen and (max-width:992px) {
 
-
     .hero__section {
-        /* background-size: contain; */
         height: 70vh;
     }
 
@@ -233,14 +193,12 @@
 
     .hero__content-p {
         font-size: 22px;
-
     }
 
     .hero__content-btn {
         font-size: 14px;
         padding: 6px 8px;
     }
-
 
     /* TIMER */
 
@@ -256,10 +214,6 @@
     .counter__img img {
         width: 300px;
     }
-
-
-
-
 }
 
 @media only screen and (max-width:768px) {
@@ -286,12 +240,9 @@
     }
 
     .hero__content-btn {
-
         font-size: 14px;
         padding: 4px 8px;
     }
-
-
 
     /* TIMER */
 
@@ -311,10 +262,6 @@
     .counter__img img {
         width: 250px;
     }
-
-
-
-
 }
 
 @media only screen and (max-width:576px) {
@@ -322,7 +269,11 @@
     /* HERO */
 
     .hero__section {
-        height: 31vh;
+        height: 47vh;
+    }
+
+    .logo img {
+        height: 90%;
     }
 
     .hero__section h1 {

@@ -13,8 +13,11 @@ const Clock = () => {
     const countDown = () => {
         const destination = new Date("Jul 24, 2023").getTime()
         interval = setInterval(() => {
+
             const now = new Date().getTime()
+
             const different = destination - now
+
             const days = Math.floor(different / (1000 * 60 * 60 * 24))
 
             const hours = Math.floor(different % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
@@ -42,7 +45,6 @@ const Clock = () => {
             <div className='clock__data'>
                 <div className='clock__data-days'>
                     <h2>{days}</h2>
-
                 </div>
                 <h5>Días</h5>
             </div>
@@ -50,7 +52,6 @@ const Clock = () => {
             <div className='clock__data'>
                 <div className='clock__data-hours'>
                     <h2>{hours}</h2>
-
                 </div>
                 <h5>Horas</h5>
             </div>
@@ -58,7 +59,6 @@ const Clock = () => {
             <div className='clock__data'>
                 <div className='clock__data-minutes'>
                     <h2>{minutes}</h2>
-
                 </div>
                 <h5>Minutos</h5>
             </div>
@@ -70,7 +70,6 @@ const Clock = () => {
                 <h5>Segundos</h5>
             </div>
         </div>
-
     )
 }
 

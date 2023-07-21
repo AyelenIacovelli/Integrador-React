@@ -4,7 +4,6 @@
     flex-direction: column;
     margin-top: -70px;
     align-items: center;
-
 }
 
 .thanks__container {
@@ -16,7 +15,6 @@
     height: 80vh;
     align-items: center;
     justify-content: center;
-
 }
 
 .thanks__container-title {
@@ -52,20 +50,11 @@
 }
 
 .congratulations__container-p {
-    /* font-size: 18px; */
     font-weight: 600;
     margin-top: 20px;
     color: black;
 }
 
-/* .shop__btn {
-    padding: 6px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 20px;
-} */
 
 /* MEDIAQUERIES */
 
@@ -81,29 +70,14 @@
 
     .congratulations__container-p {
         font-size: 16px;
-
         margin-top: 15px;
     }
-
-    .shop__btn {
-        padding: 5px 8px;
-
-        font-size: 14px;
-
-        margin-top: 15px;
-    }
-
-
 }
 
 @media only screen and (max-width:576px) {
 
-    .congratulations__section {
-        padding: 30px 10px;
-    }
-
-    h2 {
-        font-size: 20px;
+    .thanks__container-title {
+        font-size: 30px;
     }
 
     .congratulations__container-msg {
@@ -112,16 +86,10 @@
 
     .congratulations__container-p {
         font-size: 14px;
-
         margin-top: 11px;
     }
 
-    .shop__btn {
-        padding: 4px 6px;
-
-        font-size: 12px;
-
-        margin-top: 11px;
+    .thanks__container {
+        height: 60vh;
     }
-
 }

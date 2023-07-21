@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import CommonSection from '../../components/UI/common/CommonSection'
 import Helmet from "../../components/Helmet/Helmet"
-
 import { FaSearch } from "react-icons/fa"
 import "../Tienda/tienda.css"
 import { products } from "../../data/Products"
 import ProductsList from "../../components/UI/products/ProductsList"
-
-
 
 const Tienda = () => {
 
@@ -45,8 +42,6 @@ const Tienda = () => {
     setDisplayCount(8);
   }
 
-
-
   // MANEJADOR DE ORDEN
   const handleOrder = (e) => {
     const orderValue = e.target.value;
@@ -80,11 +75,8 @@ const Tienda = () => {
   return (
     <Helmet title="Tienda">
       <CommonSection title="Productos" />
-
       <section className='shop__section'>
         <div className='shop__container'>
-
-
           <div className='filter__widget'>
             <select onChange={handleFilter}>
               <option>Filtrar por categoría</option>
@@ -95,8 +87,6 @@ const Tienda = () => {
               <option value="Buzos">Buzos</option>
             </select>
           </div>
-
-
           <div className='filter__widget'>
             <select onChange={handleOrder}>
               <option>Ordenar por:</option>
@@ -104,17 +94,12 @@ const Tienda = () => {
               <option value="descending">Mayor precio</option>
             </select>
           </div>
-
-
           <div className='search__box'>
             <input type="text" placeholder='Buscar por título o personaje...' onChange={handleSearch} />
             <span><FaSearch /></span>
           </div>
-
-
         </div>
       </section>
-
 
       <section className="products__section">
         <div className="products__container">

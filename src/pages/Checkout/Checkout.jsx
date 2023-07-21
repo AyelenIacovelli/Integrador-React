@@ -45,7 +45,7 @@ const Checkout = () => {
     locality: Yup.string().required('Campo requerido'),
   });
 
-  const handleSubmit = async (values/*, { setSubmitting }*/) => {
+  const handleSubmit = async (values) => {
     try {
       setIsSubmitting(true);
       // Guardar los datos del formulario en Firestore
@@ -133,7 +133,6 @@ const Checkout = () => {
                     />
                     {errors.email && touched.email && <small className="invalid-feedback">{errors.email}</small>}
                   </div>
-                  {/* Resto de los campos del formulario */}
                   <div className="form__group-check">
                     <Field
                       type="number"

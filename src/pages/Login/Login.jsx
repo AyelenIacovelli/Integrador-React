@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Helmet from "../../components/Helmet/Helmet"
 import { Form, Field, Formik } from "formik"
 import { Link, useNavigate } from "react-router-dom"
-// import "../Login/login.css"
 import "../Signup/signup.css"
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase.config'
@@ -22,7 +21,7 @@ const Login = () => {
             console.log(user);
             setLoading(false);
             toast.success('Sesión iniciada');
-            navigate(-1);
+            navigate("/home");
         } catch (error) {
             setLoading(false);
             toast.error("Debe completar los campos");
@@ -40,7 +39,6 @@ const Login = () => {
                 ) : (
                     <div className="form__container">
                         <h3 className='login-title'>Login</h3>
-
                         <Formik
                             initialValues={{
                                 email: '',

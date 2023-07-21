@@ -8,8 +8,6 @@ import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion";
 
-
-
 const Carrito = () => {
 
   const cartItems = useSelector(state => state.cart.cartItems)
@@ -32,10 +30,7 @@ const Carrito = () => {
       <h2 className='carrito__title'>Tus productos</h2>
       <section className='cart__section'>
         <div className="cart__overlay"></div>
-
-
         <div className='cart__container'>
-
           <div className='cart__container-top'>
             {
               cartItems.length === 0 ? (<h2>No hay productos en el carrito</h2>) : (
@@ -51,17 +46,12 @@ const Carrito = () => {
                 </table>
               )
             }
-
           </div>
           <h6 className='subtotal'>
             Subtotal:
             <span> ${totalAmount}</span>
           </h6>
           <div className='cart__container-bottom'>
-
-
-
-
             <div className='cart__container-bottom-buttons'>
               <button className="clear-cart-button" onClick={handleClearCart} disabled={isCartEmpty}>
                 Borrar carrito <FaTrashAlt />
@@ -70,11 +60,9 @@ const Carrito = () => {
               <div className='checkout-btn'>
                 <motion.button whileTap={{ scale: 1.2 }} className='checkout-button' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Completar compra</Link></motion.button>
               </div>
-
             </div>
           </div>
         </div>
-
       </section>
     </Helmet>
   )
@@ -89,7 +77,6 @@ export const Tr = ({ item }) => {
     if (confirmed) {
       dispatch(deleteItem(item.id))
     }
-
   }
 
   const incrementProductQuantity = () => {
@@ -105,7 +92,6 @@ export const Tr = ({ item }) => {
   return (
     <tr className=''>
       <td className='td-container'>
-
         <div className='td-top'>
           <Link to={`/tienda/${item.id}`}>
             <img src={item.img} alt="img" />
@@ -125,8 +111,6 @@ export const Tr = ({ item }) => {
             <FaTrashAlt className='btn__trash' onClick={deleteProduct} />
           </div>
         </div>
-
-
       </td>
     </tr>
   )

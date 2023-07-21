@@ -1,7 +1,6 @@
 .checkout__section {
     display: flex;
     width: 100%;
-
     padding: 20px 50px;
     justify-content: center;
     align-items: center;
@@ -111,6 +110,7 @@ h6 span {
     color: red;
 }
 
+
 /* MEDIAQUERIES */
 
 @media only screen and (max-width:992px) {
@@ -126,7 +126,6 @@ h6 span {
     .form__group-check input {
         width: 320px;
     }
-
 }
 
 @media only screen and (max-width:768px) {
@@ -171,7 +170,6 @@ h6 span {
 
     .billing__container-title {
         font-size: 20px;
-
     }
 
     .billing__container,

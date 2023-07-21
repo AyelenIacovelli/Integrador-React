@@ -7,7 +7,6 @@
     background-image: url(../../assets/images/bg1.jpg);
     margin-bottom: 75px;
     position: relative;
-
 }
 
 .cart__overlay {
@@ -18,7 +17,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
-
 }
 
 .cart__container {
@@ -30,7 +28,6 @@
     align-items: center;
     gap: 20px;
     z-index: 2;
-
 }
 
 h2 {
@@ -49,7 +46,6 @@ h2 {
     width: 70%;
     display: flex;
     justify-content: center;
-
 }
 
 .tbody {
@@ -57,25 +53,6 @@ h2 {
     display: flex;
     flex-direction: column;
 }
-
-
-/* .buy__btn {
-    font-size: 16px;
-}
-
-.buy__btn[disabled] {
-    cursor: not-allowed;
-}
-
-.buy__btn a {
-    text-decoration: none;
-    padding: 3px 5px;
-}
-
-.buy__btn[disabled] a {
-    pointer-events: none;
-    color: inherit;
-} */
 
 .modal-cart-content {
     display: flex;
@@ -85,7 +62,6 @@ h2 {
     padding: 31px 26px;
     background-image: url(../../assets/images/bg1.jpg);
     gap: 15px;
-
 }
 
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
@@ -107,21 +83,11 @@ h2 {
     margin: 10px 0 5px 0;
 }
 
-/* .bordered {
-    display: flex;
-    align-items: center;
-    padding: 10px 5px;
-} */
-
 .td-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
 }
-
-
-
 
 .td-container .td-top,
 .td-container .td-bottom {
@@ -224,11 +190,6 @@ h6 {
     font-size: 15px;
 }
 
-/* h6 span {
-    margin-left: 2px;
-    padding-right: 10px;
-} */
-
 .cart__container-bottom-buttons {
     display: flex;
     flex-direction: column;
@@ -241,7 +202,6 @@ h6 {
 .cart__buttons {
     display: flex;
     flex-direction: column;
-    /* padding: 10px; */
     gap: 10px;
     align-items: center;
 }
@@ -280,8 +240,6 @@ h6 {
     background-color: bisque;
 }
 
-
-
 .clear-cart-button,
 .checkout-button {
     border-radius: 5px;
@@ -300,19 +258,6 @@ h6 {
     cursor: not-allowed;
 }
 
-/* .checkout-button a[disabled] {
-    cursor: not-allowed;
-}
-
-.checkout-button a:hover[disabled] {
-    cursor: not-allowed;
-}
-
-
-.checkout-btn a:hover {
-    color: grey;
-} */
-
 .subtotal {
     font-size: 22px;
     font-weight: 600;
@@ -325,6 +270,7 @@ h6 {
     color: white;
     font-size: 16px;
 }
+
 
 /* MEDIAQUERIES */
 
@@ -395,21 +341,14 @@ h6 {
     }
 
     .bordered {
-        /* display: flex; */
         align-items: stretch;
-        /* padding: 10px; */
     }
-
 
     .table td,
     span,
     .btn__quantity-icon {
         font-size: 8px;
     }
-
-    /* .bordered-title {
-        display: flex;
-    } */
 
     .table tr td img {
         width: 40px;
@@ -418,7 +357,6 @@ h6 {
 
     .btns__quantity .btn__quantity {
         padding: 2px;
-
     }
 
     .modal-cart-content {
@@ -439,11 +377,9 @@ h6 {
 
     .subtotal {
         font-size: 16px;
-
     }
 
     .checkout-button {
         font-size: 16px;
     }
-
 }

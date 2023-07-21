@@ -3,8 +3,6 @@
     justify-content: center;
     width: 100%;
     padding: 20px 50px;
-    height: calc(100vh - 400px);
-    
 }
 
 .form__container {
@@ -44,6 +42,7 @@
 
 .auth__form input[type='file'] {
     padding: unset;
+    color: white;
 }
 
 .auth__btn {
@@ -69,8 +68,8 @@ p a {
     color: red;
 }
 
-/* MEDIAQUERIES */
 
+/* MEDIAQUERIES */
 
 @media only screen and (max-width:768px) {
 
@@ -86,7 +85,6 @@ p a {
     p {
         font-size: 14px;
     }
-
 }
 
 @media only screen and (max-width:576px) {

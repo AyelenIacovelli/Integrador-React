@@ -51,7 +51,7 @@ h2 {
 .price-span {
     font-size: 25px;
     font-weight: 800;
-    text-shadow: 4px 2px 3px rgba(187,114,38,0.95);
+    text-shadow: 4px 2px 3px rgba(187, 114, 38, 0.95);
 }
 
 .details-buy-btn {
@@ -74,13 +74,14 @@ h2 {
     padding: 2px 3px;
     border: none;
     background: none;
-    font-size: 14px;    
+    font-size: 14px;
 }
 
 .details-shop-btn:hover {
     text-decoration: underline;
     color: green;
 }
+
 
 /* MEDIAQUERIES */
 
@@ -97,7 +98,7 @@ h2 {
     .product__details p:first-of-type {
         font-size: 20px;
     }
-    
+
     .product__details p:last-of-type {
         font-size: 14px;
     }
