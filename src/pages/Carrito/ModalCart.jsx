@@ -30,7 +30,7 @@ const ModalCart = ({ onCloseModal }) => {
   return (
     <>
       {isCartEmpty ? (
-        <p>Aún no hay productos agregados al carrito</p>
+        <p className='cart__modal-p'>Aún no hay productos agregados al carrito</p>
       ) : (
         <>
           <h4 className='misproductos'>Mis productos</h4>

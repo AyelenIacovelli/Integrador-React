@@ -5,6 +5,7 @@ header {
     display: flex;
     justify-content: center;
     background-color: transparent;
+    
 }
 
 .nav__wrapper {
@@ -12,8 +13,10 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    padding: 0 30px;
     width: 100%;
+    z-index: 9999;
 
 }
 

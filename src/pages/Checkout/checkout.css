@@ -8,6 +8,7 @@
     background-image: url(../../assets/images/bg1.jpg);
     align-items: center;
     height: calc(100vh - 70px);
+    margin-bottom: 20px;
 }
 
 .checkout__container {
@@ -20,7 +21,8 @@
 }
 
 .checkout-title {
-    padding: 50px 0;
+    padding: 80px 0 10px 0;
+    color: black;
 }
 
 .billing__container,

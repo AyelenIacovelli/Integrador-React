@@ -29,25 +29,19 @@ const Carrito = () => {
   return (
     <Helmet title="Carrito de compras">
       <CommonSection title="Carrito de compras" />
+      <h2 className='carrito__title'>Tus productos</h2>
       <section className='cart__section'>
+      <div className="cart__overlay"></div>
 
-
+      
         <div className='cart__container'>
-          <h2>Tus productos</h2>
+          
           <div className='cart__container-top'>
             {
               cartItems.length === 0 ? (<h2>No hay productos en el carrito</h2>) : (
                 <table className='table bordered'>
-                  {/* <thead>
-                    <tr className='bordered-title'>
-                      <th>Imagen</th>
-                      <th>Nombre</th>
-                      <th>Precio</th>
-                      <th>Cantidad</th>
-                      <th>Borrar</th>
-                    </tr>
-                  </thead> */}
-                  <tbody>
+                  
+                  <tbody className='tbody'>
                     {
                       cartItems.map((item, index) => (
                         <Tr item={item} key={index} />
