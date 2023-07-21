@@ -57,7 +57,11 @@
 
 .offer-fire {
     display: flex;
-    color: red;
+    color: rgb(160, 59, 1);
+}
+
+.offer-fire.show svg {
+    font-size: 25px;
 }
 
 
