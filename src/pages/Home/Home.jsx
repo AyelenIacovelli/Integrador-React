@@ -62,14 +62,18 @@ const Home = () => {
       <Services />
       {/* TENDENCIA */}
       <section className='trending__products'>
-        <h2 className='trending__products-title'>Productos en tendencia</h2>
+        <div className='trending__products-title-container'>
+          <h2 className='trending__products-title'>Productos en tendencia</h2>
+        </div>
         <div className='trending__content'>
           <ProductsList data={trendingProducts} />
         </div>
       </section>
       {/* SALE */}
       <section className='best_sales'>
-        <h2 className='best_sales-title'>Ofertas</h2>
+        <div className='sales-title-container'>
+          <h2 className='best_sales-title'>Ofertas</h2>
+        </div>
         <div className='sales__content'>
           <ProductsList data={bestSalesProducts} />
         </div>
