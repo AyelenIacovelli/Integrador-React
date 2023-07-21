@@ -186,8 +186,12 @@
     font-weight: 700;
 }
 
-.clock__btn:hover {
+/* .clock__btn:hover {
     background-color: thistle;
+} */
+
+.clock__btn a:hover {
+    color: grey;
 }
 
 .clock__btn-icon {

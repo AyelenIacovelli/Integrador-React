@@ -6,7 +6,7 @@ import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa"
 import { deleteItem, incrementQuantity, decrementQuantity, clearCart } from "../../redux/slices/cartSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 
 
@@ -31,16 +31,16 @@ const Carrito = () => {
       <CommonSection title="Carrito de compras" />
       <h2 className='carrito__title'>Tus productos</h2>
       <section className='cart__section'>
-      <div className="cart__overlay"></div>
+        <div className="cart__overlay"></div>
 
-      
+
         <div className='cart__container'>
-          
+
           <div className='cart__container-top'>
             {
               cartItems.length === 0 ? (<h2>No hay productos en el carrito</h2>) : (
                 <table className='table bordered'>
-                  
+
                   <tbody className='tbody'>
                     {
                       cartItems.map((item, index) => (
@@ -66,9 +66,9 @@ const Carrito = () => {
               <button className="clear-cart-button" onClick={handleClearCart} disabled={isCartEmpty}>
                 Borrar carrito <FaTrashAlt />
               </button>
-              <motion.button whileTap={{ scale: 1.2 }} className='buy__btn'><Link to="/tienda">Continuar eligiendo productos</Link></motion.button>
+              <motion.button whileTap={{ scale: 1.2 }} className='clock__btn'><Link to="/tienda">Continuar eligiendo productos</Link></motion.button>
               <div className='checkout-btn'>
-              <motion.button whileTap={{ scale: 1.2 }} className='checkout-button' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Completar compra</Link></motion.button>
+                <motion.button whileTap={{ scale: 1.2 }} className='checkout-button' disabled={isCartEmpty}><Link to={isCartEmpty ? '#' : "/checkout"}>Completar compra</Link></motion.button>
               </div>
 
             </div>
@@ -104,31 +104,31 @@ export const Tr = ({ item }) => {
 
   return (
     <tr className=''>
-    <td className='td-container'>
-      
-<div className='td-top'>
-        <Link to={`/tienda/${item.id}`}>
-          <img src={item.img} alt="img" />
-        </Link>
-        <span>{item.title}</span>
-      </div>
-      <div className='td-bottom'>
-        <span className='td-bottom-span'>${totalPrice}</span>
-        <div className='btns__quantity'>
-          <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'>
-            <FaMinus className='btn__quantity-icon' />
-          </button>
-          <span>{item.quantity}</span>
-          <button onClick={incrementProductQuantity} className='btn__quantity increment'>
-            <FaPlus className='btn__quantity-icon' />
-          </button>
-          <FaTrashAlt className='btn__trash' onClick={deleteProduct} />
+      <td className='td-container'>
+
+        <div className='td-top'>
+          <Link to={`/tienda/${item.id}`}>
+            <img src={item.img} alt="img" />
+          </Link>
+          <span>{item.title}</span>
         </div>
-      </div>
-      
-      
-    </td>
-  </tr>
+        <div className='td-bottom'>
+          <span className='td-bottom-span'>${totalPrice}</span>
+          <div className='btns__quantity'>
+            <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'>
+              <FaMinus className='btn__quantity-icon' />
+            </button>
+            <span>{item.quantity}</span>
+            <button onClick={incrementProductQuantity} className='btn__quantity increment'>
+              <FaPlus className='btn__quantity-icon' />
+            </button>
+            <FaTrashAlt className='btn__trash' onClick={deleteProduct} />
+          </div>
+        </div>
+
+
+      </td>
+    </tr>
   )
 }
 

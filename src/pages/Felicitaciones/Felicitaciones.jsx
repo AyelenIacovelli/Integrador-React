@@ -26,7 +26,7 @@ const Felicitaciones = () => {
             <li>clientes@grevery.com</li>
             <li>1161234567</li>
           </ul>
-          <motion.button whileTap={{ scale: 1.2 }} className='shop__btn' onClick={navigateToTop}><Link to="/tienda">Volver a la tienda</Link></motion.button>
+          <motion.button whileTap={{ scale: 1.2 }} className='clock__btn' ><Link to="/tienda" onClick={navigateToTop}>Volver a la tienda</Link></motion.button>
         </div>
       </section>
     </Helmet>

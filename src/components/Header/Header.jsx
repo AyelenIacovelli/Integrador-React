@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import "../Header/header.css"
 import userIcon from "../../assets/images/user-icon.png"
-import logo from "../../assets/images/logo.png"
-import logo1 from "../../assets/images/logo1.png"
 import logo2 from "../../assets/images/logo2.png"
 
 // import { BsShop } from "react-icons/bs";

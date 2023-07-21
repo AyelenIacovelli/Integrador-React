@@ -49,7 +49,7 @@ h2 {
     width: 70%;
     display: flex;
     justify-content: center;
-    
+
 }
 
 .tbody {
@@ -58,9 +58,11 @@ h2 {
     flex-direction: column;
 }
 
-.buy__btn {
+
+/* .buy__btn {
     font-size: 16px;
 }
+
 .buy__btn[disabled] {
     cursor: not-allowed;
 }
@@ -73,7 +75,7 @@ h2 {
 .buy__btn[disabled] a {
     pointer-events: none;
     color: inherit;
-}
+} */
 
 .modal-cart-content {
     display: flex;
@@ -82,8 +84,8 @@ h2 {
     width: 521px;
     padding: 31px 26px;
     background-image: url(../../assets/images/bg1.jpg);
-    gap: 15px;   
-    
+    gap: 15px;
+
 }
 
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
@@ -294,17 +296,29 @@ h6 {
     margin-top: 10px;
 }
 
+.checkout-button[disabled] {
+    cursor: not-allowed;
+}
+
+/* .checkout-button a[disabled] {
+    cursor: not-allowed;
+}
+
+.checkout-button a:hover[disabled] {
+    cursor: not-allowed;
+}
+
 
 .checkout-btn a:hover {
     color: grey;
-}
+} */
 
 .subtotal {
     font-size: 22px;
     font-weight: 600;
-    color:white;
+    color: white;
     padding-top: 10px;
-    text-shadow: 4px 2px 3px rgba(187,114,38,0.95);
+    text-shadow: 4px 2px 3px rgba(187, 114, 38, 0.95);
 }
 
 .cart__modal-p {
@@ -386,7 +400,7 @@ h6 {
         /* padding: 10px; */
     }
 
-    
+
     .table td,
     span,
     .btn__quantity-icon {
