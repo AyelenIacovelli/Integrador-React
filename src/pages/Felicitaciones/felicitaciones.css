@@ -48,12 +48,14 @@
 
 .congratulations__container-msg {
     font-size: 20px;
+    color: black;
 }
 
 .congratulations__container-p {
     /* font-size: 18px; */
     font-weight: 600;
     margin-top: 20px;
+    color: black;
 }
 
 .shop__btn {

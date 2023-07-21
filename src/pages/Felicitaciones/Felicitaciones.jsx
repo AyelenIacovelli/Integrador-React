@@ -6,6 +6,11 @@ import "./felicitaciones.css"
 import { motion } from "framer-motion"
 
 const Felicitaciones = () => {
+
+  const navigateToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Helmet title="Felicitaciones">
       {/* <CommonSection title="Felicitaciones" /> */}
@@ -21,7 +26,7 @@ const Felicitaciones = () => {
             <li>clientes@grevery.com</li>
             <li>1161234567</li>
           </ul>
-          <motion.button whileTap={{ scale: 1.2 }} className='shop__btn'><Link to="/tienda">Volver a la tienda</Link></motion.button>
+          <motion.button whileTap={{ scale: 1.2 }} className='shop__btn' onClick={navigateToTop}><Link to="/tienda">Volver a la tienda</Link></motion.button>
         </div>
       </section>
     </Helmet>

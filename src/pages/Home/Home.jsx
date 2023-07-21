@@ -61,13 +61,13 @@ const Home = () => {
       {/* HERO */}
       <section className='hero__section'>
         <div className='hero__section-titles'>
-        <h1>GREVERY STORE</h1>
-        <h2>Tienda de regalos</h2>
+          <h1>GREVERY STORE</h1>
+          <h2>Tienda de regalos</h2>
         </div>
         <div className='hero__content'>
           {/* <h2>Tienda de regalos</h2> */}
           <p className='hero__content-p'>¡Conoce lo nuevo del {year}!</p>
-          <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda">Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
+          {/* <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn'><Link to="/tienda">Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button> */}
         </div>
 
       </section>
@@ -93,10 +93,10 @@ const Home = () => {
         <div className='timer__content'>
           <div className='clock__down'>
 
-            <h4>Ofertas por tiempo limitado</h4>
+            <h4 className='clock__down-title'>Ofertas por tiempo limitado</h4>
 
             <Clock />
-            <motion.button whileTap={{ scale: 1.2 }} className='hero__content-btn clock__btn'><Link to="/tienda" onClick={navigateToTop}>Tienda Online<BsArrowUpRight className='hero__content-icon' /></Link></motion.button>
+            <motion.button whileTap={{ scale: 1.2 }} className='clock__btn'><Link to="/tienda" onClick={navigateToTop}>Tienda Online<BsArrowUpRight className='clock__btn-icon' /></Link></motion.button>
 
           </div>
           <div className='counter__img'>

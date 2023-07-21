@@ -32,15 +32,15 @@
     font-weight: 900;
     /* margin-top: -35px; */
     letter-spacing: 3px;
-    text-shadow: 4px -3px 4px rgba(0,0,0,0.67);
-    
+    text-shadow: 4px -3px 4px rgba(0, 0, 0, 0.67);
+
 }
 
 .hero__section-titles h2 {
     font-size: 20px;
     text-align: end;
     color: white;
-    text-shadow: 4px 3px 2px rgba(0,0,0,0.67);
+    text-shadow: 4px 3px 2px rgba(0, 0, 0, 0.67);
     margin-top: -12px;
 }
 
@@ -48,20 +48,21 @@
 .best_sales-title {
     color: black;
     padding-top: 30px;
-    text-shadow: 4px 2px 3px rgba(187,114,38,0.95);
+    text-shadow: 4px 2px 3px rgba(187, 114, 38, 0.95);
 }
 
 .hero__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     align-content: center;
+    padding-bottom: 30px;
     /* margin-top: 39%; */
     gap: 10px;
     height: 50%;
     /* margin-left: 65px; */
-    padding-top: 40px;
+    /* padding-top: 40px; */
 }
 
 /* .hero__content h1 {
@@ -76,10 +77,10 @@
     color: tan;
     font-size: 30px;
     font-weight: 700;
-    text-shadow: -4px -3px 2px rgba(0,0,0,0.67);
+    text-shadow: -4px -3px 2px rgba(0, 0, 0, 0.67);
 }
 
-.hero__content-btn {
+/* .hero__content-btn {
     border: none;
     outline: none;
     padding: 8px 12px;
@@ -94,7 +95,7 @@
 
 .hero__content-btn a:hover {
     color: wheat;
-}
+} */
 
 /* TENDENCIA */
 
@@ -168,8 +169,8 @@
     width: 50%;
 }
 
-.clock__down h4 {
-    font-size: 20px;
+.clock__down-title {
+    font-size: 30px;
     color: white;
 }
 
@@ -178,14 +179,19 @@
     outline: none;
     padding: 8px 20px;
     border-radius: 5px;
-    background-color: thistle;
-    color: black;
+    background-color: brown;
+    color: white;
     cursor: pointer;
     font-size: 18px;
+    font-weight: 700;
 }
 
-.clock__btn a:hover {
-    color: wheat;
+.clock__btn:hover {
+    background-color: thistle;
+}
+
+.clock__btn-icon {
+    padding-left: 3px;
 }
 
 .counter__img {
@@ -214,16 +220,16 @@
     }
 
     .hero__section-titles h1 {
-       font-size: 50px;
+        font-size: 50px;
     }
 
     .hero__section-titles h2 {
-       font-size: 18px;
+        font-size: 18px;
     }
 
     .hero__content-p {
         font-size: 22px;
-       
+
     }
 
     .hero__content-btn {
@@ -234,13 +240,13 @@
 
     /* TIMER */
 
-    .clock__down h4 {
-        font-size: 18px;
+    .clock__down-title {
+        font-size: 24px;
     }
 
     .clock__btn {
         padding: 5px 10px;
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .counter__img img {
@@ -276,7 +282,7 @@
     }
 
     .hero__content-btn {
-        
+
         font-size: 14px;
         padding: 4px 8px;
     }
@@ -285,13 +291,17 @@
 
     /* TIMER */
 
-    .clock__down h4 {
-        font-size: 15px;
+    .clock__down-title {
+        font-size: 18px;
+    }
+
+    .clock__down {
+        row-gap: 25px;
     }
 
     .clock__btn {
         padding: 5px 10px;
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .counter__img img {
@@ -328,7 +338,7 @@
     .hero__content {
         gap: 4px;
     }
-    
+
 
     .hero__content p {
         font-size: 14px;
@@ -339,7 +349,7 @@
         padding: 4px 6px;
     }
 
-    
+
     /* TENDENCIA */
 
     .trending__content,
@@ -367,7 +377,7 @@
         width: 100%;
     }
 
-    .clock__down h4 {
+    .clock__down-title {
         text-align: center;
         font-size: 22px;
     }

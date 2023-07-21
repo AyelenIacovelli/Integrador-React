@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import "../Header/header.css"
 import userIcon from "../../assets/images/user-icon.png"
 import logo from "../../assets/images/logo.png"
+import logo1 from "../../assets/images/logo1.png"
+import logo2 from "../../assets/images/logo2.png"
 
 // import { BsShop } from "react-icons/bs";
 import { FaHeart, FaBars, FaShoppingCart } from "react-icons/fa"
@@ -187,7 +189,7 @@ const Header = () => {
       <div className='nav__wrapper'>
         <div className='logo' onClick={menuClose}>
           <Link to="/home" onClick={navigateToTop}>
-            <img src={logo} alt='logo' />
+            <img src={logo2} alt='logo' />
           </Link>
           {/* <h1>Grevery Store</h1> */}
         </div>
@@ -213,20 +215,20 @@ const Header = () => {
 
 
             <Modal
-        isOpen={isCartModalOpen}
-        onRequestClose={toggleCartModal}
-        contentLabel='Carrito de compras'
-        className="modal-cart-content"
-      >
-        <ModalCart onCloseModal={closeCartModal} />
-      </Modal>
+              isOpen={isCartModalOpen}
+              onRequestClose={toggleCartModal}
+              contentLabel='Carrito de compras'
+              className="modal-cart-content"
+            >
+              <ModalCart onCloseModal={closeCartModal} />
+            </Modal>
 
-      
+
           </span>
 
 
 
-          
+
 
           <div className='profile' onClick={menuClose}>
             <motion.img whileTap={{ scale: 1.2 }} src={currentUser ? currentUser.photoURL : userIcon} ref={profileImageRef} onClick={toggleProfileActions} alt='user' />
@@ -244,7 +246,7 @@ const Header = () => {
               }
             </div>
 
-            
+
           </div>
 
           <div className='mobile__menu'>
@@ -261,7 +263,7 @@ const Header = () => {
 
 
 
-      
+
 
 
 
