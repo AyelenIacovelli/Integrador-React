@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import "../Header/header.css"
 import userIcon from "../../assets/images/user-icon.png"
-import logo2 from "../../assets/images/logo2.png"
+import logo2 from "../../assets/images/logogg.png"
 import { FaHeart, FaBars, FaShoppingCart } from "react-icons/fa"
 import { toast } from "react-toastify"
 import { Link, NavLink, useNavigate } from "react-router-dom"
