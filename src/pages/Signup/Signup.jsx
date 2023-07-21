@@ -8,6 +8,8 @@ import { setDoc, doc } from 'firebase/firestore';
 import { auth, db, storage } from '../../firebase.config';
 import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
+import CommonSection from '../../components/UI/common/CommonSection';
+import Helmet from '../../components/Helmet/Helmet';
 
 const Signup = () => {
   const [file, setFile] = useState(null);
@@ -92,14 +94,17 @@ const Signup = () => {
   };
 
   return (
+    <Helmet title="Registrarse">
+            <CommonSection title="Registrarse" />
     <section className="signup__section">
+      
       {loading ? (
         <div>
           <h5>Cargando...</h5>
         </div>
       ) : (
         <div className="form__container">
-          <h3>Registro</h3>
+          <h3 className='login-title'>Create una cuenta</h3>
           <Formik
             initialValues={{
               username: '',
@@ -137,6 +142,7 @@ const Signup = () => {
         </div>
       )}
     </section>
+    </Helmet>
   );
 };
 

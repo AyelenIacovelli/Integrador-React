@@ -44,6 +44,13 @@
     margin-top: -12px;
 }
 
+.trending__products-title,
+.best_sales-title {
+    color: black;
+    padding-top: 30px;
+    text-shadow: 4px 2px 3px rgba(187,114,38,0.95);
+}
+
 .hero__content {
     display: flex;
     flex-direction: column;

@@ -94,4 +94,13 @@ p {
         align-items: center;
     }
 
+    .footer__section h3 {
+        font-size: 22px;
+    }
+
+    .contacto h4,
+    .redes h4 {
+        font-size: 18px;
+    }
+
 }

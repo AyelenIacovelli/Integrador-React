@@ -35,6 +35,8 @@ const Favoritos = () => {
 
   const favoriteProducts = useSelector(getFavoriteProducts);
 
+  const isButtonDisabled = favoriteProducts.length === 0;
+
   return (
     <Helmet title="Favoritos">
       <CommonSection title="Favoritos" />
@@ -44,14 +46,14 @@ const Favoritos = () => {
       <section className='favoritos__section'>
         <div className='favoritos__container'>
           {favoriteProducts.length === 0 ? (
-            <p>Aún no hay productos agregados a favoritos</p>
+            <p className='favs-p'>Aún no hay productos agregados a favoritos</p>
           ) : (
             favoriteProducts.map((product) => (
               <ProductCard key={product.id} item={product} />
             ))
           )}
         </div>
-        <button onClick={handleClearFavorites} className='fav__btn'>Borrar todos los Favoritos <FaHeart /></button>
+        <button onClick={handleClearFavorites} className='fav__btn' disabled={isButtonDisabled}>Borrar todos los Favoritos <FaHeart /></button>
       </section>
 
 

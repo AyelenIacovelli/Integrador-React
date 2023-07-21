@@ -43,7 +43,7 @@ const ProductDetails = () => {
 
   return (
     <Helmet title={title}>
-      <CommonSection title="Detalles" />
+      <CommonSection title="Detalles del producto" />
       <section className='details__section'>
         <div className='details__contain'>
         <h2>{title}</h2>
@@ -57,11 +57,11 @@ const ProductDetails = () => {
             <div>
               <div className='product__details'>
                 
-                {pricesale ? <span>${pricesale}</span> : <span>${price}</span>}
-                <p>{desc}</p>
-                <p>{desc2}</p>
-                <motion.button whileTap={{ scale: 1.2 }} className='buy__btn' onClick={addToCart}>Agregar al carrito</motion.button>
-                <motion.button whileTap={{ scale: 1.2 }} className='shop__btn' onClick={navigateToTop}><Link to="/tienda">Volver a la tienda</Link></motion.button>
+                {pricesale ? <span className='price-span'>${pricesale}</span> : <span className='price-span'>${price}</span>}
+                <p className='details-desc'>{desc}</p>
+                <p className='details-p'>{desc2}</p>
+                <motion.button whileTap={{ scale: 1.2 }} className='details-buy-btn' onClick={addToCart}>Agregar al carrito</motion.button>
+                <motion.button whileTap={{ scale: 1.2 }} className='details-shop-btn' onClick={navigateToTop}><Link to="/tienda">Volver a la tienda</Link></motion.button>
               </div>
             </div>
         </div>

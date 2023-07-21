@@ -21,3 +21,12 @@
 .fav__btn {
     padding: 4px 6px;
 }
+
+.fav__btn:disabled {
+    cursor: not-allowed;
+}
+
+.favs-p {
+    color: black;
+}
+

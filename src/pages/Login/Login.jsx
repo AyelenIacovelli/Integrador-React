@@ -8,6 +8,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
+import CommonSection from '../../components/UI/common/CommonSection'
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
@@ -30,6 +31,7 @@ const Login = () => {
 
     return (
         <Helmet title="Login">
+            <CommonSection title="Iniciar sesión" />
             <section className="signup__section">
                 {loading ? (
                     <div className="loading">
@@ -37,7 +39,7 @@ const Login = () => {
                     </div>
                 ) : (
                     <div className="form__container">
-                        <h3>Login</h3>
+                        <h3 className='login-title'>Login</h3>
 
                         <Formik
                             initialValues={{
