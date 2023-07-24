@@ -64,7 +64,7 @@ const Signup = () => {
 
             setLoading(false);
             toast.success('Cuenta creada');
-            navigate(-1);
+            navigate("/carrito");
           }
         );
       } else {
@@ -80,7 +80,7 @@ const Signup = () => {
 
         setLoading(false);
         toast.success('Cuenta creada');
-        navigate(-1);
+        navigate("/carrito");
       }
     } catch (error) {
       setLoading(false);
