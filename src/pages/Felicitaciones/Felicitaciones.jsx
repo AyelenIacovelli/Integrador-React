@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Helmet from '../../components/Helmet/Helmet'
 import { Link } from "react-router-dom"
 import "./felicitaciones.css"
@@ -9,6 +9,10 @@ const Felicitaciones = () => {
   const navigateToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   return (
     <Helmet title="Felicitaciones">
