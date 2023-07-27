@@ -311,6 +311,10 @@ h6 {
         font-size: 14px;
     }
 
+    span {
+        display: flex;
+    }
+
     .td-top,
     .td-bottom {
         gap: 8px;
