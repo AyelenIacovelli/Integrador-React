@@ -79,11 +79,13 @@ export const Tr = ({ item }) => {
     }
   }
 
-  const incrementProductQuantity = () => {
+  const handleIncrement = (event) => {
+    event.stopPropagation();
     dispatch(incrementQuantity(item.id));
   };
 
-  const decrementProductQuantity = () => {
+  const handleDecrement = (event) => {
+    event.stopPropagation();
     dispatch(decrementQuantity(item.id));
   };
 
@@ -101,11 +103,11 @@ export const Tr = ({ item }) => {
         <div className='td-bottom'>
           <span className='td-bottom-span'>${totalPrice}</span>
           <div className='btns__quantity'>
-            <button onClick={decrementProductQuantity} disabled={item.quantity === 1} className='btn__quantity decrement'>
+            <button onClick={handleDecrement} disabled={item.quantity === 1} className='btn__quantity decrement'>
               <FaMinus className='btn__quantity-icon' />
             </button>
             <span>{item.quantity}</span>
-            <button onClick={incrementProductQuantity} className='btn__quantity increment'>
+            <button onClick={handleIncrement} className='btn__quantity increment'>
               <FaPlus className='btn__quantity-icon' />
             </button>
             <FaTrashAlt className='btn__trash' onClick={deleteProduct} />
