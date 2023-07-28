@@ -5,6 +5,7 @@ import { clearCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { FaTrashAlt } from "react-icons/fa";
+import { ImCross } from "react-icons/im"
 
 const ModalCart = ({ onCloseModal }) => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -22,11 +23,12 @@ const ModalCart = ({ onCloseModal }) => {
   const isCartEmpty = cartItems.length === 0;
 
   const handleCloseModal = () => {
-    onCloseModal(); // Cerrar el modal llamando a la función prop
+    onCloseModal();
   };
 
   return (
     <>
+      <motion.div whileTap={{ scale: 1.2 }} className='exit' onClick={handleCloseModal}><ImCross /></motion.div>
       {isCartEmpty ? (
         <p className='cart__modal-p'>Aún no hay productos agregados al carrito</p>
       ) : (

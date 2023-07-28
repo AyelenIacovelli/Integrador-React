@@ -200,7 +200,8 @@ header {
 @media only screen and (max-width:768px) {
     .navigation {
         position: fixed;
-        top: 70px;
+        top: 0px;
+        padding-top: 70px;
         left: 0;
         width: 100%;
         height: calc(100vh - 70px);
@@ -235,6 +236,7 @@ header {
     .mobile__menu {
         display: block;
         cursor: pointer;
+        z-index: 999999;
     }
 
     .mobile__menu span i {
@@ -257,7 +259,8 @@ header {
 
     .menu {
         width: 100%;
-        height: calc(100vh - 70px);
+        height: 100vh;
+        top: 0;
         right: 0;
         border-radius: unset;
         padding: 90px 0;
