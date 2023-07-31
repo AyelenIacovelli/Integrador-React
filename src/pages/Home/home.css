@@ -53,7 +53,7 @@
     width: 100%;
     background-position: center;
     background-size: cover;
-    height: 400px;
+    height: 506px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -338,9 +338,10 @@
     .trending__content,
     .sales__content {
         overflow-y: scroll;
-        height: 290px;
+        height: 386px;
         gap: unset;
         row-gap: 28px;
+        margin-bottom: 40px;
     }
 
     .trending__products-title,

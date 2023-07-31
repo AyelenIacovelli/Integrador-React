@@ -350,14 +350,31 @@ h6 {
         width: 100%;
     }
 
+    .tbody {
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
     .bordered {
         align-items: stretch;
     }
 
     .table td,
-    span,
-    .btn__quantity-icon {
+    span {
         font-size: 8px;
+    }
+
+    .btn__quantity-icon {
+        font-size: 13px;
+    }
+
+    .td-container .td-bottom {
+        gap: 12px;
+    }
+
+    .table tr {
+        padding: unset;
     }
 
     .table tr td img {
@@ -378,11 +395,24 @@ h6 {
     }
 
     .td-bottom {
-        gap: 3px;
+        gap: unset;
+    }
+
+    .td-bottom span {
+        font-size: 13px;
+    }
+
+    .td-top span,
+    .td-bottom span {
+        font-size: 13px;
     }
 
     .btns__quantity {
-        gap: 2px;
+        gap: 7px;
+    }
+
+    .btn__trash {
+        padding-left: unset;
     }
 
     .subtotal {

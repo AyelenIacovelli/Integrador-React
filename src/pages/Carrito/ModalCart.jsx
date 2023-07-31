@@ -8,6 +8,12 @@ import { FaTrashAlt } from "react-icons/fa";
 import { ImCross } from "react-icons/im"
 
 const ModalCart = ({ onCloseModal }) => {
+
+  const navigateToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
@@ -24,6 +30,7 @@ const ModalCart = ({ onCloseModal }) => {
 
   const handleCloseModal = () => {
     onCloseModal();
+    navigateToTop();
   };
 
   return (
@@ -35,7 +42,7 @@ const ModalCart = ({ onCloseModal }) => {
         <>
           <h4 className='misproductos'>Mis productos</h4>
           <table className='table'>
-            <tbody>
+            <tbody className='tbody'>
               {cartItems.map((item, index) => (
                 <Tr item={item} key={index} className='table__body' />
               ))}
