@@ -96,6 +96,7 @@
     align-items: center;
     width: 100%;
     gap: 40px;
+    position: relative;
 
 }
 
@@ -113,6 +114,10 @@
 .trending__products h2,
 .best_sales h2 {
     text-align: center;
+}
+
+.swipe {
+    display: none;
 }
 
 /* TIMER */
@@ -337,7 +342,7 @@
 
     .trending__content,
     .sales__content {
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 386px;
         gap: unset;
         row-gap: 28px;
@@ -352,6 +357,20 @@
     .trending__products-title-container,
     .sales-title-container {
         height: 252px;
+    }
+
+    .swipe {
+        display: flex;
+        position: absolute;
+        right: 0;
+        color: grey;
+        font-size: 20px;
+        transition: right 1s ease;
+    }
+
+    .trending__products:hover .swipe,
+    .best_sales:hover .swipe {
+        right: 18px;
     }
 
 

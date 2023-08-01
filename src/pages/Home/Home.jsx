@@ -9,6 +9,7 @@ import Clock from "../../components/UI/clock/Clock"
 import ofertaok from "../../assets/images/ofertaok.png"
 import { motion, useAnimation } from 'framer-motion';
 import { BsArrowUpRight } from "react-icons/bs"
+import { MdSwipeVertical } from "react-icons/md"
 
 const Home = () => {
 
@@ -68,6 +69,7 @@ const Home = () => {
         <div className='trending__content'>
           <ProductsList data={trendingProducts} />
         </div>
+        <span className='swipe'><MdSwipeVertical /></span>
       </section>
       {/* SALE */}
       <section className='best_sales'>
@@ -77,6 +79,7 @@ const Home = () => {
         <div className='sales__content'>
           <ProductsList data={bestSalesProducts} />
         </div>
+        <span className='swipe'><MdSwipeVertical /></span>
       </section>
       {/* TIMER */}
       <section className='timer__count'>
