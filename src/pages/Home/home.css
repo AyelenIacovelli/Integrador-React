@@ -364,13 +364,13 @@
         position: absolute;
         right: 0;
         color: grey;
-        font-size: 20px;
+        font-size: 30px;
         transition: right 1s ease;
     }
 
     .trending__products:hover .swipe,
     .best_sales:hover .swipe {
-        right: 18px;
+        right: 25px;
     }
 
 
